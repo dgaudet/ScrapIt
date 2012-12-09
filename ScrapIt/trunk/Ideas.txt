@@ -1,0 +1,22 @@
+* Map screen
+** Possibly the main screen should have some location search inputs, as well as a current location button
+*** However I am not sure what to do if the current location doesn't yield a valid/usefull city
+** When the map loads it should be at a high enough resolution that you can see at least one place mark
+** Have a button to allow users to add a Store that we have missed - possibly in the settings or something
+*** When they hit it, it will bring up a form that allows them to add any information they can think of (possibly just name required)
+**** Then we take that info, find out as much as we can about it, and add it to our results from now on
+
+* Store Details Page
+** On the Store Details page, touching the phone number should ask if they want to call, touching url should ask if they want to view it in safari
+*** enable copy from some of the fields in the store details page
+** Have an add to contacts button
+** Have a way to make a store one of their favorites - on the detail summary
+*** We store the favs on the phone and on the server
+*** then they show up as a star or something on the map, and you could view and remove/edit favorites somewhere
+*** Then we find out from all the business's when they are having sales, and notify all the users who have them as a favorite and notify them of the deal
+** Have a link on the detail view of a store to get directions, to current location
+*** And a second button for directions to a different location maybe from the address book
+*** It then closes the app, and loads google maps with the direction, just like Timmy Me
+** on the detail view add a link to share the store with someone, not sure how, maybe email, I guess
+
+* We need to do the leg work to find out information about each business in each city, that's where the money is, in the ability to know infomration about all the stores out there
