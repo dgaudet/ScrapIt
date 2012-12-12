@@ -139,6 +139,18 @@ NSString *const Row_Key = @"Row";
     return [[[_tableData objectAtIndex:section] objectForKey:Row_Key] count];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    int linePadding = 30;
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(linePadding, 33, self.view.bounds.size.width - linePadding * 2, 2)];
+    lineView.backgroundColor = [UIColor lightGrayColor];
+        
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 10)];
+    [header setBackgroundColor:[UIColor clearColor]];
+    [header addSubview:lineView];
+    [lineView release];
+    return [header autorelease];
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [[_tableData objectAtIndex:section] objectForKey:Section_Key];
 }
