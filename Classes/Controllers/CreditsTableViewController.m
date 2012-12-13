@@ -9,7 +9,7 @@
 #import "CreditsTableViewController.h"
 #import "TableViewRow.h"
 #import "MultilineTableViewRow.h"
-#import "MultilineTwoRowTableViewRow.h"
+#import "TwoTableViewRow.h"
 #import "DeviceService.h"
 
 NSString *const Section_Key = @"section";
@@ -69,8 +69,11 @@ NSString *const Row_Key = @"Row";
     NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:rows3, Row_Key, @"Yellow Pages legal", Section_Key, nil];
     [array addObject:section3];
     
-    MultilineTwoRowTableViewRow *multilineRow41 = [[MultilineTwoRowTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app" andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
+    TwoTableViewRow *multilineRow41 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app" andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
     [multilineRow41 setTextAlignment:UITextAlignmentCenter];
+    [multilineRow41.mainLabel setTextColor:[UIColor whiteColor]];
+    [multilineRow41.secondaryLabel setTextColor:[UIColor blackColor]];
+    [multilineRow41.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
     NSArray *rows4 = [NSArray arrayWithObject:multilineRow41];
     [multilineRow41 release];
     NSDictionary *section4 = [NSDictionary dictionaryWithObjectsAndKeys:rows4, Row_Key, @"Artwork", Section_Key, nil];
