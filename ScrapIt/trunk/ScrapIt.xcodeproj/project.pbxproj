@@ -66,6 +66,7 @@
 		05CC96531651A713009CC29D /* YellowPagesFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CC96521651A713009CC29D /* YellowPagesFooterView.m */; };
 		05D37A1B14859BE000C9842D /* TableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D37A1A14859BE000C9842D /* TableViewRow.m */; };
 		05D87882162530E1002AAD9B /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
+		05DCAF13167995190098363B /* TwoTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DCAF12167995190098363B /* TwoTableViewRow.m */; };
 		05EB10E216068ED300FF01AD /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
 		05EB10E7160699AA00FF01AD /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		05EB10EA16069B8200FF01AD /* FlurryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* FlurryService.m */; };
@@ -181,6 +182,8 @@
 		05CC96521651A713009CC29D /* YellowPagesFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YellowPagesFooterView.m; path = Domain/YellowPagesFooterView.m; sourceTree = "<group>"; };
 		05D37A1914859BE000C9842D /* TableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewRow.h; path = Domain/TableViewRow.h; sourceTree = "<group>"; };
 		05D37A1A14859BE000C9842D /* TableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewRow.m; path = Domain/TableViewRow.m; sourceTree = "<group>"; };
+		05DCAF11167995190098363B /* TwoTableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwoTableViewRow.h; path = Domain/TwoTableViewRow.h; sourceTree = "<group>"; };
+		05DCAF12167995190098363B /* TwoTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwoTableViewRow.m; path = Domain/TwoTableViewRow.m; sourceTree = "<group>"; };
 		05EB10E016068ED300FF01AD /* DeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceService.h; path = Services/DeviceService.h; sourceTree = "<group>"; };
 		05EB10E116068ED300FF01AD /* DeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceService.m; path = Services/DeviceService.m; sourceTree = "<group>"; };
 		05EB10E5160699AA00FF01AD /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				05D37A1A14859BE000C9842D /* TableViewRow.m */,
 				05B8A9621485B208002D65A1 /* TextInputTableViewRow.h */,
 				05B8A9631485B208002D65A1 /* TextInputTableViewRow.m */,
+				05DCAF11167995190098363B /* TwoTableViewRow.h */,
+				05DCAF12167995190098363B /* TwoTableViewRow.m */,
 				05B8F6A21500532100136D6A /* MultilineTableViewRow.h */,
 				05B8F6A31500532100136D6A /* MultilineTableViewRow.m */,
 				05B3028314C369D700D74AF8 /* MultilineTextInputTableViewRow.h */,
@@ -664,6 +669,7 @@
 				05CC96531651A713009CC29D /* YellowPagesFooterView.m in Sources */,
 				051970D9165978CE009F1A5E /* CreditsView.m in Sources */,
 				05EBEE46165C858000F5FAD4 /* CreditsTableViewController.m in Sources */,
+				05DCAF13167995190098363B /* TwoTableViewRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
