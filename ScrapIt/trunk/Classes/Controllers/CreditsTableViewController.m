@@ -61,21 +61,21 @@ NSString *const Row_Key = @"Row";
     [array addObject:section2];
         
     NSString *legalText = kYellowPagesLegalText;
-    MultilineTableViewRow *multilineRow31 = [[MultilineTableViewRow alloc] initWithValue:@"Thanks to Yellow pages for their great api" andMethod:nil];
-    MultilineTableViewRow *multilineRow32 = [[MultilineTableViewRow alloc] initWithValue:legalText andMethod:nil];
-    NSArray *rows3 = [NSArray arrayWithObjects:multilineRow31, multilineRow32, nil];
-    [multilineRow31 release];
-    [multilineRow32 release];
-    NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:rows3, Row_Key, @"Yellow Pages legal", Section_Key, nil];
+    TwoTableViewRow *row31 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to Yellow Pages for their great api" andValueTwo:legalText andMethod:nil];
+    [row31 setTextAlignment:UITextAlignmentCenter];
+    [row31.mainLabel setTextColor:[UIColor whiteColor]];
+    [row31.secondaryLabel setTextColor:[UIColor blackColor]];
+    NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row31], Row_Key, @"Yellow Pages legal", Section_Key, nil];
+    [row31 release];
     [array addObject:section3];
     
-    TwoTableViewRow *multilineRow41 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app" andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
-    [multilineRow41 setTextAlignment:UITextAlignmentCenter];
-    [multilineRow41.mainLabel setTextColor:[UIColor whiteColor]];
-    [multilineRow41.secondaryLabel setTextColor:[UIColor blackColor]];
-    [multilineRow41.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
-    NSArray *rows4 = [NSArray arrayWithObject:multilineRow41];
-    [multilineRow41 release];
+    TwoTableViewRow *row41 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app" andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
+    [row41 setTextAlignment:UITextAlignmentCenter];
+    [row41.mainLabel setTextColor:[UIColor whiteColor]];
+    [row41.secondaryLabel setTextColor:[UIColor blackColor]];
+    [row41.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+    NSArray *rows4 = [NSArray arrayWithObject:row41];
+    [row41 release];
     NSDictionary *section4 = [NSDictionary dictionaryWithObjectsAndKeys:rows4, Row_Key, @"Artwork", Section_Key, nil];
     [array addObject:section4];
     
