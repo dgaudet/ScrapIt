@@ -9,7 +9,6 @@
 #import "TwoTableViewRow.h"
 
 NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
-CGFloat TTVR_ROW_PADDING = 20.0;
 
 @interface TwoTableViewRow (PrivateMethods)
 
@@ -26,7 +25,7 @@ CGFloat TTVR_ROW_PADDING = 20.0;
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method {
     self = [super initWithValue:val andMethod:method];
     if (self) {
-        _font = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
+        _mainLabelDefaultFont = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
         _alignment = UITextAlignmentLeft;
         textAlignment = _alignment;
         _value2 = val2;
@@ -51,7 +50,7 @@ CGFloat TTVR_ROW_PADDING = 20.0;
         [mainLabel setFrame:[self groupedInnerContentRect]];
         mainLabel.backgroundColor = [UIColor clearColor];
         mainLabel.textAlignment = textAlignment;
-		mainLabel.font = _font;
+		mainLabel.font = _mainLabelDefaultFont;
         
 		mainLabel.lineBreakMode = UILineBreakModeWordWrap;
 		mainLabel.numberOfLines = 999;
@@ -60,6 +59,8 @@ CGFloat TTVR_ROW_PADDING = 20.0;
         
         [secondaryLabel setFrame:[self subLabelContentRect]];
         secondaryLabel.backgroundColor = [UIColor clearColor];
+        secondaryLabel.lineBreakMode = UILineBreakModeWordWrap;
+        secondaryLabel.numberOfLines = 999;
         secondaryLabel.textAlignment = textAlignment;
 		secondaryLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0];
         secondaryLabel.tag = subLabelTag;
@@ -67,17 +68,16 @@ CGFloat TTVR_ROW_PADDING = 20.0;
     }
     
     // Set up the cell...
-    //	UILabel *mainLabel = (UILabel *) [cell.contentView viewWithTag:mainLabelTag];
     CGRect rect = mainLabel.frame;
-    rect.size.height = [self heightForString:value withWidth:[self groupedInnerContentRect].size.width withFont:_font];
+    rect.size.height = [self heightForString:value withWidth:[self groupedInnerContentRect].size.width withFont:mainLabel.font];
     mainLabel.frame = rect;
 	mainLabel.text = value;
     
-    UILabel *subLabel = (UILabel *) [cell.contentView viewWithTag:subLabelTag];
-    CGRect subLabelRect = subLabel.frame;
+    CGRect subLabelRect = secondaryLabel.frame;
     subLabelRect.origin.y = mainLabel.frame.size.height;
-    subLabel.frame = subLabelRect;
-	subLabel.text = _value2;
+    subLabelRect.size.height = [self heightForString:_value2 withWidth:[self subLabelContentRect].size.width withFont:secondaryLabel.font];
+    secondaryLabel.frame = subLabelRect;
+	secondaryLabel.text = _value2;
 	
     return cell;
 }
@@ -88,8 +88,9 @@ CGFloat TTVR_ROW_PADDING = 20.0;
 }
 
 - (CGFloat)heightForRow {
-    CGFloat mainLabelHeight = [self heightForString:value withWidth:[self groupedInnerContentRect].size.width withFont:_font];
-    return mainLabelHeight + TTVR_ROW_PADDING;
+    CGFloat mainLabelHeight = [self heightForString:value withWidth:[self groupedInnerContentRect].size.width withFont:mainLabel.font];
+    CGFloat secondaryLabelHeight = [self heightForString:_value2 withWidth:[self groupedInnerContentRect].size.width withFont:secondaryLabel.font];
+    return mainLabelHeight + secondaryLabelHeight;
 }
 
 - (CGRect)groupedInnerContentRect {
@@ -97,7 +98,7 @@ CGFloat TTVR_ROW_PADDING = 20.0;
 }
 
 - (CGRect)subLabelContentRect {
-    return CGRectMake(20.0, 38.0, 280.0, 15.0);
+    return CGRectMake(10.0, 38.0, 280.0, 15.0);
 }
 
 - (void)dealloc {
