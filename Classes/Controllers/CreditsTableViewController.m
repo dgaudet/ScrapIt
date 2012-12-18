@@ -142,16 +142,24 @@ NSString *const Row_Key = @"Row";
     return [[[_tableData objectAtIndex:section] objectForKey:Row_Key] count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20.0;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     int linePadding = 30;
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(linePadding, 33, self.view.bounds.size.width - linePadding * 2, 2)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(linePadding, 10, self.view.bounds.size.width - linePadding * 2, 2)];
     lineView.backgroundColor = [UIColor lightGrayColor];
         
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 10)];
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 10.0)];
     [header setBackgroundColor:[UIColor clearColor]];
     [header addSubview:lineView];
     [lineView release];
     return [header autorelease];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 1.0;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
