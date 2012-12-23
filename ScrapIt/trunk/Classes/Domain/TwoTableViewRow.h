@@ -9,7 +9,6 @@
 #import "TableViewRow.h"
 
 @interface TwoTableViewRow : TableViewRow {
-    UIFont *_mainLabelDefaultFont;
     UITextAlignment _alignment;
     NSString *_value2;
 }

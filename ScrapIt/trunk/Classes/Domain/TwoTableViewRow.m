@@ -25,15 +25,23 @@ NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method {
     self = [super initWithValue:val andMethod:method];
     if (self) {
-        _mainLabelDefaultFont = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
         _alignment = UITextAlignmentLeft;
         textAlignment = _alignment;
         _value2 = val2;
     }
     self.mainLabel = [[UILabel alloc] init];
     mainLabel.textColor = [UIColor blackColor];
+    mainLabel.backgroundColor = [UIColor clearColor];
+    mainLabel.lineBreakMode = UILineBreakModeWordWrap;
+    mainLabel.numberOfLines = 999;
+    mainLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
+    
     self.secondaryLabel = [[UILabel alloc] init];
     secondaryLabel.textColor = [UIColor darkGrayColor];
+    secondaryLabel.backgroundColor = [UIColor clearColor];
+    secondaryLabel.lineBreakMode = UILineBreakModeWordWrap;
+    secondaryLabel.numberOfLines = 999;    
+    secondaryLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0];
     return self;
 }
 
@@ -48,21 +56,12 @@ NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
         
         [mainLabel setFrame:[self groupedInnerContentRect]];
-        mainLabel.backgroundColor = [UIColor clearColor];
         mainLabel.textAlignment = textAlignment;
-		mainLabel.font = _mainLabelDefaultFont;
-        
-		mainLabel.lineBreakMode = UILineBreakModeWordWrap;
-		mainLabel.numberOfLines = 999;
         mainLabel.tag = mainLabelTag;
 		[cell.contentView addSubview:mainLabel];
         
         [secondaryLabel setFrame:[self subLabelContentRect]];
-        secondaryLabel.backgroundColor = [UIColor clearColor];
-        secondaryLabel.lineBreakMode = UILineBreakModeWordWrap;
-        secondaryLabel.numberOfLines = 999;
         secondaryLabel.textAlignment = textAlignment;
-		secondaryLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0];
         secondaryLabel.tag = subLabelTag;
 		[cell.contentView addSubview:secondaryLabel];
     }

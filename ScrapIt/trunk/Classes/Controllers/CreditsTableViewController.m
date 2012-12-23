@@ -51,13 +51,14 @@ NSString *const Row_Key = @"Row";
     [multilineRow1 release];
     [array addObject:section1];
 
+    NSString *dedicationTitle = @"I would like to dedicate this app to my Family";
     NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible.";
-    MultilineTableViewRow *multilineRow21 = [[MultilineTableViewRow alloc] initWithValue:dedicationText andMethod:nil];
-    MultilineTableViewRow *multilineRow22 = [[MultilineTableViewRow alloc] initWithValue:@"test2" andMethod:nil];
-    NSArray *rows2 = [NSArray arrayWithObjects:multilineRow21, multilineRow22, nil];
-    [multilineRow21 release];
-    [multilineRow22 release];
-    NSDictionary *section2 = [NSDictionary dictionaryWithObjectsAndKeys:rows2, Row_Key, @"For my family", Section_Key, nil];
+    TwoTableViewRow *row21 = [[TwoTableViewRow alloc] initWithValue:dedicationTitle andValueTwo:dedicationText andMethod:nil];
+    [row21 setTextAlignment:UITextAlignmentCenter];
+    [row21.mainLabel setTextColor:[UIColor whiteColor]];
+    [row21.secondaryLabel setTextColor:[UIColor blackColor]];
+    NSDictionary *section2 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row21], Row_Key, @"For my family", Section_Key, nil];
+    [row21 release];
     [array addObject:section2];
         
     NSString *legalText = kYellowPagesLegalText;
