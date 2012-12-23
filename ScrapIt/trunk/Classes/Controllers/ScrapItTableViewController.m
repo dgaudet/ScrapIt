@@ -85,10 +85,10 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 //    self.navigationItem.rightBarButtonItem = rightButton;
 //    [rightButton release];
     
-//    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-//    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [infoButton setFrame:CGRectMake(290, 385, infoButton.frame.size.width, infoButton.frame.size.height)];
-//    [self.view addSubview:infoButton];
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [infoButton setFrame:CGRectMake(290, 385, infoButton.frame.size.width, infoButton.frame.size.height)];
+    [self.view addSubview:infoButton];
     
     tableData = [[NSArray alloc] initWithArray:[self loadTableData]];
     loadingData = FALSE;
