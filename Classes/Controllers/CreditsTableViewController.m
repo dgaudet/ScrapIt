@@ -43,41 +43,46 @@ NSString *const Row_Key = @"Row";
 
 - (NSArray *)setupTableData {
     NSMutableArray *array = [NSMutableArray array];
-    
-    NSString *versionText = [DeviceService getApplicationVersion];
-    MultilineTableViewRow *multilineRow1 = [[MultilineTableViewRow alloc] initWithValue:versionText andMethod:nil];
-    [multilineRow1 setTextAlignment:UITextAlignmentCenter];
-    NSDictionary *section1 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:multilineRow1], Row_Key, @"App Version", Section_Key, nil];
-    [multilineRow1 release];
-    [array addObject:section1];
 
-    NSString *dedicationTitle = @"I would like to dedicate this app to my Family";
+    NSString *dedicationTitle = @"I would like to dedicate this app to my Family.";
     NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible.";
-    TwoTableViewRow *row21 = [[TwoTableViewRow alloc] initWithValue:dedicationTitle andValueTwo:dedicationText andMethod:nil];
-    [row21 setTextAlignment:UITextAlignmentCenter];
-    [row21.mainLabel setTextColor:[UIColor whiteColor]];
-    [row21.secondaryLabel setTextColor:[UIColor blackColor]];
-    NSDictionary *section2 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row21], Row_Key, @"For my family", Section_Key, nil];
-    [row21 release];
-    [array addObject:section2];
+    TwoTableViewRow *row1 = [[TwoTableViewRow alloc] initWithValue:dedicationTitle andValueTwo:dedicationText andMethod:nil];
+    [row1 setTextAlignment:UITextAlignmentCenter];
+    [row1.mainLabel setTextColor:[UIColor whiteColor]];
+    [row1.secondaryLabel setTextColor:[UIColor blackColor]];
+    [row1.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+    NSDictionary *section1 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row1], Row_Key, @"For my family", Section_Key, nil];
+    [row1 release];
+    [array addObject:section1];
         
     NSString *legalText = kYellowPagesLegalText;
-    TwoTableViewRow *row31 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to Yellow Pages for their great api" andValueTwo:legalText andMethod:nil];
-    [row31 setTextAlignment:UITextAlignmentCenter];
-    [row31.mainLabel setTextColor:[UIColor whiteColor]];
-    [row31.secondaryLabel setTextColor:[UIColor blackColor]];
-    NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row31], Row_Key, @"Yellow Pages legal", Section_Key, nil];
-    [row31 release];
+    TwoTableViewRow *row2 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to Yellow Pages for their great api." andValueTwo:legalText andMethod:nil];
+    [row2 setTextAlignment:UITextAlignmentCenter];
+    [row2.mainLabel setTextColor:[UIColor whiteColor]];
+    [row2.secondaryLabel setTextColor:[UIColor blackColor]];
+    [row2.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+    NSDictionary *section2 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row2], Row_Key, @"Yellow Pages legal", Section_Key, nil];
+    [row2 release];
+    [array addObject:section2];
+    
+    TwoTableViewRow *row3 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app." andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
+    [row3 setTextAlignment:UITextAlignmentCenter];
+    [row3.mainLabel setTextColor:[UIColor whiteColor]];
+    [row3.secondaryLabel setTextColor:[UIColor blackColor]];
+    [row3.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+    NSArray *rows4 = [NSArray arrayWithObject:row3];
+    [row3 release];
+    NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:rows4, Row_Key, @"Artwork", Section_Key, nil];
     [array addObject:section3];
     
-    TwoTableViewRow *row41 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app" andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
-    [row41 setTextAlignment:UITextAlignmentCenter];
-    [row41.mainLabel setTextColor:[UIColor whiteColor]];
-    [row41.secondaryLabel setTextColor:[UIColor blackColor]];
-    [row41.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
-    NSArray *rows4 = [NSArray arrayWithObject:row41];
-    [row41 release];
-    NSDictionary *section4 = [NSDictionary dictionaryWithObjectsAndKeys:rows4, Row_Key, @"Artwork", Section_Key, nil];
+    NSString *versionText = [DeviceService getApplicationVersion];
+    TwoTableViewRow *row4 = [[TwoTableViewRow alloc] initWithValue:@"App Version:" andValueTwo:versionText andMethod:nil];
+    [row4 setTextAlignment:UITextAlignmentCenter];
+    [row4.mainLabel setTextColor:[UIColor whiteColor]];
+    [row4.secondaryLabel setTextColor:[UIColor blackColor]];
+    [row4.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+    NSDictionary *section4 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row4], Row_Key, @"App Version", Section_Key, nil];
+    [row4 release];
     [array addObject:section4];
     
     return array;
