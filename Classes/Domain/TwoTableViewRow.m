@@ -20,13 +20,15 @@ NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
 
 @implementation TwoTableViewRow
 
-@synthesize textAlignment, mainLabel, secondaryLabel;
+@synthesize mainLabel, secondaryLabel;
+@synthesize textAlignment = _textAlignment;
+@synthesize cellSelectionStyle = _cellSelectionStyle;
 
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method {
     self = [super initWithValue:val andMethod:method];
     if (self) {
-        _alignment = UITextAlignmentLeft;
-        textAlignment = _alignment;
+        _textAlignment = UITextAlignmentLeft;
+        _cellSelectionStyle = UITableViewCellSelectionStyleGray;
         _value2 = val2;
     }
     self.mainLabel = [[UILabel alloc] init];
@@ -42,6 +44,7 @@ NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
     secondaryLabel.lineBreakMode = UILineBreakModeWordWrap;
     secondaryLabel.numberOfLines = 999;    
     secondaryLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0];
+    
     return self;
 }
 
@@ -56,12 +59,12 @@ NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
         
         [mainLabel setFrame:[self groupedInnerContentRect]];
-        mainLabel.textAlignment = textAlignment;
+        mainLabel.textAlignment = _textAlignment;
         mainLabel.tag = mainLabelTag;
 		[cell.contentView addSubview:mainLabel];
         
         [secondaryLabel setFrame:[self subLabelContentRect]];
-        secondaryLabel.textAlignment = textAlignment;
+        secondaryLabel.textAlignment = _textAlignment;
         secondaryLabel.tag = subLabelTag;
 		[cell.contentView addSubview:secondaryLabel];
     }
@@ -77,7 +80,9 @@ NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
     subLabelRect.size.height = [self heightForString:_value2 withWidth:[self subLabelContentRect].size.width withFont:secondaryLabel.font];
     secondaryLabel.frame = subLabelRect;
 	secondaryLabel.text = _value2;
-	
+    
+    [cell setSelectionStyle:_cellSelectionStyle];
+    
     return cell;
 }
 

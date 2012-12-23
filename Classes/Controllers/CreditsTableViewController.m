@@ -47,6 +47,7 @@ NSString *const Row_Key = @"Row";
     NSString *dedicationTitle = @"I would like to dedicate this app to my Family.";
     NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible.";
     TwoTableViewRow *row1 = [[TwoTableViewRow alloc] initWithValue:dedicationTitle andValueTwo:dedicationText andMethod:nil];
+    [row1 setCellSelectionStyle:UITableViewCellEditingStyleNone];
     [row1 setTextAlignment:UITextAlignmentCenter];
     [row1.mainLabel setTextColor:[UIColor whiteColor]];
     [row1.secondaryLabel setTextColor:[UIColor blackColor]];
@@ -57,6 +58,7 @@ NSString *const Row_Key = @"Row";
         
     NSString *legalText = kYellowPagesLegalText;
     TwoTableViewRow *row2 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to Yellow Pages for their great api." andValueTwo:legalText andMethod:nil];
+    [row2 setCellSelectionStyle:UITableViewCellEditingStyleNone];
     [row2 setTextAlignment:UITextAlignmentCenter];
     [row2.mainLabel setTextColor:[UIColor whiteColor]];
     [row2.secondaryLabel setTextColor:[UIColor blackColor]];
@@ -65,11 +67,11 @@ NSString *const Row_Key = @"Row";
     [row2 release];
     [array addObject:section2];
     
-    TwoTableViewRow *row3 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app." andValueTwo:@"- View nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
+    TwoTableViewRow *row3 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to nevermoregraphix for the paper background for our app." andValueTwo:@"- Tap to view nevermoregraphix artwork -" andMethod:@selector(paperArtworkRowTapped:)];
     [row3 setTextAlignment:UITextAlignmentCenter];
     [row3.mainLabel setTextColor:[UIColor whiteColor]];
     [row3.secondaryLabel setTextColor:[UIColor blackColor]];
-    [row3.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+    [row3.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
     NSArray *rows4 = [NSArray arrayWithObject:row3];
     [row3 release];
     NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:rows4, Row_Key, @"Artwork", Section_Key, nil];
@@ -77,6 +79,7 @@ NSString *const Row_Key = @"Row";
     
     NSString *versionText = [DeviceService getApplicationVersion];
     TwoTableViewRow *row4 = [[TwoTableViewRow alloc] initWithValue:@"App Version:" andValueTwo:versionText andMethod:nil];
+    [row4 setCellSelectionStyle:UITableViewCellEditingStyleNone];
     [row4 setTextAlignment:UITextAlignmentCenter];
     [row4.mainLabel setTextColor:[UIColor whiteColor]];
     [row4.secondaryLabel setTextColor:[UIColor blackColor]];

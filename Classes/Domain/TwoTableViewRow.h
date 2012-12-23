@@ -9,13 +9,13 @@
 #import "TableViewRow.h"
 
 @interface TwoTableViewRow : TableViewRow {
-    UITextAlignment _alignment;
     NSString *_value2;
 }
 
 @property UITextAlignment textAlignment;
 @property (nonatomic, retain) UILabel *mainLabel;
 @property (nonatomic, retain) UILabel *secondaryLabel;
+@property UITableViewCellSelectionStyle cellSelectionStyle;
 
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method;
 
