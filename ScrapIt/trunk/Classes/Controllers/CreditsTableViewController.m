@@ -44,6 +44,16 @@ NSString *const Row_Key = @"Row";
 - (NSArray *)setupTableData {
     NSMutableArray *array = [NSMutableArray array];
 
+//    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need Help?" andValueTwo:@"- Tap To Email Support - " andMethod:nil];
+//    [row0 setCellSelectionStyle:UITableViewCellEditingStyleNone];
+//    [row0 setTextAlignment:UITextAlignmentCenter];
+//    [row0.mainLabel setTextColor:[UIColor whiteColor]];
+//    [row0.secondaryLabel setTextColor:[UIColor blackColor]];
+//    [row0.secondaryLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
+//    NSDictionary *section0 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row0], Row_Key, @"Support", Section_Key, nil];
+//    [row0 release];
+//    [array addObject:section0];
+    
     NSString *dedicationTitle = @"I would like to dedicate this app to my Family.";
     NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible.";
     TwoTableViewRow *row1 = [[TwoTableViewRow alloc] initWithValue:dedicationTitle andValueTwo:dedicationText andMethod:nil];
@@ -55,7 +65,7 @@ NSString *const Row_Key = @"Row";
     NSDictionary *section1 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row1], Row_Key, @"For my family", Section_Key, nil];
     [row1 release];
     [array addObject:section1];
-        
+    
     NSString *legalText = kYellowPagesLegalText;
     TwoTableViewRow *row2 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to Yellow Pages for their great api." andValueTwo:legalText andMethod:nil];
     [row2 setCellSelectionStyle:UITableViewCellEditingStyleNone];

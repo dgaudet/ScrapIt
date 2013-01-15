@@ -8,7 +8,7 @@
 
 #import "TwoTableViewRow.h"
 
-NSString * const TTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
+NSString * const TTVR_CELL_IDENTIFIER = @"TTVR_CELL_IDENTIFIER";
 
 @interface TwoTableViewRow (PrivateMethods)
 

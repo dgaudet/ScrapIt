@@ -8,7 +8,7 @@
 
 #import "MultilineTableViewRow.h"
 
-NSString * const MTVR_CELL_IDENTIFIER = @"CTVR_CELL_IDENTIFIER";
+NSString * const MTVR_CELL_IDENTIFIER = @"MTVR_CELL_IDENTIFIER";
 CGFloat MTVR_ROW_PADDING = 20.0;
 
 @interface MultilineTableViewRow (PrivateMethods)
