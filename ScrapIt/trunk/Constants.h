@@ -15,4 +15,6 @@
 
 #define kSystemDefaultFont [UIFont fontWithName:@"Helvetica-Bold" size:17.0]
 
+#define kSystemAppSupportEmail @"support@deangaudet.com"
+
 #endif

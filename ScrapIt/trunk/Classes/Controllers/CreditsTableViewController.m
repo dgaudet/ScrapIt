@@ -11,6 +11,7 @@
 #import "MultilineTableViewRow.h"
 #import "TwoTableViewRow.h"
 #import "DeviceService.h"
+#import "EmailService.h"
 
 NSString *const Section_Key = @"section";
 NSString *const Row_Key = @"Row";
@@ -48,14 +49,14 @@ NSString *const Row_Key = @"Row";
     UIFont *smallTextFont = [UIFont fontWithName:@"Helvetica" size:14.0];
     UIFont *mediumTextFont = [UIFont fontWithName:@"Helvetica" size:16.0];
 
-//    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need Help?" andValueTwo:@"- Tap To Email Support - " andMethod:@selector(supportRowTapped:)];
-//    [row0 setTextAlignment:UITextAlignmentCenter];
-//    [row0 setLabel1Color:[UIColor whiteColor]];
-//    [row0 setLabel2Color:[UIColor blackColor]];
-//    [row0 setLabel2Font:smallTextFont];
-//    NSDictionary *section0 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row0], Row_Key, @"Support", Section_Key, nil];
-//    [row0 release];
-//    [array addObject:section0];
+    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need Help?" andValueTwo:@"- Tap To Email Support - " andMethod:@selector(supportRowTapped:)];
+    [row0 setTextAlignment:UITextAlignmentCenter];
+    [row0 setLabel1Color:[UIColor whiteColor]];
+    [row0 setLabel2Color:[UIColor blackColor]];
+    [row0 setLabel2Font:smallTextFont];
+    NSDictionary *section0 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:row0], Row_Key, @"Support", Section_Key, nil];
+    [row0 release];
+    [array addObject:section0];
     
     NSString *dedicationTitle = @"I would like to dedicate this app to my Family.";
     NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible.";
@@ -111,18 +112,35 @@ NSString *const Row_Key = @"Row";
 }
 
 - (void)supportRowTapped:(id)sender {
-    NSLog(@"tapped");
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    [mailController setMailComposeDelegate:self];
+    [EmailService setupSupportEmailForMailController:mailController];
+    [mailController setToRecipients:[NSArray arrayWithObject:kSystemAppSupportEmail]];
+    [self.navigationController presentModalViewController:mailController animated:YES];
+    
+    [mailController release];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    switch (result) {
+        case MFMailComposeResultFailed:
+            [self loadAlertViewWithMessage:@"There was a problem sending your email, please try again." andOkButtonTitle:nil];
+            break;
+        default:
+            [self.navigationController dismissModalViewControllerAnimated:YES];
+            break;
+    }
 }
 
 - (void)paperArtworkRowTapped:(id)sender {
     NSURL *artworkUrl = [NSURL URLWithString:@"http://nevermoregraphix.deviantart.com/"];
     if ([[UIApplication sharedApplication] canOpenURL:artworkUrl]) {
         _urlSelected = [artworkUrl copy];
-        [self loadAlertViewWithMessage:@"Leave scrap it and view artwork from nevermoregraphix?" andOkButtonTile:@"Leave"];
+        [self loadAlertViewWithMessage:@"Leave scrap it and view artwork from nevermoregraphix?" andOkButtonTitle:@"Leave"];
     }
 }
 
-- (void)loadAlertViewWithMessage:(NSString *)message andOkButtonTile:(NSString *)okTitle {
+- (void)loadAlertViewWithMessage:(NSString *)message andOkButtonTitle:(NSString *)okTitle {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                     message:message
                                                    delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:okTitle, nil];

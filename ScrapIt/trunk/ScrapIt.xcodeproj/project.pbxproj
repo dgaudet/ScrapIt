@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		051970D9165978CE009F1A5E /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
+		05306D0216ACA43A0006777F /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05306D0116ACA43A0006777F /* EmailService.m */; };
+		05306D0516ACA8D60006777F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05306D0416ACA8D60006777F /* MessageUI.framework */; };
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
 		0537D9EC145E4CC800EEB730 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
 		054D67F015FEDA100092B234 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
@@ -98,6 +100,9 @@
 		051970D7165978CE009F1A5E /* CreditsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsView.h; path = Domain/CreditsView.h; sourceTree = "<group>"; };
 		051970D8165978CE009F1A5E /* CreditsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsView.m; path = Domain/CreditsView.m; sourceTree = "<group>"; };
 		0522F02E1617A958007D9F48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		05306D0016ACA43A0006777F /* EmailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailService.h; path = Services/EmailService.h; sourceTree = "<group>"; };
+		05306D0116ACA43A0006777F /* EmailService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmailService.m; path = Services/EmailService.m; sourceTree = "<group>"; };
+		05306D0416ACA8D60006777F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowPagesLogo.png; sourceTree = "<group>"; };
 		0537D9EA145E4CC700EEB730 /* ScrapItBusinessService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapItBusinessService.h; path = Services/ScrapItBusinessService.h; sourceTree = "<group>"; };
 		0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapItBusinessService.m; path = Services/ScrapItBusinessService.m; sourceTree = "<group>"; };
@@ -231,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05306D0516ACA8D60006777F /* MessageUI.framework in Frameworks */,
 				05F240B516001EAF00B2CDD1 /* MapKit.framework in Frameworks */,
 				05F240B316001EA800B2CDD1 /* CoreLocation.framework in Frameworks */,
 				05F240AA16001CFA00B2CDD1 /* SystemConfiguration.framework in Frameworks */,
@@ -348,6 +354,8 @@
 				05B952CC140B036900786A6D /* SearchService.m */,
 				05B952C4140B020800786A6D /* YellowPagesBusinessService.h */,
 				05B952C5140B020800786A6D /* YellowPagesBusinessService.m */,
+				05306D0016ACA43A0006777F /* EmailService.h */,
+				05306D0116ACA43A0006777F /* EmailService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -437,6 +445,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				05306D0416ACA8D60006777F /* MessageUI.framework */,
 				05F240B416001EAF00B2CDD1 /* MapKit.framework */,
 				05F240B216001EA800B2CDD1 /* CoreLocation.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -670,6 +679,7 @@
 				051970D9165978CE009F1A5E /* CreditsView.m in Sources */,
 				05EBEE46165C858000F5FAD4 /* CreditsTableViewController.m in Sources */,
 				05DCAF13167995190098363B /* TwoTableViewRow.m in Sources */,
+				05306D0216ACA43A0006777F /* EmailService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
