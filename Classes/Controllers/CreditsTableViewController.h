@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @protocol CreditsTableViewControllerDelegate;
 
-@interface CreditsTableViewController : UITableViewController {
+@interface CreditsTableViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
     NSArray *_tableData;
     id<CreditsTableViewControllerDelegate> delegate;
     NSURL *_urlSelected;
