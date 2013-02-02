@@ -85,18 +85,12 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 //    self.navigationItem.rightBarButtonItem = rightButton;
 //    [rightButton release];
     
-    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [infoButton setFrame:CGRectMake(290, 385, infoButton.frame.size.width, infoButton.frame.size.height)];
-    [self.view addSubview:infoButton];
-    
     tableData = [[NSArray alloc] initWithArray:[self loadTableData]];
     loadingData = FALSE;
     return self;
 }
 
 - (NSArray *)loadTableData {
-    
     NSMutableArray *dataArray = [[[NSMutableArray alloc] init] autorelease];
     
     SelectionTableViewRow *provinceRow = [[SelectionTableViewRow alloc] initWithValue:@"Saskatchewan" andLabel:@"Province" methodWhenSelected:@selector(selectedProvinceCell)];
@@ -160,6 +154,11 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PaperTexture"]]];
+
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [infoButton setFrame:CGRectMake(290, 385, infoButton.frame.size.width, infoButton.frame.size.height)];
+    [self.view addSubview:infoButton];
     
     //Add gesture to hide keyboard when the background is tapped
     UITapGestureRecognizer *tapBackgroundViewGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
