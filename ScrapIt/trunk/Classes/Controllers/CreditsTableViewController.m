@@ -49,7 +49,7 @@ NSString *const Row_Key = @"Row";
     UIFont *smallTextFont = [UIFont fontWithName:@"Helvetica" size:14.0];
     UIFont *mediumTextFont = [UIFont fontWithName:@"Helvetica" size:16.0];
 
-    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need Help?" andValueTwo:@"- Tap To Email Support - " andMethod:@selector(supportRowTapped:)];
+    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need help, or want to suggest an improvement?" andValueTwo:@"- Tap To Email Support - " andMethod:@selector(supportRowTapped:)];
     [row0 setTextAlignment:UITextAlignmentCenter];
     [row0 setLabel1Color:[UIColor whiteColor]];
     [row0 setLabel2Color:[UIColor blackColor]];
