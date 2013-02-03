@@ -9,7 +9,6 @@
 #import "ScrapItBusinessService.h"
 #import "JSON.h"
 
-NSString * const SBS_BASE_URL = @"http://scrapitservices.appspot.com/";
 NSString * const SBS_API_LOCATION = @"api/business/";
 
 @implementation ScrapItBusinessService
@@ -27,7 +26,7 @@ NSString * const SBS_API_LOCATION = @"api/business/";
 
 - (NSString *)retrieveURLForBusinessWithYellowPagesId:(NSString *)ypId {
     NSString *businessUrl = nil;
-    NSString *request = [NSString stringWithFormat:@"%@%@%@", SBS_BASE_URL, SBS_API_LOCATION, ypId];
+    NSString *request = [NSString stringWithFormat:@"%@%@%@", kScrapItServicesBaseUrl, SBS_API_LOCATION, ypId];
 	NSURL *url = [NSURL URLWithString:request];
 	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
 	

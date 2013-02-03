@@ -17,4 +17,6 @@
 
 #define kSystemAppSupportEmail @"support@deangaudet.com"
 
+#define kScrapItServicesBaseUrl @"http://scrapitservices.appspot.com/"
+
 #endif
