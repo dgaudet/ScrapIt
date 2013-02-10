@@ -13,10 +13,13 @@
 #define kYellowPagesBadgeLinkUrl @"http://badge.yellowapi.com/"
 #define kYellowPagesLegalText @"Yellow Pages Group & Design is a trademark of Yellow Pages Group Co. in Canada."
 
+#define kYellowPagesBaseUrl @"http://api.sandbox.yellowapi.com"
+#define kYellowPagesBaseUrlLocal @"http://localhost:8080/"
+
 #define kSystemDefaultFont [UIFont fontWithName:@"Helvetica-Bold" size:17.0]
 
 #define kSystemAppSupportEmail @"support@deangaudet.com"
 
-#define kScrapItServicesBaseUrl @"http://scrapitservices.appspot.com/"
+#define kScrapItServicesBaseUrl @"http://deangaudet.com/"
 
 #endif
