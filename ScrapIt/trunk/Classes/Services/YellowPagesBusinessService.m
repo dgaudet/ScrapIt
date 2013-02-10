@@ -14,7 +14,7 @@
 #import "EncodingUtil.h"
 #import "Constants.h"
 
-NSString * const BASE_URL = @"http://api.sandbox.yellowapi.com";
+NSString * const BASE_URL = kYellowPagesBaseUrl;
 NSString * const SEARCH_TERM = @"scrapbook";
 
 @interface YellowPagesBusinessService (PrivateMethods)
@@ -30,7 +30,6 @@ NSString * const SEARCH_TERM = @"scrapbook";
 //ToDo: gracefully handle errors returned when retreiving business data
 //ToDo: thread retrieving businesses
 //ToDo: thread retrieving retrieveBusinessFromBusinessSummary
-//ToDo: refactor all methods into class methods, and remove shared instance
 //ToDo: handle multiple pages of results ie Toronto
 //ToDo: handle what would happen if you requested business details and it failed
 
