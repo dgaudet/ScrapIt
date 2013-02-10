@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface ScrapItBusinessService : NSObject
 
 + (id)sharedInstance;
 - (NSString *)retrieveURLForBusinessWithYellowPagesId:(NSString *)ypId;
+- (NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate;
 
 @end
