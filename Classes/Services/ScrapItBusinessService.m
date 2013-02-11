@@ -15,7 +15,7 @@
 
 NSString * const SBS_Bus_By_Id_Location = @"api/business/";
 NSString * const SBS_Bus_By_City_Location = @"api/businessByCity/";
-NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation/";
+NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation";
 
 @interface ScrapItBusinessService (PrivateMethods)
 
@@ -33,6 +33,7 @@ NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation/";
 //ToDo: find out how to parse parameters from the url request in python
 //ToDo: get the phones and merchant url in python
 //ToDo: see if I can get the correct ip from headers, so I can pass them to the Yellow Pages service
+//ToDo: have the python app fail if you don't have enough query params ie: missing latitude, but have longitude
 
 + (id)sharedInstance
 {
@@ -69,8 +70,8 @@ NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation/";
 }
 
 - (NSString *)searchUrlWithCoordinates:(CLLocationCoordinate2D)coordinate {
-    NSString *queryParams = [NSString stringWithFormat:@"longitude=cZ%.8f&latitude=%.8f", coordinate.longitude, coordinate.latitude];
-    return [NSString stringWithFormat:@"%@%@%@", kYellowPagesBaseUrlLocal, SBS_Bus_By_Geo_Location, queryParams];
+    NSString *queryParams = [NSString stringWithFormat:@"longitude=%.8f&latitude=%.8f", coordinate.longitude, coordinate.latitude];
+    return [NSString stringWithFormat:@"%@%@?%@", kYellowPagesBaseUrlLocal, SBS_Bus_By_Geo_Location, queryParams];
 }
 
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl {
