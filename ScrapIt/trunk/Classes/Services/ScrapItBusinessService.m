@@ -16,12 +16,15 @@
 NSString * const SBS_Bus_By_Id_Location = @"api/business/";
 NSString * const SBS_Bus_By_City_Location = @"api/businessByCity/";
 NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation";
+NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 
 @interface ScrapItBusinessService (PrivateMethods)
 
 - (NSString *)searchUrlWithCoordinates:(CLLocationCoordinate2D)coordinate;
+- (NSString *)searchUrlWithBusinessSummary:(BusinessSummary *)business;
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl;
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store;
+- (NSString *)getLongFormProvinceFromAbbreviation:(NSString *)provinceCode;
 
 @end
 
@@ -29,11 +32,9 @@ NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation";
 
 //ToDo: ensure that businesses that have special chars in their name still work, they may be double encoded
 //ScrapIt python app
-//ToDo: find out how to pull longitude and latitude from the google db object
-//ToDo: find out how to parse parameters from the url request in python
-//ToDo: get the phones and merchant url in python
 //ToDo: see if I can get the correct ip from headers, so I can pass them to the Yellow Pages service
 //ToDo: have the python app fail if you don't have enough query params ie: missing latitude, but have longitude
+//ToDo: fix calgary scrapbook store crash Scrapbook Pantry
 
 + (id)sharedInstance
 {
@@ -69,9 +70,41 @@ NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation";
     return [self retrieveBusinessesFromUrl:request];    
 }
 
+- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business {	
+	NSString *request = [self searchUrlWithBusinessSummary:business];
+    //	NSLog(@"Request: %@", request);
+	NSURL *url = [NSURL URLWithString:request];
+	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+	NSArray *results = [responseString JSONValue];
+	
+	NSString *phoneNum, *busUrl;
+	if ([results valueForKey:@"phoneNumber"]) {
+		phoneNum = [NSString stringWithString:[results valueForKey:@"phoneNumber"]];
+	}
+	if ([results valueForKey:@"url"]) {
+		busUrl = [NSString stringWithString:[results valueForKey:@"url"]];
+	}
+	return [[[Business alloc] initWithBusinessSummary:business phoneNumber:phoneNum url:busUrl] autorelease];
+}
+
+- (NSString *)encodeBusinessName:(NSString *)businessName {
+    NSError *error = nil;
+    NSRegularExpression *regEx = [NSRegularExpression regularExpressionWithPattern:@"[\\W]" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSString *encodedName = [businessName stringByReplacingOccurrencesOfString:@"-" withString:@"--"];
+    encodedName = [regEx stringByReplacingMatchesInString:encodedName options:0 range:NSMakeRange(0, [businessName length]) withTemplate:@"-"];
+    return encodedName;
+}
+
 - (NSString *)searchUrlWithCoordinates:(CLLocationCoordinate2D)coordinate {
     NSString *queryParams = [NSString stringWithFormat:@"longitude=%.8f&latitude=%.8f", coordinate.longitude, coordinate.latitude];
     return [NSString stringWithFormat:@"%@%@?%@", kYellowPagesBaseUrlLocal, SBS_Bus_By_Geo_Location, queryParams];
+}
+
+- (NSString *)searchUrlWithBusinessSummary:(BusinessSummary *)business {
+    NSString *encodedName = [self encodeBusinessName:business.name];
+    NSString *encodedProvice = [self getLongFormProvinceFromAbbreviation:business.province];
+    NSString *queryParams = [NSString stringWithFormat:@"id=%@&province=%@&name=%@", business.yellowPagesId, encodedProvice, encodedName];
+    return [NSString stringWithFormat:@"%@%@?%@", kYellowPagesBaseUrlLocal, SBS_Bus_By_Details_Location, queryParams];
 }
 
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl {
@@ -124,6 +157,28 @@ NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation";
     }
 	
 	return nil;
+}
+
+- (NSString *)getLongFormProvinceFromAbbreviation:(NSString *)provinceCode {
+    NSString *provinceName = @"Saskatchewan";
+    provinceCode = [provinceCode lowercaseString];
+    NSDictionary *countryNameDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Alberta", @"ab",
+                                     @"Manitoba", @"mb",
+                                     @"British-Columbia", @"bc",
+                                     @"Northwest-Territories", @"nt",
+                                     @"New-Brunswick", @"nb",
+                                     @"Newfoundland-and-Labrador", @"nl",
+                                     @"Nova-Scotia", @"ns",
+                                     @"Nunavut", @"nu",
+                                     @"Prince-Edward-Island", @"pe",
+                                     @"Ontario", @"on",
+                                     @"Quebec", @"qc",
+                                     @"Yukon", @"yt",
+                                     nil];
+    if ([countryNameDict objectForKey:provinceCode]) {
+        provinceName = [countryNameDict objectForKey:provinceCode];
+    }
+    return provinceName;
 }
 
 @end
