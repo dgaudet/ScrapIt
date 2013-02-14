@@ -9,7 +9,6 @@
 #import "SearchService.h"
 #import "PlaceMark.h"
 #import "GoogleSearchService.h"
-#import "YellowPagesBusinessService.h"
 #import "JSON.h"
 #import "Province.h"
 #import "Business.h"
