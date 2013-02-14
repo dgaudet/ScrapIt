@@ -12,6 +12,7 @@
 #import "Business.h"
 #import "BusinessSummary.h"
 #import "SearchService.h"
+#import "Constants.h"
 
 NSString * const SBS_Bus_By_Id_Location = @"api/business/";
 NSString * const SBS_Bus_By_City_Location = @"api/businessByCity/";
