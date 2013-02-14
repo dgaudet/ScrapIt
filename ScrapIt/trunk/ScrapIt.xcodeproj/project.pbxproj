@@ -9,6 +9,68 @@
 /* Begin PBXBuildFile section */
 		0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		051970D9165978CE009F1A5E /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
+		052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C7D52613B2EBFC002D518F /* bradCrop.png */; };
+		052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
+		052E005D16C55E2C00E5E178 /* LocationTest.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 05B1C9861475F339009F0719 /* LocationTest.gpx */; };
+		052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3731556F005001F15F4 /* PaperTexture.png */; };
+		052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3741556F005001F15F4 /* PaperTexture@2x.png */; };
+		052E006016C55E2C00E5E178 /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
+		052E006116C55E2C00E5E178 /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
+		052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
+		052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC964F1651A462009CC29D /* YellowPagesLogo@2x.png */; };
+		052E006516C55E2C00E5E178 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		052E006616C55E2C00E5E178 /* ScrapItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ScrapItAppDelegate.m */; };
+		052E006716C55E2C00E5E178 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9713987F2E00BCA74E /* NSObject+JSON.m */; };
+		052E006816C55E2C00E5E178 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9913987F2E00BCA74E /* SBJsonParser.m */; };
+		052E006916C55E2C00E5E178 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9B13987F2E00BCA74E /* SBJsonStreamParser.m */; };
+		052E006A16C55E2C00E5E178 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9D13987F2E00BCA74E /* SBJsonStreamParserAdapter.m */; };
+		052E006B16C55E2C00E5E178 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9F13987F2E00BCA74E /* SBJsonStreamParserState.m */; };
+		052E006C16C55E2C00E5E178 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA113987F2E00BCA74E /* SBJsonStreamWriter.m */; };
+		052E006D16C55E2C00E5E178 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA313987F2E00BCA74E /* SBJsonStreamWriterState.m */; };
+		052E006E16C55E2C00E5E178 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA513987F2E00BCA74E /* SBJsonTokeniser.m */; };
+		052E006F16C55E2C00E5E178 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA713987F2E00BCA74E /* SBJsonWriter.m */; };
+		052E007016C55E2C00E5E178 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
+		052E007116C55E2C00E5E178 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
+		052E007216C55E2C00E5E178 /* BusinessSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA965140750F5007CDEFC /* BusinessSummary.m */; };
+		052E007316C55E2C00E5E178 /* PlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C1140AFFF700786A6D /* PlaceMark.m */; };
+		052E007416C55E2C00E5E178 /* YellowPagesBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C5140B020800786A6D /* YellowPagesBusinessService.m */; };
+		052E007516C55E2C00E5E178 /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
+		052E007616C55E2C00E5E178 /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952CC140B036900786A6D /* SearchService.m */; };
+		052E007716C55E2C00E5E178 /* GoogleSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952D8140B041B00786A6D /* GoogleSearchService.m */; };
+		052E007816C55E2C00E5E178 /* SelectionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952DD140B05BA00786A6D /* SelectionListTableViewController.m */; };
+		052E007916C55E2C00E5E178 /* BusinessListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E0140B067800786A6D /* BusinessListTableViewController.m */; };
+		052E007A16C55E2C00E5E178 /* ScrapItTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E3140B06E400786A6D /* ScrapItTableViewController.m */; };
+		052E007B16C55E2C00E5E178 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E6140B079100786A6D /* MapViewController.m */; };
+		052E007C16C55E2C00E5E178 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
+		052E007D16C55E2C00E5E178 /* EncodingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B2F446146A1AAB008CE996 /* EncodingUtil.m */; };
+		052E007E16C55E2C00E5E178 /* TableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D37A1A14859BE000C9842D /* TableViewRow.m */; };
+		052E007F16C55E2C00E5E178 /* TextInputTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8A9631485B208002D65A1 /* TextInputTableViewRow.m */; };
+		052E008016C55E2C00E5E178 /* SelectionTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8A9691485C5CC002D65A1 /* SelectionTableViewRow.m */; };
+		052E008116C55E2C00E5E178 /* FeedbackSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B12D5914A2E5A100A8B661 /* FeedbackSelectionTableViewController.m */; };
+		052E008216C55E2C00E5E178 /* MultilineTextInputTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B3028414C369D700D74AF8 /* MultilineTextInputTableViewRow.m */; };
+		052E008316C55E2C00E5E178 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
+		052E008416C55E2C00E5E178 /* UILoadingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B58FDB14EC837200BB007D /* UILoadingAlertView.m */; };
+		052E008516C55E2C00E5E178 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B6429014EE022C005F59C0 /* LocationHelper.m */; };
+		052E008616C55E2C00E5E178 /* MultilineTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8F6A31500532100136D6A /* MultilineTableViewRow.m */; };
+		052E008716C55E2C00E5E178 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
+		052E008816C55E2C00E5E178 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240A7160018A800B2CDD1 /* Reachability.m */; };
+		052E008916C55E2C00E5E178 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
+		052E008A16C55E2C00E5E178 /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
+		052E008B16C55E2C00E5E178 /* FlurryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* FlurryService.m */; };
+		052E008C16C55E2C00E5E178 /* YellowPagesFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CC96521651A713009CC29D /* YellowPagesFooterView.m */; };
+		052E008D16C55E2C00E5E178 /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
+		052E008E16C55E2C00E5E178 /* CreditsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EBEE45165C858000F5FAD4 /* CreditsTableViewController.m */; };
+		052E008F16C55E2C00E5E178 /* TwoTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DCAF12167995190098363B /* TwoTableViewRow.m */; };
+		052E009016C55E2C00E5E178 /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05306D0116ACA43A0006777F /* EmailService.m */; };
+		052E009216C55E2C00E5E178 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05306D0416ACA8D60006777F /* MessageUI.framework */; };
+		052E009316C55E2C00E5E178 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F240B416001EAF00B2CDD1 /* MapKit.framework */; };
+		052E009416C55E2C00E5E178 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F240B216001EA800B2CDD1 /* CoreLocation.framework */; };
+		052E009516C55E2C00E5E178 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F240A916001CFA00B2CDD1 /* SystemConfiguration.framework */; };
+		052E009616C55E2C00E5E178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		052E009916C55E2C00E5E178 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		05306D0216ACA43A0006777F /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05306D0116ACA43A0006777F /* EmailService.m */; };
 		05306D0516ACA8D60006777F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05306D0416ACA8D60006777F /* MessageUI.framework */; };
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
@@ -20,7 +82,7 @@
 		056BD3DB13DCD6FB0045FF79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 056BD3D913DCD6FB0045FF79 /* InfoPlist.strings */; };
 		056BD3DE13DCD6FB0045FF79 /* Unit_Tests.h in Resources */ = {isa = PBXBuildFile; fileRef = 056BD3DD13DCD6FB0045FF79 /* Unit_Tests.h */; };
 		056BD3E013DCD6FB0045FF79 /* Unit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 056BD3DF13DCD6FB0045FF79 /* Unit_Tests.m */; };
-		056BD3E613DCD7F80045FF79 /* YellowPagesBusinessServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 056BD3E513DCD7F80045FF79 /* YellowPagesBusinessServiceTest.m */; };
+		056BD3E613DCD7F80045FF79 /* ScrapItBusinessServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 056BD3E513DCD7F80045FF79 /* ScrapItBusinessServiceTest.m */; };
 		05856EA813987F2E00BCA74E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9713987F2E00BCA74E /* NSObject+JSON.m */; };
 		05856EA913987F2E00BCA74E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9913987F2E00BCA74E /* SBJsonParser.m */; };
 		05856EAA13987F2E00BCA74E /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9B13987F2E00BCA74E /* SBJsonStreamParser.m */; };
@@ -100,6 +162,8 @@
 		051970D7165978CE009F1A5E /* CreditsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsView.h; path = Domain/CreditsView.h; sourceTree = "<group>"; };
 		051970D8165978CE009F1A5E /* CreditsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsView.m; path = Domain/CreditsView.m; sourceTree = "<group>"; };
 		0522F02E1617A958007D9F48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		052E009D16C55E2C00E5E178 /* ScrapIt_local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapIt_local.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		052E00A016C55E2E00E5E178 /* ScrapIt_local-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ScrapIt_local-Info.plist"; path = "/Users/Dean/Documents/Code/ScrapIt/trunk/ScrapIt_local-Info.plist"; sourceTree = "<absolute>"; };
 		05306D0016ACA43A0006777F /* EmailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailService.h; path = Services/EmailService.h; sourceTree = "<group>"; };
 		05306D0116ACA43A0006777F /* EmailService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmailService.m; path = Services/EmailService.m; sourceTree = "<group>"; };
 		05306D0416ACA8D60006777F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -114,8 +178,8 @@
 		056BD3DC13DCD6FB0045FF79 /* Unit Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit Tests-Prefix.pch"; sourceTree = "<group>"; };
 		056BD3DD13DCD6FB0045FF79 /* Unit_Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unit_Tests.h; sourceTree = "<group>"; };
 		056BD3DF13DCD6FB0045FF79 /* Unit_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unit_Tests.m; sourceTree = "<group>"; };
-		056BD3E413DCD7F80045FF79 /* YellowPagesBusinessServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YellowPagesBusinessServiceTest.h; sourceTree = "<group>"; };
-		056BD3E513DCD7F80045FF79 /* YellowPagesBusinessServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YellowPagesBusinessServiceTest.m; sourceTree = "<group>"; };
+		056BD3E413DCD7F80045FF79 /* ScrapItBusinessServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapItBusinessServiceTest.h; sourceTree = "<group>"; };
+		056BD3E513DCD7F80045FF79 /* ScrapItBusinessServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapItBusinessServiceTest.m; sourceTree = "<group>"; };
 		05856E9513987F2E00BCA74E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		05856E9613987F2E00BCA74E /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
 		05856E9713987F2E00BCA74E /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
@@ -218,6 +282,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		052E009116C55E2C00E5E178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052E009216C55E2C00E5E178 /* MessageUI.framework in Frameworks */,
+				052E009316C55E2C00E5E178 /* MapKit.framework in Frameworks */,
+				052E009416C55E2C00E5E178 /* CoreLocation.framework in Frameworks */,
+				052E009516C55E2C00E5E178 /* SystemConfiguration.framework in Frameworks */,
+				052E009616C55E2C00E5E178 /* Foundation.framework in Frameworks */,
+				052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */,
+				052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */,
+				052E009916C55E2C00E5E178 /* libFlurry.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		056BD3CE13DCD6FB0045FF79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,8 +335,8 @@
 				056BD3D713DCD6FB0045FF79 /* Supporting Files */,
 				056BD3DD13DCD6FB0045FF79 /* Unit_Tests.h */,
 				056BD3DF13DCD6FB0045FF79 /* Unit_Tests.m */,
-				056BD3E413DCD7F80045FF79 /* YellowPagesBusinessServiceTest.h */,
-				056BD3E513DCD7F80045FF79 /* YellowPagesBusinessServiceTest.m */,
+				056BD3E413DCD7F80045FF79 /* ScrapItBusinessServiceTest.h */,
+				056BD3E513DCD7F80045FF79 /* ScrapItBusinessServiceTest.m */,
 			);
 			path = "Unit Tests";
 			sourceTree = "<group>";
@@ -438,6 +517,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* ScrapIt.app */,
 				056BD3D213DCD6FB0045FF79 /* Unit Tests.octest */,
+				052E009D16C55E2C00E5E178 /* ScrapIt_local.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -480,6 +560,7 @@
 				05CC964F1651A462009CC29D /* YellowPagesLogo@2x.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ScrapIt-Info.plist */,
+				052E00A016C55E2E00E5E178 /* ScrapIt_local-Info.plist */,
 				0587664A13C104570005F9A1 /* Ideas.txt */,
 				05B1C9861475F339009F0719 /* LocationTest.gpx */,
 			);
@@ -500,6 +581,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		052E005816C55E2C00E5E178 /* ScrapIt_local */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 052E009A16C55E2C00E5E178 /* Build configuration list for PBXNativeTarget "ScrapIt_local" */;
+			buildPhases = (
+				052E005916C55E2C00E5E178 /* Resources */,
+				052E006416C55E2C00E5E178 /* Sources */,
+				052E009116C55E2C00E5E178 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrapIt_local;
+			productName = ScrapIt;
+			productReference = 052E009D16C55E2C00E5E178 /* ScrapIt_local.app */;
+			productType = "com.apple.product-type.application";
+		};
 		056BD3D113DCD6FB0045FF79 /* Unit Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056BD3E313DCD6FB0045FF79 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
@@ -559,12 +657,30 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* ScrapIt */,
+				052E005816C55E2C00E5E178 /* ScrapIt_local */,
 				056BD3D113DCD6FB0045FF79 /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		052E005916C55E2C00E5E178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */,
+				052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */,
+				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
+				052E005D16C55E2C00E5E178 /* LocationTest.gpx in Resources */,
+				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
+				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
+				052E006016C55E2C00E5E178 /* BookIcon.png in Resources */,
+				052E006116C55E2C00E5E178 /* BookIcon@2x.png in Resources */,
+				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
+				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		056BD3CF13DCD6FB0045FF79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -610,6 +726,57 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		052E006416C55E2C00E5E178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052E006516C55E2C00E5E178 /* main.m in Sources */,
+				052E006616C55E2C00E5E178 /* ScrapItAppDelegate.m in Sources */,
+				052E006716C55E2C00E5E178 /* NSObject+JSON.m in Sources */,
+				052E006816C55E2C00E5E178 /* SBJsonParser.m in Sources */,
+				052E006916C55E2C00E5E178 /* SBJsonStreamParser.m in Sources */,
+				052E006A16C55E2C00E5E178 /* SBJsonStreamParserAdapter.m in Sources */,
+				052E006B16C55E2C00E5E178 /* SBJsonStreamParserState.m in Sources */,
+				052E006C16C55E2C00E5E178 /* SBJsonStreamWriter.m in Sources */,
+				052E006D16C55E2C00E5E178 /* SBJsonStreamWriterState.m in Sources */,
+				052E006E16C55E2C00E5E178 /* SBJsonTokeniser.m in Sources */,
+				052E006F16C55E2C00E5E178 /* SBJsonWriter.m in Sources */,
+				052E007016C55E2C00E5E178 /* Province.m in Sources */,
+				052E007116C55E2C00E5E178 /* Business.m in Sources */,
+				052E007216C55E2C00E5E178 /* BusinessSummary.m in Sources */,
+				052E007316C55E2C00E5E178 /* PlaceMark.m in Sources */,
+				052E007416C55E2C00E5E178 /* YellowPagesBusinessService.m in Sources */,
+				052E007516C55E2C00E5E178 /* ProvinceService.m in Sources */,
+				052E007616C55E2C00E5E178 /* SearchService.m in Sources */,
+				052E007716C55E2C00E5E178 /* GoogleSearchService.m in Sources */,
+				052E007816C55E2C00E5E178 /* SelectionListTableViewController.m in Sources */,
+				052E007916C55E2C00E5E178 /* BusinessListTableViewController.m in Sources */,
+				052E007A16C55E2C00E5E178 /* ScrapItTableViewController.m in Sources */,
+				052E007B16C55E2C00E5E178 /* MapViewController.m in Sources */,
+				052E007C16C55E2C00E5E178 /* ScrapItBusinessService.m in Sources */,
+				052E007D16C55E2C00E5E178 /* EncodingUtil.m in Sources */,
+				052E007E16C55E2C00E5E178 /* TableViewRow.m in Sources */,
+				052E007F16C55E2C00E5E178 /* TextInputTableViewRow.m in Sources */,
+				052E008016C55E2C00E5E178 /* SelectionTableViewRow.m in Sources */,
+				052E008116C55E2C00E5E178 /* FeedbackSelectionTableViewController.m in Sources */,
+				052E008216C55E2C00E5E178 /* MultilineTextInputTableViewRow.m in Sources */,
+				052E008316C55E2C00E5E178 /* DeviceUtil.m in Sources */,
+				052E008416C55E2C00E5E178 /* UILoadingAlertView.m in Sources */,
+				052E008516C55E2C00E5E178 /* LocationHelper.m in Sources */,
+				052E008616C55E2C00E5E178 /* MultilineTableViewRow.m in Sources */,
+				052E008716C55E2C00E5E178 /* MultilineTwoRowTableViewRow.m in Sources */,
+				052E008816C55E2C00E5E178 /* Reachability.m in Sources */,
+				052E008916C55E2C00E5E178 /* NetworkErrors.m in Sources */,
+				052E008A16C55E2C00E5E178 /* DeviceService.m in Sources */,
+				052E008B16C55E2C00E5E178 /* FlurryService.m in Sources */,
+				052E008C16C55E2C00E5E178 /* YellowPagesFooterView.m in Sources */,
+				052E008D16C55E2C00E5E178 /* CreditsView.m in Sources */,
+				052E008E16C55E2C00E5E178 /* CreditsTableViewController.m in Sources */,
+				052E008F16C55E2C00E5E178 /* TwoTableViewRow.m in Sources */,
+				052E009016C55E2C00E5E178 /* EmailService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		056BD3CD13DCD6FB0045FF79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,7 +787,7 @@
 				05ACA9681407516B007CDEFC /* Business.m in Sources */,
 				05ACA9691407516B007CDEFC /* BusinessSummary.m in Sources */,
 				056BD3E013DCD6FB0045FF79 /* Unit_Tests.m in Sources */,
-				056BD3E613DCD7F80045FF79 /* YellowPagesBusinessServiceTest.m in Sources */,
+				056BD3E613DCD7F80045FF79 /* ScrapItBusinessServiceTest.m in Sources */,
 				05B952C7140B020800786A6D /* YellowPagesBusinessService.m in Sources */,
 				05B952CE140B036900786A6D /* SearchService.m in Sources */,
 				05B952DA140B041B00786A6D /* GoogleSearchService.m in Sources */,
@@ -697,6 +864,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		052E009B16C55E2C00E5E178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ScrapIt_Prefix.pch;
+				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
+				);
+				OTHER_CFLAGS = "-DTest";
+				PRODUCT_NAME = ScrapIt_local;
+			};
+			name = Debug;
+		};
+		052E009C16C55E2C00E5E178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ScrapIt_Prefix.pch;
+				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
+				);
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-DTest",
+				);
+				PRODUCT_NAME = ScrapIt_local;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		056BD3E113DCD6FB0045FF79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -831,6 +1046,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		052E009A16C55E2C00E5E178 /* Build configuration list for PBXNativeTarget "ScrapIt_local" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				052E009B16C55E2C00E5E178 /* Debug */,
+				052E009C16C55E2C00E5E178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		056BD3E313DCD6FB0045FF79 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
