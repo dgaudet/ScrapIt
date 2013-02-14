@@ -86,23 +86,30 @@ CGFloat const headerHeight = 40.0;
 - (NSArray *)setupTableData:(Business *)bus {
     BusinessSummary *businessSummary = bus.businessSummary;
     
+    NSMutableArray *data = [[NSMutableArray alloc] init];
+    
     NSDictionary *section0 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray array], SECTION_DATA_KEY, businessSummary.name, SECTION_NAME_KEY, nil];
     NSString *phoneSectionTitle = @"Phone";
     MultilineTwoRowTableViewRow *phoneRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.phoneNumber andValueTwo:@"- Call -" andMethod:@selector(phoneCellClicked)];
+    [data addObject:section0];
+    
     NSDictionary *section1 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:phoneRow, nil], SECTION_DATA_KEY, phoneSectionTitle, SECTION_NAME_KEY, nil];
+    [data addObject:section1];
     
     NSString *address = [NSString stringWithFormat:@"%@\n%@, %@, %@", businessSummary.street, businessSummary.city, businessSummary.province, businessSummary.country];
     MultilineTwoRowTableViewRow *cityRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:address andValueTwo:@"- View in Maps -" andMethod:@selector(addressCellClicked)];
     NSDictionary *section2 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:cityRow], SECTION_DATA_KEY, @"Address", SECTION_NAME_KEY, nil];
+    [data addObject:section2];
     
-    MultilineTwoRowTableViewRow *urlRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.url andValueTwo:@"- View in Safari -" andMethod:@selector(urlCellClicked)];
-    NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:urlRow], SECTION_DATA_KEY, @"Website", SECTION_NAME_KEY, nil];
+    if (bus.url) {
+        MultilineTwoRowTableViewRow *urlRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.url andValueTwo:@"- View in Safari -" andMethod:@selector(urlCellClicked)];
+        NSDictionary *section3 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:urlRow], SECTION_DATA_KEY, @"Website", SECTION_NAME_KEY, nil];
+        [data addObject:section3];
+    }
     
     phoneIndex = [[NSIndexPath indexPathForRow:0 inSection:1] retain];
     locationIndex = [[NSIndexPath indexPathForRow:0 inSection:2] retain];
     urlIndex = [[NSIndexPath indexPathForRow:0 inSection:3] retain];
-    
-    NSArray *data = [[NSArray alloc] initWithObjects:section0, section1, section2, section3, nil];
     
     return [data autorelease];
 }

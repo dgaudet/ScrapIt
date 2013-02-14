@@ -9,6 +9,12 @@
 #import "ScrapItBusinessServiceTest.h"
 #import "ScrapItBusinessService.h"
 
+@interface ScrapItBusinessService (PrivateMethods)
+
+- (NSString *)encodeBusinessName:(NSString *)businessName;
+
+@end
+
 @implementation ScrapItBusinessServiceTest
 
 - (void)setUp

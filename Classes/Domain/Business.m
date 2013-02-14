@@ -19,10 +19,14 @@
         // Custom initialization.
         [bus_summary retain];
 		businessSummary = bus_summary;
-		[phone_num retain];
-        phoneNumber = phone_num;
-        [_url retain];
-		url	= _url;
+        if (phone_num) {
+            [phone_num retain];
+            phoneNumber = phone_num;
+        }
+        if (_url) {
+            [_url retain];
+            url	= _url;
+        }
     }
 	
 	return self;

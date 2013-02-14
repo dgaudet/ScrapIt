@@ -13,6 +13,7 @@
 #import "BusinessSummary.h"
 #import "SearchService.h"
 #import "Constants.h"
+#import "JsonHelper.h"
 
 NSString * const SBS_Bus_By_Id_Location = @"api/business/";
 NSString * const SBS_Bus_By_City_Location = @"api/businessByCity/";
@@ -26,6 +27,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl;
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store;
 - (NSString *)getLongFormProvinceFromAbbreviation:(NSString *)provinceCode;
+- (NSString *)encodeBusinessName:(NSString *)businessName;
 
 @end
 
@@ -80,10 +82,10 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 	
 	NSString *phoneNum, *busUrl;
 	if ([results valueForKey:@"phoneNumber"]) {
-		phoneNum = [NSString stringWithString:[results valueForKey:@"phoneNumber"]];
+		phoneNum = [JsonHelper stringForJsonValue:[results valueForKey:@"phoneNumber"]];
 	}
 	if ([results valueForKey:@"url"]) {
-		busUrl = [NSString stringWithString:[results valueForKey:@"url"]];
+        busUrl = [JsonHelper stringForJsonValue:[results valueForKey:@"url"]];
 	}
 	return [[[Business alloc] initWithBusinessSummary:business phoneNumber:phoneNum url:busUrl] autorelease];
 }
