@@ -98,14 +98,14 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 
 - (NSString *)searchUrlWithCoordinates:(CLLocationCoordinate2D)coordinate {
     NSString *queryParams = [NSString stringWithFormat:@"longitude=%.8f&latitude=%.8f", coordinate.longitude, coordinate.latitude];
-    return [NSString stringWithFormat:@"%@%@?%@", kYellowPagesBaseUrlLocal, SBS_Bus_By_Geo_Location, queryParams];
+    return [NSString stringWithFormat:@"%@%@?%@", kScrapItServicesBaseUrl, SBS_Bus_By_Geo_Location, queryParams];
 }
 
 - (NSString *)searchUrlWithBusinessSummary:(BusinessSummary *)business {
     NSString *encodedName = [self encodeBusinessName:business.name];
     NSString *encodedProvice = [self getLongFormProvinceFromAbbreviation:business.province];
     NSString *queryParams = [NSString stringWithFormat:@"id=%@&province=%@&name=%@", business.yellowPagesId, encodedProvice, encodedName];
-    return [NSString stringWithFormat:@"%@%@?%@", kYellowPagesBaseUrlLocal, SBS_Bus_By_Details_Location, queryParams];
+    return [NSString stringWithFormat:@"%@%@?%@", kScrapItServicesBaseUrl, SBS_Bus_By_Details_Location, queryParams];
 }
 
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl {

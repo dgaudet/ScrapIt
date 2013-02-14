@@ -19,7 +19,6 @@
 }
 
 + (id)sharedInstance;
-- (NSArray *)retrievePlacemarksForCity:(NSString *)city;
 - (NSArray *)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate error:(NSError **)error;
 - (CLLocationCoordinate2D)retrieveCenterCoordinatesForCity:(NSString *)city inProvince:(Province *)province error:(NSError **)error;
 - (CLLocationCoordinate2D)retrieveCoordinatesForStreet:(NSString *)street city:(NSString *)city province:(NSString *)prov country:(NSString *)country error:(NSError **)error;
