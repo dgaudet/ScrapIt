@@ -70,17 +70,12 @@
 	return nil;
 }
 
-- (NSArray *)retrievePlacemarksForCity:(NSString *)city {	
-	NSArray *businesses = [[YellowPagesBusinessService sharedInstance] retrieveBusinessesForCity:city];
-	return [self generatePlacemarksFromBusinesses:businesses];
-}
-
 - (NSArray *)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate error:(NSError **)error {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
         *error = [NetworkErrors noWifiError];
         return [NSArray array];
     }
-    NSArray *businesses = [[YellowPagesBusinessService sharedInstance] retrieveBusinessesForCoordinates:coordinate];
+    NSArray *businesses = [[ScrapItBusinessService sharedInstance] retrieveBusinessesForCoordinates:coordinate];
     [FlurryService logBusinessEventForStoresWithLocation:coordinate];
     return [self generatePlacemarksFromBusinesses:businesses];
 }
@@ -90,11 +85,7 @@
         *error = [NetworkErrors noWifiError];
         return [NSArray array];
     }
-    Business *business = [[YellowPagesBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary];
-    NSString *scrapItUrl = [[ScrapItBusinessService sharedInstance] retrieveURLForBusinessWithYellowPagesId:businessSummary.yellowPagesId];
-    if(scrapItUrl){
-        business.url = scrapItUrl;
-    }
+    Business *business = [[ScrapItBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary];
     [FlurryService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
 	return business;
 }
