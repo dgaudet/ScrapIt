@@ -1,5 +1,5 @@
 //
-//  YellowPagesBusinessServiceTest.h
+//  ScrapItBusinessServiceTest.h
 //  ScrapIt
 //
 //  Created by Dean Gaudet on 11-07-24.
