@@ -38,7 +38,6 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 //ScrapIt python app
 //ToDo: see if I can get the correct ip from headers, so I can pass them to the Yellow Pages service
 //ToDo: have the python app fail if you don't have enough query params ie: missing latitude, but have longitude
-//ToDo: fix businesses with special chars, like ones from quebec, looks like it's not making the request at all
 
 + (id)sharedInstance
 {
@@ -100,6 +99,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
     NSRegularExpression *regEx = [NSRegularExpression regularExpressionWithPattern:@"[\\W]" options:NSRegularExpressionCaseInsensitive error:&error];
     NSString *encodedName = [businessName stringByReplacingOccurrencesOfString:@"-" withString:@"--"];
     encodedName = [regEx stringByReplacingMatchesInString:encodedName options:0 range:NSMakeRange(0, [businessName length]) withTemplate:@"-"];
+    encodedName = [encodedName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return encodedName;
 }
 
