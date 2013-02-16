@@ -44,6 +44,7 @@ CGFloat const headerHeight = 40.0;
 //ToDo: Handle really long business names that span multiple lines
 //ToDo: Change the color/font of the section titles to make them look nicer
 //ToDo: Change the size of the city row to match the size of the text, for example, regina returned a store with no street address, in that case we only need one line of text not two, the size of the cell should match
+//ToDo: Make the view scrollable again, by making the table view a subview
 
 @synthesize business;
 

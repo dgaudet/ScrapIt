@@ -14,6 +14,7 @@
 #import "SearchService.h"
 #import "Constants.h"
 #import "JsonHelper.h"
+#import "NetworkErrors.h"
 
 NSString * const SBS_Bus_By_Id_Location = @"api/business/";
 NSString * const SBS_Bus_By_City_Location = @"api/businessByCity/";
@@ -37,7 +38,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 //ScrapIt python app
 //ToDo: see if I can get the correct ip from headers, so I can pass them to the Yellow Pages service
 //ToDo: have the python app fail if you don't have enough query params ie: missing latitude, but have longitude
-//ToDo: fix calgary scrapbook store crash Scrapbook Pantry
+//ToDo: fix businesses with special chars, like ones from quebec, looks like it's not making the request at all
 
 + (id)sharedInstance
 {
@@ -73,11 +74,15 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
     return [self retrieveBusinessesFromUrl:request];    
 }
 
-- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business {	
+- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business error:(NSError **)error {
 	NSString *request = [self searchUrlWithBusinessSummary:business];
-    //	NSLog(@"Request: %@", request);
 	NSURL *url = [NSURL URLWithString:request];
-	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    NSError *requestError = nil;
+	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&requestError];
+    if (requestError) {
+        *error = [NetworkErrors downloadErrorWithMessage:@"There was a problem retrieving that business please try again later."];
+        return nil;
+    }
 	NSArray *results = [responseString JSONValue];
 	
 	NSString *phoneNum, *busUrl;
