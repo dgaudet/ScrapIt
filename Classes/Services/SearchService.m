@@ -84,7 +84,13 @@
         *error = [NetworkErrors noWifiError];
         return [NSArray array];
     }
-    Business *business = [[ScrapItBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary];
+    
+    NSError *businessError = nil;
+    Business *business = [[ScrapItBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary error:&businessError];
+    if (businessError) {
+        *error = businessError;
+        return [NSArray array];
+    }
     [FlurryService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
 	return business;
 }

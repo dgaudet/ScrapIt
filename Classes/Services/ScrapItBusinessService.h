@@ -16,6 +16,6 @@
 + (id)sharedInstance;
 - (NSString *)retrieveURLForBusinessWithYellowPagesId:(NSString *)ypId;
 - (NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate;
-- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business;
+- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business error:(NSError **)error;
 
 @end
