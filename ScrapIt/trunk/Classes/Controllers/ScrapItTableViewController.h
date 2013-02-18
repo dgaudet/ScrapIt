@@ -13,6 +13,7 @@
 #import "CreditsTableViewController.h"
 @class UILoadingAlertView;
 @class CreditsView;
+@class UserService;
 
 @interface ScrapItTableViewController : UITableViewController <UITextFieldDelegate, LocationHelperDelegate, SelectionListTableViewControllerDelegate, CreditsTableViewControllerDelegate> {
     NSArray *tableData;
@@ -24,6 +25,7 @@
     BOOL loadingData;
     LocationHelper *locationHelper;
     BOOL currentLocationClicked;
+    UserService *_userService;
 }
 
 - (void)selectionListTableViewControllerDidCancelController:(SelectionListTableViewController *)controller;
