@@ -8,7 +8,7 @@
 
 #import "ScrapItAppDelegate.h"
 #import "ScrapItTableViewController.h"
-#import "FlurryService.h"
+#import "AnalyticsService.h"
 #import "DeviceUtil.h"
 
 @implementation ScrapItAppDelegate
@@ -33,9 +33,9 @@
 	
     [window addSubview:navController.view];
 
-    [FlurryService startFlurry];
+    [AnalyticsService startTrackingAnalytics];
     if (![DeviceUtil isCurrentDeviceOSOlderThanIos43]) {
-        NSSetUncaughtExceptionHandler(&flurryServiceUncaughtExceptionHandler);
+        NSSetUncaughtExceptionHandler(&analyticsServiceUncaughtExceptionHandler);
     }
     
     return YES;

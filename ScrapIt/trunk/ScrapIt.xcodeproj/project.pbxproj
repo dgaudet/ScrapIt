@@ -57,7 +57,7 @@
 		052E008816C55E2C00E5E178 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240A7160018A800B2CDD1 /* Reachability.m */; };
 		052E008916C55E2C00E5E178 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
 		052E008A16C55E2C00E5E178 /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
-		052E008B16C55E2C00E5E178 /* FlurryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* FlurryService.m */; };
+		052E008B16C55E2C00E5E178 /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* AnalyticsService.m */; };
 		052E008C16C55E2C00E5E178 /* YellowPagesFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CC96521651A713009CC29D /* YellowPagesFooterView.m */; };
 		052E008D16C55E2C00E5E178 /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
 		052E008E16C55E2C00E5E178 /* CreditsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EBEE45165C858000F5FAD4 /* CreditsTableViewController.m */; };
@@ -153,7 +153,7 @@
 		05DEDAEC16D1BECF0058A861 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE916D1BECF0058A861 /* UserService.m */; };
 		05EB10E216068ED300FF01AD /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
 		05EB10E7160699AA00FF01AD /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; settings = {ATTRIBUTES = (Weak, ); }; };
-		05EB10EA16069B8200FF01AD /* FlurryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* FlurryService.m */; };
+		05EB10EA16069B8200FF01AD /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* AnalyticsService.m */; };
 		05EBEE46165C858000F5FAD4 /* CreditsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EBEE45165C858000F5FAD4 /* CreditsTableViewController.m */; };
 		05F240A8160018A800B2CDD1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240A7160018A800B2CDD1 /* Reachability.m */; };
 		05F240AA16001CFA00B2CDD1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F240A916001CFA00B2CDD1 /* SystemConfiguration.framework */; };
@@ -165,7 +165,7 @@
 		05F240BC16001F9700B2CDD1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240A7160018A800B2CDD1 /* Reachability.m */; };
 		05F240BF1600216400B2CDD1 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
 		05F240C01600226500B2CDD1 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
-		05F4B9E11609580B0062C8F5 /* FlurryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* FlurryService.m */; };
+		05F4B9E11609580B0062C8F5 /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* AnalyticsService.m */; };
 		05F4B9E2160958100062C8F5 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; };
 		05F4B9E3160964500062C8F5 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
@@ -292,8 +292,8 @@
 		05EB10E116068ED300FF01AD /* DeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceService.m; path = Services/DeviceService.m; sourceTree = "<group>"; };
 		05EB10E5160699AA00FF01AD /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		05EB10E6160699AA00FF01AD /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
-		05EB10E816069B8100FF01AD /* FlurryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryService.h; path = Services/FlurryService.h; sourceTree = "<group>"; };
-		05EB10E916069B8200FF01AD /* FlurryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlurryService.m; path = Services/FlurryService.m; sourceTree = "<group>"; };
+		05EB10E816069B8100FF01AD /* AnalyticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsService.h; path = Services/AnalyticsService.h; sourceTree = "<group>"; };
+		05EB10E916069B8200FF01AD /* AnalyticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsService.m; path = Services/AnalyticsService.m; sourceTree = "<group>"; };
 		05EBEE44165C858000F5FAD4 /* CreditsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsTableViewController.h; path = Controllers/CreditsTableViewController.h; sourceTree = "<group>"; };
 		05EBEE45165C858000F5FAD4 /* CreditsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsTableViewController.m; path = Controllers/CreditsTableViewController.m; sourceTree = "<group>"; };
 		05F240A6160018A800B2CDD1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Vendors/Apple/Reachability.h; sourceTree = "<group>"; };
@@ -477,8 +477,8 @@
 			children = (
 				05EB10E016068ED300FF01AD /* DeviceService.h */,
 				05EB10E116068ED300FF01AD /* DeviceService.m */,
-				05EB10E816069B8100FF01AD /* FlurryService.h */,
-				05EB10E916069B8200FF01AD /* FlurryService.m */,
+				05EB10E816069B8100FF01AD /* AnalyticsService.h */,
+				05EB10E916069B8200FF01AD /* AnalyticsService.m */,
 				05B952D7140B041B00786A6D /* GoogleSearchService.h */,
 				05B952D8140B041B00786A6D /* GoogleSearchService.m */,
 				05B952C8140B02A900786A6D /* ProvinceService.h */,
@@ -840,7 +840,7 @@
 				052E008816C55E2C00E5E178 /* Reachability.m in Sources */,
 				052E008916C55E2C00E5E178 /* NetworkErrors.m in Sources */,
 				052E008A16C55E2C00E5E178 /* DeviceService.m in Sources */,
-				052E008B16C55E2C00E5E178 /* FlurryService.m in Sources */,
+				052E008B16C55E2C00E5E178 /* AnalyticsService.m in Sources */,
 				052E008C16C55E2C00E5E178 /* YellowPagesFooterView.m in Sources */,
 				052E008D16C55E2C00E5E178 /* CreditsView.m in Sources */,
 				052E008E16C55E2C00E5E178 /* CreditsTableViewController.m in Sources */,
@@ -869,7 +869,7 @@
 				05B952DA140B041B00786A6D /* GoogleSearchService.m in Sources */,
 				05F240BC16001F9700B2CDD1 /* Reachability.m in Sources */,
 				05F240C01600226500B2CDD1 /* NetworkErrors.m in Sources */,
-				05F4B9E11609580B0062C8F5 /* FlurryService.m in Sources */,
+				05F4B9E11609580B0062C8F5 /* AnalyticsService.m in Sources */,
 				05F4B9E3160964500062C8F5 /* DeviceUtil.m in Sources */,
 				05D87882162530E1002AAD9B /* DeviceService.m in Sources */,
 				05D0213F16CC8AD7002CD9C1 /* JsonHelper.m in Sources */,
@@ -923,7 +923,7 @@
 				05F240A8160018A800B2CDD1 /* Reachability.m in Sources */,
 				05F240BF1600216400B2CDD1 /* NetworkErrors.m in Sources */,
 				05EB10E216068ED300FF01AD /* DeviceService.m in Sources */,
-				05EB10EA16069B8200FF01AD /* FlurryService.m in Sources */,
+				05EB10EA16069B8200FF01AD /* AnalyticsService.m in Sources */,
 				05CC96531651A713009CC29D /* YellowPagesFooterView.m in Sources */,
 				051970D9165978CE009F1A5E /* CreditsView.m in Sources */,
 				05EBEE46165C858000F5FAD4 /* CreditsTableViewController.m in Sources */,

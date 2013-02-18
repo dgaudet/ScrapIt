@@ -16,7 +16,7 @@
 #import "ScrapItBusinessService.h"
 #import "Reachability.h"
 #import "NetworkErrors.h"
-#import "FlurryService.h"
+#import "AnalyticsService.h"
 
 @interface SearchService (PrivateMethods)
 
@@ -73,7 +73,7 @@
         return [NSArray array];
     }
     NSArray *businesses = [[ScrapItBusinessService sharedInstance] retrieveBusinessesForCoordinates:coordinate];
-    [FlurryService logBusinessEventForStoresWithLocation:coordinate];
+    [AnalyticsService logBusinessEventForStoresWithLocation:coordinate];
     return [self generatePlacemarksFromBusinesses:businesses];
 }
 
@@ -89,7 +89,7 @@
         *error = businessError;
         return [NSArray array];
     }
-    [FlurryService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
+    [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
 	return business;
 }
 
@@ -103,7 +103,7 @@
             *error = [NetworkErrors downloadErrorWithMessage:@"There was no city found with that name"];
             return CLLocationCoordinate2DMake(0.0, 0.0);
         }
-        [FlurryService logSearchEventForBusinessWithCity:city andProvince:province.name];
+        [AnalyticsService logSearchEventForBusinessWithCity:city andProvince:province.name];
         return [[GoogleSearchService sharedInstance] retrieveCoordinatesForCityResults:locationResults];
     }
 }

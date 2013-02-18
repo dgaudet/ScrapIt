@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-extern void flurryServiceUncaughtExceptionHandler(NSException *exception);
+extern void analyticsServiceUncaughtExceptionHandler(NSException *exception);
 
-@interface FlurryService : NSObject
+@interface AnalyticsService : NSObject
 
-+ (void)startFlurry;
++ (void)startTrackingAnalytics;
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province;
 + (void)logBusinessEventForStoresWithLocation:(CLLocationCoordinate2D)location;
 + (void)logDetailViewEventForBusiness:(NSString *)businessName inCity:(NSString *)city andProvince:(NSString *)province;

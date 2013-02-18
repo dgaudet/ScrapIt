@@ -25,4 +25,6 @@
 #define kScrapItServicesBaseUrl @"http://deangaudet.com/"
 #endif
 
+#define kGoogleAnalyticsTrackingCode @"UA-38534491-1"
+
 #endif
