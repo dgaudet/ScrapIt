@@ -134,6 +134,15 @@
 		05D37A1B14859BE000C9842D /* TableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D37A1A14859BE000C9842D /* TableViewRow.m */; };
 		05D87882162530E1002AAD9B /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
 		05DCAF13167995190098363B /* TwoTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DCAF12167995190098363B /* TwoTableViewRow.m */; };
+		05DEDAE016D1B9380058A861 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDADF16D1B9370058A861 /* UserRepository.m */; };
+		05DEDAE116D1B9380058A861 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDADF16D1B9370058A861 /* UserRepository.m */; };
+		05DEDAE216D1B9380058A861 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDADF16D1B9370058A861 /* UserRepository.m */; };
+		05DEDAE516D1BA090058A861 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE416D1BA090058A861 /* User.m */; };
+		05DEDAE616D1BA090058A861 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE416D1BA090058A861 /* User.m */; };
+		05DEDAE716D1BA090058A861 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE416D1BA090058A861 /* User.m */; };
+		05DEDAEA16D1BECF0058A861 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE916D1BECF0058A861 /* UserService.m */; };
+		05DEDAEB16D1BECF0058A861 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE916D1BECF0058A861 /* UserService.m */; };
+		05DEDAEC16D1BECF0058A861 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE916D1BECF0058A861 /* UserService.m */; };
 		05EB10E216068ED300FF01AD /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
 		05EB10E7160699AA00FF01AD /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		05EB10EA16069B8200FF01AD /* FlurryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* FlurryService.m */; };
@@ -258,6 +267,12 @@
 		05D37A1A14859BE000C9842D /* TableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewRow.m; path = Domain/TableViewRow.m; sourceTree = "<group>"; };
 		05DCAF11167995190098363B /* TwoTableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwoTableViewRow.h; path = Domain/TwoTableViewRow.h; sourceTree = "<group>"; };
 		05DCAF12167995190098363B /* TwoTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwoTableViewRow.m; path = Domain/TwoTableViewRow.m; sourceTree = "<group>"; };
+		05DEDADE16D1B9370058A861 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRepository.h; path = Repositories/UserRepository.h; sourceTree = "<group>"; };
+		05DEDADF16D1B9370058A861 /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRepository.m; path = Repositories/UserRepository.m; sourceTree = "<group>"; };
+		05DEDAE316D1BA090058A861 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Domain/User.h; sourceTree = "<group>"; };
+		05DEDAE416D1BA090058A861 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Domain/User.m; sourceTree = "<group>"; };
+		05DEDAE816D1BECF0058A861 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = Services/UserService.h; sourceTree = "<group>"; };
+		05DEDAE916D1BECF0058A861 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserService.m; path = Services/UserService.m; sourceTree = "<group>"; };
 		05EB10E016068ED300FF01AD /* DeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceService.h; path = Services/DeviceService.h; sourceTree = "<group>"; };
 		05EB10E116068ED300FF01AD /* DeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceService.m; path = Services/DeviceService.m; sourceTree = "<group>"; };
 		05EB10E5160699AA00FF01AD /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -415,6 +430,8 @@
 				05ACA96014074EBB007CDEFC /* Province.m */,
 				05B58FDA14EC837200BB007D /* UILoadingAlertView.h */,
 				05B58FDB14EC837200BB007D /* UILoadingAlertView.m */,
+				05DEDAE316D1BA090058A861 /* User.h */,
+				05DEDAE416D1BA090058A861 /* User.m */,
 				05CC96511651A713009CC29D /* YellowPagesFooterView.h */,
 				05CC96521651A713009CC29D /* YellowPagesFooterView.m */,
 			);
@@ -440,6 +457,8 @@
 				05B952C5140B020800786A6D /* YellowPagesBusinessService.m */,
 				05306D0016ACA43A0006777F /* EmailService.h */,
 				05306D0116ACA43A0006777F /* EmailService.m */,
+				05DEDAE816D1BECF0058A861 /* UserService.h */,
+				05DEDAE916D1BECF0058A861 /* UserService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -476,6 +495,15 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		05DEDADC16D1B8930058A861 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				05DEDADE16D1B9370058A861 /* UserRepository.h */,
+				05DEDADF16D1B9370058A861 /* UserRepository.m */,
+			);
+			name = Repositories;
+			sourceTree = "<group>";
+		};
 		05EB10E4160699AA00FF01AD /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +535,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				05DEDADC16D1B8930058A861 /* Repositories */,
 				05F240A41600188F00B2CDD1 /* Vendors */,
 				05B2F444146A1980008CE996 /* Utilities */,
 				05B952DB140B055600786A6D /* Controllers */,
@@ -782,6 +811,9 @@
 				052E008F16C55E2C00E5E178 /* TwoTableViewRow.m in Sources */,
 				052E009016C55E2C00E5E178 /* EmailService.m in Sources */,
 				05D0213E16CC8AD7002CD9C1 /* JsonHelper.m in Sources */,
+				05DEDAE116D1B9380058A861 /* UserRepository.m in Sources */,
+				05DEDAE616D1BA090058A861 /* User.m in Sources */,
+				05DEDAEB16D1BECF0058A861 /* UserService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +837,9 @@
 				05F4B9E3160964500062C8F5 /* DeviceUtil.m in Sources */,
 				05D87882162530E1002AAD9B /* DeviceService.m in Sources */,
 				05D0213F16CC8AD7002CD9C1 /* JsonHelper.m in Sources */,
+				05DEDAE216D1B9380058A861 /* UserRepository.m in Sources */,
+				05DEDAE716D1BA090058A861 /* User.m in Sources */,
+				05DEDAEC16D1BECF0058A861 /* UserService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,6 +892,9 @@
 				05DCAF13167995190098363B /* TwoTableViewRow.m in Sources */,
 				05306D0216ACA43A0006777F /* EmailService.m in Sources */,
 				05D0213D16CC8AD7002CD9C1 /* JsonHelper.m in Sources */,
+				05DEDAE016D1B9380058A861 /* UserRepository.m in Sources */,
+				05DEDAE516D1BA090058A861 /* User.m in Sources */,
+				05DEDAEA16D1BECF0058A861 /* UserService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

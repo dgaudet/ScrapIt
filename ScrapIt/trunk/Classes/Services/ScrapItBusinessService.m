@@ -34,9 +34,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
 
 @implementation ScrapItBusinessService
 
-//ToDo: ensure that businesses that have special chars in their name still work, they may be double encoded
 //ScrapIt python app
-//ToDo: see if I can get the correct ip from headers, so I can pass them to the Yellow Pages service
 //ToDo: have the python app fail if you don't have enough query params ie: missing latitude, but have longitude
 
 + (id)sharedInstance
