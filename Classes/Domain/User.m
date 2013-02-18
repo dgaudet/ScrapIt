@@ -19,8 +19,11 @@
         [prov retain];
         province = prov;
     }
-    
     return self;
+}
+
+- (NSString *)description {
+    return self.province.description;
 }
 
 - (void)dealloc {

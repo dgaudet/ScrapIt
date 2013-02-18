@@ -22,6 +22,7 @@
 #import "CreditsTableViewController.h"
 #import "UserService.h"
 #import "User.h"
+#import "ProvinceService.h"
 #import "Province.h"
 
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY = @"SectionTitle";
@@ -81,7 +82,8 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     self = [super initWithStyle:style];
     if (self) {
         self.title = @"Scrap It!";
-        _userService = [UserService sharedInstance];
+        _provinceService = [ProvinceService sharedInstance];
+        _userService = [UserService sharedInstance];        
     }
     self.tableView.backgroundColor = [UIColor clearColor];
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightButtonClicked:)];
@@ -89,6 +91,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 //    self.navigationItem.rightBarButtonItem = rightButton;
 //    [rightButton release];
     
+    _user = [[_userService retrieveUser] retain];
     tableData = [[NSArray alloc] initWithArray:[self loadTableData]];
     loadingData = FALSE;
     return self;
@@ -97,8 +100,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (NSArray *)loadTableData {
     NSMutableArray *dataArray = [[[NSMutableArray alloc] init] autorelease];
     
-    User *user = [_userService retrieveUser];
-    Province *province = user.province;
+    Province *province = _user.province;
     
     SelectionTableViewRow *provinceRow = [[SelectionTableViewRow alloc] initWithValue:province.name andLabel:@"Province" methodWhenSelected:@selector(selectedProvinceCell)];
     provRowIndexPath = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
@@ -393,6 +395,10 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 }
 
 - (void)selectionListTableViewController:(SelectionListTableViewController *)controller didSelectItem:(NSString *)selectedItem {
+    Province *province  = [_provinceService retrieveProvinceWithName:selectedItem];
+    [_user setProvince:province];
+    [_userService saveUser:_user];
+    
     [self updateProvince:selectedItem];
     [self.tableView reloadData];
     [controller dismissModalViewControllerAnimated:YES];
@@ -481,6 +487,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     if(locationHelper) {
         [locationHelper release];
     }
+    [_user release];
     [super dealloc];
 }
 
