@@ -67,7 +67,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 @implementation ScrapItTableViewController
 
 //ToDo: add country selection
-//ToDo: remember province selection, and possibly city, when app is totally turned off
+//ToDo: remember possibly city, when app is totally turned off
 //ToDo: pass country to search service
 //ToDo: when use current location search, lookup the city name by location coords, to display in the title of the map view
 //ToDo: handle location updates, I think if you do a search from one location, using current location, then move to a signifcantly different location, and try to search again, it may use the original location

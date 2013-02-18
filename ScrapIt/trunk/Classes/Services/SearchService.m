@@ -18,8 +18,6 @@
 #import "NetworkErrors.h"
 #import "FlurryService.h"
 
-//ToDo: don't crash if no wireless is found/let the user know that we couldn't access the internet
-
 @interface SearchService (PrivateMethods)
 
 - (NSArray *)generatePlacemarksFromBusinesses:(NSArray *)businesses;
