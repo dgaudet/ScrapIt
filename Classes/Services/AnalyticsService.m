@@ -6,13 +6,13 @@
 //
 //
 
-#import "FlurryService.h"
+#import "AnalyticsService.h"
 #import "Flurry.h"
 #import "DeviceUtil.h"
 #import "Constants.h"
 #import "DeviceService.h"
 
-void flurryServiceUncaughtExceptionHandler(NSException *exception) {
+void analyticsServiceUncaughtExceptionHandler(NSException *exception) {
     if (![DeviceUtil isCurrentDeviceOSOlderThanIos43]) {
         [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
     }
@@ -30,16 +30,16 @@ NSString * const FS_App_Version_Event_Key = @"ApplicationVersion";
 NSString * const FS_Device_Version_Event_Key = @"DeviceVersion";
 NSString * const FS_Machine_Type_Event_Key = @"MachineType";
 
-@interface FlurryService (PrivateMethods)
+@interface AnalyticsService (PrivateMethods)
 
 + (NSDictionary *)eventForCitySearchWithCity:(NSString *)city inProvince:(NSString *)province;
 + (NSDictionary *)deviceDataDictionary;
 
 @end
 
-@implementation FlurryService
+@implementation AnalyticsService
 
-+ (void)startFlurry {
++ (void)startTrackingAnalytics {
     [Flurry startSession:@"P3DCXVKMTQSDJH53M85D"];
 }
 
