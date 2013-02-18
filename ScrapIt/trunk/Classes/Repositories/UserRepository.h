@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @class User;
+@class ProvinceService;
 
-@interface UserRepository : NSObject
+@interface UserRepository : NSObject {
+    NSUserDefaults *_userDefaults;
+    ProvinceService *_provinceService;
+}
 
 + (id)sharedInstance;
 - (User *)retrieveUser;
