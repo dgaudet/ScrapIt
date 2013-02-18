@@ -14,6 +14,8 @@
 @class UILoadingAlertView;
 @class CreditsView;
 @class UserService;
+@class User;
+@class ProvinceService;
 
 @interface ScrapItTableViewController : UITableViewController <UITextFieldDelegate, LocationHelperDelegate, SelectionListTableViewControllerDelegate, CreditsTableViewControllerDelegate> {
     NSArray *tableData;
@@ -26,6 +28,8 @@
     LocationHelper *locationHelper;
     BOOL currentLocationClicked;
     UserService *_userService;
+    ProvinceService *_provinceService;
+    User *_user;
 }
 
 - (void)selectionListTableViewControllerDidCancelController:(SelectionListTableViewController *)controller;

@@ -45,7 +45,7 @@
     return user;
 }
 - (void)saveUser:(User *)user {
-    
+    [_userRepository saveUser:user];
 }
 
 @end

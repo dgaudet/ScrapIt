@@ -74,6 +74,8 @@
 		05306D0216ACA43A0006777F /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05306D0116ACA43A0006777F /* EmailService.m */; };
 		05306D0516ACA8D60006777F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05306D0416ACA8D60006777F /* MessageUI.framework */; };
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
+		0534EDEA16D2848B00D82133 /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
+		0534EDEC16D284BD00D82133 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
 		0537D9EC145E4CC800EEB730 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
 		054D67F015FEDA100092B234 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
 		056BD3D313DCD6FB0045FF79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -840,6 +842,8 @@
 				05DEDAE216D1B9380058A861 /* UserRepository.m in Sources */,
 				05DEDAE716D1BA090058A861 /* User.m in Sources */,
 				05DEDAEC16D1BECF0058A861 /* UserService.m in Sources */,
+				0534EDEA16D2848B00D82133 /* ProvinceService.m in Sources */,
+				0534EDEC16D284BD00D82133 /* Province.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
