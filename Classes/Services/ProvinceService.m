@@ -76,6 +76,9 @@
     return nil;
 }
 
+- (Province *)retrieveDefaultProvince {
+    return [self retrieveProvinceWithCode:@"sk"];
+}
 
 - (void)dealloc {
     [_provincesSet release];

@@ -20,6 +20,9 @@
 #import "UILoadingAlertView.h"
 #import "LocationHelper.h"
 #import "CreditsTableViewController.h"
+#import "UserService.h"
+#import "User.h"
+#import "Province.h"
 
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY = @"SectionTitle";
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_DATA_KEY = @"SectionData";
@@ -78,6 +81,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     self = [super initWithStyle:style];
     if (self) {
         self.title = @"Scrap It!";
+        _userService = [UserService sharedInstance];
     }
     self.tableView.backgroundColor = [UIColor clearColor];
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightButtonClicked:)];
@@ -93,7 +97,10 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (NSArray *)loadTableData {
     NSMutableArray *dataArray = [[[NSMutableArray alloc] init] autorelease];
     
-    SelectionTableViewRow *provinceRow = [[SelectionTableViewRow alloc] initWithValue:@"Saskatchewan" andLabel:@"Province" methodWhenSelected:@selector(selectedProvinceCell)];
+    User *user = [_userService retrieveUser];
+    Province *province = user.province;
+    
+    SelectionTableViewRow *provinceRow = [[SelectionTableViewRow alloc] initWithValue:province.name andLabel:@"Province" methodWhenSelected:@selector(selectedProvinceCell)];
     provRowIndexPath = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     TextInputTableViewRow *cityRow = [[TextInputTableViewRow alloc] initWithValue:@"enter city" andLabel:@"City:" andDelegate:self andMethod:@selector(selectedCityCell)];
     cityRowIndexPath = [[NSIndexPath indexPathForRow:1 inSection:0] retain];

@@ -17,5 +17,6 @@
 - (NSSet *)retrieveAllProvinces;
 - (Province *)retrieveProvinceWithCode:(NSString *)code;
 - (Province *)retrieveProvinceWithName:(NSString *)name;
+- (Province *)retrieveDefaultProvince;
 
 @end
