@@ -124,6 +124,10 @@ NSString *const Row_Key = @"Row";
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
     switch (result) {
+        case MFMailComposeResultSent:
+            [AnalyticsService logEmailedSupportEvent];
+            [self.navigationController dismissModalViewControllerAnimated:YES];
+            break;
         case MFMailComposeResultFailed:
             [self loadAlertViewWithMessage:@"There was a problem sending your email, please try again." andOkButtonTitle:nil];
             break;
@@ -152,6 +156,7 @@ NSString *const Row_Key = @"Row";
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         if ([[UIApplication sharedApplication] canOpenURL:_urlSelected]) {
+            [AnalyticsService logViewedArtworkEvent];
             [[UIApplication sharedApplication] openURL:_urlSelected];
         }
     }

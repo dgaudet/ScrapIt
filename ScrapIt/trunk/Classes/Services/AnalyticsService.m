@@ -93,6 +93,18 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"Call Business" withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
 }
 
++ (void)logViewedArtworkEvent {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"User Viewed External Resource" withAction:@"Viewed Artwork" withLabel:nil withValue:nil];
+}
+
++ (void)logViewedYellowpagesEvent {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"User Viewed External Resource" withAction:@"Viewed Yellowpages" withLabel:nil withValue:nil];
+}
+
++ (void)logEmailedSupportEvent {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"User Sent Email" withAction:@"Support Email" withLabel:nil withValue:nil];
+}
+
 + (void)logScreenViewWithName:(NSString *)name {
     [[GAI sharedInstance].defaultTracker sendView:name];
 }
