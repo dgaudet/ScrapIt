@@ -7,6 +7,7 @@
 //
 
 #import "YellowPagesFooterView.h"
+#import "AnalyticsService.h"
 
 @interface YellowPagesFooterView (PrivateMethods)
 
@@ -64,6 +65,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:kYellowPagesBadgeLinkUrl]]) {
+            [AnalyticsService logEmailedSupportEvent];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kYellowPagesBadgeLinkUrl]];
         }
     }

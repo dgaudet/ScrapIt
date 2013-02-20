@@ -22,5 +22,8 @@ extern void analyticsServiceUncaughtExceptionHandler(NSException *exception);
 + (void)logViewBusinessInMapsWithBusinessSummary:(BusinessSummary *)businessSummary;
 + (void)logViewBusinessUrlInSafariWithBusinessSummary:(BusinessSummary *)businessSummary;
 + (void)logCallBusinessWithBusinessSummary:(BusinessSummary *)businessSummary;
++ (void)logViewedArtworkEvent;
++ (void)logViewedYellowpagesEvent;
++ (void)logEmailedSupportEvent;
 
 @end
