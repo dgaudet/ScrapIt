@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "DeviceService.h"
 #import "GAI.h"
+#import "BusinessSummary.h"
 
 void analyticsServiceUncaughtExceptionHandler(NSException *exception) {
     if (![DeviceUtil isCurrentDeviceOSOlderThanIos43]) {
@@ -35,13 +36,12 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
 
 + (NSDictionary *)eventForCitySearchWithCity:(NSString *)city inProvince:(NSString *)province;
 + (NSDictionary *)deviceDataDictionary;
++ (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary;
 
 @end
 
 //ToDo: ensure information about the device is being tracked
-//ToDo: add events for clicking call, view in maps, and view website
 //ToDo: add events for actions on the about page
-//ToDo: turn off google analytics debug
 
 @implementation AnalyticsService
 
@@ -49,9 +49,6 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [Flurry startSession:@"P3DCXVKMTQSDJH53M85D"];
     
     [GAI sharedInstance].dispatchInterval = 20;
-    // Optional: set debug to YES for extra debugging information.
-    [GAI sharedInstance].debug = YES;
-    // Create tracker instance.
     [[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
 }
 
@@ -84,6 +81,18 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"City Search" withLabel:label withValue:nil];
 }
 
++ (void)logViewBusinessInMapsWithBusinessSummary:(BusinessSummary *)businessSummary {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"View in Maps" withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
+}
+
++ (void)logViewBusinessUrlInSafariWithBusinessSummary:(BusinessSummary *)businessSummary {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"View in Safari" withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
+}
+
++ (void)logCallBusinessWithBusinessSummary:(BusinessSummary *)businessSummary {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"Call Business" withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
+}
+
 + (void)logScreenViewWithName:(NSString *)name {
     [[GAI sharedInstance].defaultTracker sendView:name];
 }
@@ -102,6 +111,10 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [dictionary setObject:[DeviceService getDeviceOSVersion] forKey:FS_Device_Version_Event_Key];
     [dictionary setObject:[DeviceService getMachineType] forKey:FS_Machine_Type_Event_Key];
     return dictionary;
+}
+
++ (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary {
+    return [NSString stringWithFormat:@"Business: %@, Province: %@, City: %@", summary.name, summary.province, summary.city];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+@class BusinessSummary;
 
 extern void analyticsServiceUncaughtExceptionHandler(NSException *exception);
 
@@ -18,5 +19,8 @@ extern void analyticsServiceUncaughtExceptionHandler(NSException *exception);
 + (void)logBusinessEventForStoresWithLocation:(CLLocationCoordinate2D)location;
 + (void)logDetailViewEventForBusiness:(NSString *)businessName inCity:(NSString *)city andProvince:(NSString *)province;
 + (void)logScreenViewWithName:(NSString *)name;
++ (void)logViewBusinessInMapsWithBusinessSummary:(BusinessSummary *)businessSummary;
++ (void)logViewBusinessUrlInSafariWithBusinessSummary:(BusinessSummary *)businessSummary;
++ (void)logCallBusinessWithBusinessSummary:(BusinessSummary *)businessSummary;
 
 @end
