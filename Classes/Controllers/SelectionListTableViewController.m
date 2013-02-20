@@ -8,6 +8,7 @@
 
 #import "SelectionListTableViewController.h"
 #import "ProvinceService.h"
+#import "AnalyticsService.h"
 
 @interface SelectionListTableViewController (PrivateMethods)
 - (void)donePressed;
@@ -65,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [AnalyticsService logScreenViewWithName:@"Select Province"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

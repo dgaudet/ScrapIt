@@ -12,6 +12,7 @@
 #import "SearchService.h"
 #import "UILoadingAlertView.h"
 #import "YellowPagesFooterView.h"
+#import "AnalyticsService.h"
 
 //ToDo: do the correct thing? when you try to get a cities location but there isn't one found
 
@@ -51,7 +52,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    [AnalyticsService logScreenViewWithName:@"Map - Business Search Results"];
+    
 	mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
 	mapView.mapType = MKMapTypeStandard;
 	mapView.delegate = self;

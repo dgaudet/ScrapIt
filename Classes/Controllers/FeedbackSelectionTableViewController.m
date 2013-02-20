@@ -9,6 +9,7 @@
 #import "FeedbackSelectionTableViewController.h"
 #import "TextInputTableViewRow.h"
 #import "MultilineTextInputTableViewRow.h"
+#import "AnalyticsService.h"
 
 @interface FeedbackSelectionTableViewController (PrivateMethods)
 
@@ -83,7 +84,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [AnalyticsService logScreenViewWithName:@"Feedback"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

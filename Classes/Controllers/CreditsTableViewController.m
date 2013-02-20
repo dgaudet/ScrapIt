@@ -12,6 +12,7 @@
 #import "TwoTableViewRow.h"
 #import "DeviceService.h"
 #import "EmailService.h"
+#import "AnalyticsService.h"
 
 NSString *const Section_Key = @"section";
 NSString *const Row_Key = @"Row";
@@ -159,6 +160,7 @@ NSString *const Row_Key = @"Row";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [AnalyticsService logScreenViewWithName:@"Credits and Info"];
     [self.view setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
 }
 
