@@ -11,6 +11,7 @@
 #import "DeviceUtil.h"
 #import "Constants.h"
 #import "DeviceService.h"
+#import "GAI.h"
 
 void analyticsServiceUncaughtExceptionHandler(NSException *exception) {
     if (![DeviceUtil isCurrentDeviceOSOlderThanIos43]) {
@@ -37,14 +38,27 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
 
 @end
 
+//ToDo: ensure information about the device is being tracked
+//ToDo: add events for clicking call, view in maps, and view website
+//ToDo: add events for actions on the about page
+//ToDo: turn off google analytics debug
+
 @implementation AnalyticsService
 
 + (void)startTrackingAnalytics {
     [Flurry startSession:@"P3DCXVKMTQSDJH53M85D"];
+    
+    [GAI sharedInstance].dispatchInterval = 20;
+    // Optional: set debug to YES for extra debugging information.
+    [GAI sharedInstance].debug = YES;
+    // Create tracker instance.
+    [[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
 }
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
     [Flurry logEvent:FS_City_Search_Key withParameters:[self eventForCitySearchWithCity:city inProvince:province]];
+    NSString *label = [NSString stringWithFormat:@"Province: %@, City: %@", province, city];
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Search" withAction:@"City Search" withLabel:label withValue:nil];
 }
 
 + (void)logBusinessEventForStoresWithLocation:(CLLocationCoordinate2D)location {
@@ -55,6 +69,9 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [eventDictionary setObject:longitude forKey:FS_Longitude_Event_Key];
     [eventDictionary addEntriesFromDictionary:[self deviceDataDictionary]];
     [Flurry logEvent:FS_Location_Search_Key withParameters:eventDictionary];
+    
+    NSString *label = [NSString stringWithFormat:@"Longitude: %@, Latitude: %@", longitude, latitude];
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Search" withAction:@"Geo Location" withLabel:label withValue:nil];
 }
 
 + (void)logDetailViewEventForBusiness:(NSString *)businessName inCity:(NSString *)city andProvince:(NSString *)province {
@@ -62,13 +79,20 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [eventDictionary addEntriesFromDictionary:[self eventForCitySearchWithCity:city inProvince:province]];
     [eventDictionary setObject:businessName forKey:FS_Business_Event_Key];
     [Flurry logEvent:FS_Business_View_Key withParameters:eventDictionary];
+    
+    NSString *label = [NSString stringWithFormat:@"Business: %@, Province: %@, City: %@", businessName, province, city];
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"City Search" withLabel:label withValue:nil];
+}
+
++ (void)logScreenViewWithName:(NSString *)name {
+    [[GAI sharedInstance].defaultTracker sendView:name];
 }
 
 + (NSDictionary *)eventForCitySearchWithCity:(NSString *)city inProvince:(NSString *)province {
     NSMutableDictionary *eventDictionary = [NSMutableDictionary dictionary];
     [eventDictionary setObject:city forKey:FS_City_Event_Key];
     [eventDictionary setObject:province forKey:FS_Province_Event_Key];
-    [eventDictionary addEntriesFromDictionary:[self deviceDataDictionary]];
+    [eventDictionary addEntriesFromDictionary:[self deviceDataDictionary]];    
     return eventDictionary;
 }
 

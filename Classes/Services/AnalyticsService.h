@@ -17,5 +17,6 @@ extern void analyticsServiceUncaughtExceptionHandler(NSException *exception);
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province;
 + (void)logBusinessEventForStoresWithLocation:(CLLocationCoordinate2D)location;
 + (void)logDetailViewEventForBusiness:(NSString *)businessName inCity:(NSString *)city andProvince:(NSString *)province;
++ (void)logScreenViewWithName:(NSString *)name;
 
 @end
