@@ -322,14 +322,17 @@ CGFloat const headerHeight = 40.0;
     if (buttonIndex == 1) {
         if ([lastSelectedIndex isEqual:urlIndex]) {        
             if ([[UIApplication sharedApplication] canOpenURL:[self storeUrl]]) {
+                [AnalyticsService logViewBusinessUrlInSafariWithBusinessSummary:business.businessSummary];
                 [[UIApplication sharedApplication] openURL:[self storeUrl]];
             }
         } else if ([lastSelectedIndex isEqual:phoneIndex]){
             if ([[UIApplication sharedApplication] canOpenURL:[self phoneUrl]]) {
+                [AnalyticsService logCallBusinessWithBusinessSummary:business.businessSummary];
                 [[UIApplication sharedApplication] openURL:[self phoneUrl]];
             }
         } else {
             if ([[UIApplication sharedApplication] canOpenURL:[self locationUrl]]) {
+                [AnalyticsService logViewBusinessInMapsWithBusinessSummary:business.businessSummary];
                 [[UIApplication sharedApplication] openURL:[self locationUrl]];
             }
         }
