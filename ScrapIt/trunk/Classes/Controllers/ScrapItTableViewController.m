@@ -24,6 +24,7 @@
 #import "User.h"
 #import "ProvinceService.h"
 #import "Province.h"
+#import "AnalyticsService.h"
 
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY = @"SectionTitle";
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_DATA_KEY = @"SectionData";
@@ -162,6 +163,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PaperTexture"]]];
 
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
