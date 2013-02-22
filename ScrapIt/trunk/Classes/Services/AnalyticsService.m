@@ -1,5 +1,5 @@
 //
-//  FlurryService.m
+//  AnalyticsService.m
 //  ScrapIt
 //
 //  Created by Dean Gaudet on 2012-09-16.
@@ -7,18 +7,11 @@
 //
 
 #import "AnalyticsService.h"
-#import "Flurry.h"
 #import "DeviceUtil.h"
 #import "Constants.h"
 #import "DeviceService.h"
 #import "GAI.h"
 #import "BusinessSummary.h"
-
-void analyticsServiceUncaughtExceptionHandler(NSException *exception) {
-    if (![DeviceUtil isCurrentDeviceOSOlderThanIos43]) {
-        [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
-    }
-}
 
 NSString * const FS_City_Search_Key = @"CitySearch";
 NSString * const FS_Location_Search_Key = @"LocationSearch";
@@ -45,15 +38,12 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
 
 @implementation AnalyticsService
 
-+ (void)startTrackingAnalytics {
-    [Flurry startSession:@"P3DCXVKMTQSDJH53M85D"];
-    
++ (void)startTrackingAnalytics {    
     [GAI sharedInstance].dispatchInterval = 20;
     [[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
 }
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
-    [Flurry logEvent:FS_City_Search_Key withParameters:[self eventForCitySearchWithCity:city inProvince:province]];
     NSString *label = [NSString stringWithFormat:@"Province: %@, City: %@", province, city];
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Search" withAction:@"City Search" withLabel:label withValue:nil];
 }
@@ -65,7 +55,6 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     [eventDictionary setObject:latitude forKey:FS_Latitude_Event_Key];
     [eventDictionary setObject:longitude forKey:FS_Longitude_Event_Key];
     [eventDictionary addEntriesFromDictionary:[self deviceDataDictionary]];
-    [Flurry logEvent:FS_Location_Search_Key withParameters:eventDictionary];
     
     NSString *label = [NSString stringWithFormat:@"Longitude: %@, Latitude: %@", longitude, latitude];
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Search" withAction:@"Geo Location" withLabel:label withValue:nil];
@@ -75,7 +64,6 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
     NSMutableDictionary *eventDictionary = [NSMutableDictionary dictionary];
     [eventDictionary addEntriesFromDictionary:[self eventForCitySearchWithCity:city inProvince:province]];
     [eventDictionary setObject:businessName forKey:FS_Business_Event_Key];
-    [Flurry logEvent:FS_Business_View_Key withParameters:eventDictionary];
     
     NSString *label = [NSString stringWithFormat:@"Business: %@, Province: %@, City: %@", businessName, province, city];
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"Business Detail View" withAction:@"City Search" withLabel:label withValue:nil];
