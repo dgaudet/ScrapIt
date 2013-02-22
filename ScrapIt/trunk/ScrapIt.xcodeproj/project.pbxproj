@@ -83,6 +83,8 @@
 		0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0537D9EC145E4CC800EEB730 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
 		054D67F015FEDA100092B234 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
+		0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
+		0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		056BD3D313DCD6FB0045FF79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		056BD3D413DCD6FB0045FF79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		056BD3D513DCD6FB0045FF79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -196,6 +198,7 @@
 		0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapItBusinessService.m; path = Services/ScrapItBusinessService.m; sourceTree = "<group>"; };
 		054D67EE15FEDA100092B234 /* MultilineTwoRowTableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultilineTwoRowTableViewRow.h; path = Domain/MultilineTwoRowTableViewRow.h; sourceTree = "<group>"; };
 		054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultilineTwoRowTableViewRow.m; path = Domain/MultilineTwoRowTableViewRow.m; sourceTree = "<group>"; };
+		0560656916D70F7400D29E0F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		056BD3D213DCD6FB0045FF79 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056BD3D813DCD6FB0045FF79 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		056BD3DA13DCD6FB0045FF79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -325,6 +328,7 @@
 				052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */,
 				052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */,
 				0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
+				0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +360,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
+				0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +628,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0560656916D70F7400D29E0F /* Crashlytics.framework */,
 				05F240A916001CFA00B2CDD1 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -641,6 +647,7 @@
 				052E005916C55E2C00E5E178 /* Resources */,
 				052E006416C55E2C00E5E178 /* Sources */,
 				052E009116C55E2C00E5E178 /* Frameworks */,
+				0533AC1716D70E6900D69366 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -676,6 +683,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				0533AC1616D70E3F00D69366 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -763,6 +771,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0533AC1616D70E3F00D69366 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run a5e729783a2ccbc18626b6a118870aae9c94ed75";
+		};
+		0533AC1716D70E6900D69366 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run a5e729783a2ccbc18626b6a118870aae9c94ed75";
+		};
 		056BD3D013DCD6FB0045FF79 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -940,6 +974,10 @@
 					armv6,
 				);
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -963,6 +1001,10 @@
 					armv6,
 				);
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ScrapIt_Prefix.pch;
 				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
@@ -1045,6 +1087,10 @@
 					armv6,
 				);
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1067,6 +1113,10 @@
 					armv6,
 				);
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ScrapIt_Prefix.pch;
 				INFOPLIST_FILE = "ScrapIt-Info.plist";

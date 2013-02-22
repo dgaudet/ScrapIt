@@ -275,10 +275,12 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 
 - (void)selectedLocationCell {
     currentLocationClicked = TRUE;
+    [AnalyticsService logClickedFindStoresWithLocationEvent];
     [self setupLocationManager];
 }
 
 - (void)selectedSearchCell {
+    [AnalyticsService logClickedSearchEvent];
     UITextField *textField = [self retrieveCellTextFieldFromIndexPath:cityRowIndexPath];
     [textField resignFirstResponder];
     if (textField.text.length > 0) {
