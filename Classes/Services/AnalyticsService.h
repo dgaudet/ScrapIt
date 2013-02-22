@@ -1,5 +1,5 @@
 //
-//  FlurryService.h
+//  AnalyticsService.h
 //  ScrapIt
 //
 //  Created by Dean Gaudet on 2012-09-16.

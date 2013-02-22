@@ -34,9 +34,6 @@
     [window addSubview:navController.view];
 
     [AnalyticsService startTrackingAnalytics];
-    if (![DeviceUtil isCurrentDeviceOSOlderThanIos43]) {
-        NSSetUncaughtExceptionHandler(&analyticsServiceUncaughtExceptionHandler);
-    }
     
     return YES;
 }

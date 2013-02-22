@@ -70,7 +70,6 @@
 		052E009616C55E2C00E5E178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		052E009916C55E2C00E5E178 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		05306D0216ACA43A0006777F /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05306D0116ACA43A0006777F /* EmailService.m */; };
 		05306D0516ACA8D60006777F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05306D0416ACA8D60006777F /* MessageUI.framework */; };
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
@@ -152,7 +151,6 @@
 		05DEDAEB16D1BECF0058A861 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE916D1BECF0058A861 /* UserService.m */; };
 		05DEDAEC16D1BECF0058A861 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DEDAE916D1BECF0058A861 /* UserService.m */; };
 		05EB10E216068ED300FF01AD /* DeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E116068ED300FF01AD /* DeviceService.m */; };
-		05EB10E7160699AA00FF01AD /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		05EB10EA16069B8200FF01AD /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* AnalyticsService.m */; };
 		05EBEE46165C858000F5FAD4 /* CreditsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EBEE45165C858000F5FAD4 /* CreditsTableViewController.m */; };
 		05F240A8160018A800B2CDD1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240A7160018A800B2CDD1 /* Reachability.m */; };
@@ -166,7 +164,6 @@
 		05F240BF1600216400B2CDD1 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
 		05F240C01600226500B2CDD1 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
 		05F4B9E11609580B0062C8F5 /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* AnalyticsService.m */; };
-		05F4B9E2160958100062C8F5 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EB10E6160699AA00FF01AD /* libFlurry.a */; };
 		05F4B9E3160964500062C8F5 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
 		1D3623260D0F684500981E51 /* ScrapItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ScrapItAppDelegate.m */; };
@@ -290,8 +287,6 @@
 		05DEDAE916D1BECF0058A861 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserService.m; path = Services/UserService.m; sourceTree = "<group>"; };
 		05EB10E016068ED300FF01AD /* DeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceService.h; path = Services/DeviceService.h; sourceTree = "<group>"; };
 		05EB10E116068ED300FF01AD /* DeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceService.m; path = Services/DeviceService.m; sourceTree = "<group>"; };
-		05EB10E5160699AA00FF01AD /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		05EB10E6160699AA00FF01AD /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		05EB10E816069B8100FF01AD /* AnalyticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsService.h; path = Services/AnalyticsService.h; sourceTree = "<group>"; };
 		05EB10E916069B8200FF01AD /* AnalyticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsService.m; path = Services/AnalyticsService.m; sourceTree = "<group>"; };
 		05EBEE44165C858000F5FAD4 /* CreditsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsTableViewController.h; path = Controllers/CreditsTableViewController.h; sourceTree = "<group>"; };
@@ -329,7 +324,6 @@
 				052E009616C55E2C00E5E178 /* Foundation.framework in Frameworks */,
 				052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */,
 				052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */,
-				052E009916C55E2C00E5E178 /* libFlurry.a in Frameworks */,
 				0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +339,6 @@
 				056BD3D313DCD6FB0045FF79 /* UIKit.framework in Frameworks */,
 				056BD3D413DCD6FB0045FF79 /* Foundation.framework in Frameworks */,
 				056BD3D513DCD6FB0045FF79 /* CoreGraphics.framework in Frameworks */,
-				05F4B9E2160958100062C8F5 /* libFlurry.a in Frameworks */,
 				0534EE1516D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +355,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				05EB10E7160699AA00FF01AD /* libFlurry.a in Frameworks */,
 				0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,21 +530,10 @@
 			name = Repositories;
 			sourceTree = "<group>";
 		};
-		05EB10E4160699AA00FF01AD /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				05EB10E5160699AA00FF01AD /* Flurry.h */,
-				05EB10E6160699AA00FF01AD /* libFlurry.a */,
-			);
-			name = Flurry;
-			path = Vendors/Flurry;
-			sourceTree = "<group>";
-		};
 		05F240A41600188F00B2CDD1 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
 				0534EDED16D28EE800D82133 /* Google */,
-				05EB10E4160699AA00FF01AD /* Flurry */,
 				05F240A51600189800B2CDD1 /* Apple */,
 			);
 			name = Vendors;
@@ -966,7 +947,6 @@
 				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				OTHER_CFLAGS = "-DTest";
@@ -988,7 +968,6 @@
 				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				OTHER_CFLAGS = (
@@ -1019,7 +998,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1047,7 +1025,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1075,7 +1052,6 @@
 				INFOPLIST_FILE = "ScrapIt-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				PRODUCT_NAME = ScrapIt;
@@ -1096,7 +1072,6 @@
 				INFOPLIST_FILE = "ScrapIt-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Flurry\"",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				PRODUCT_NAME = ScrapIt;
