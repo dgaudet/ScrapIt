@@ -12,6 +12,7 @@
 #import "DeviceService.h"
 #import "GAI.h"
 #import "BusinessSummary.h"
+#import <Crashlytics/Crashlytics.h>
 
 NSString * const FS_City_Search_Key = @"CitySearch";
 NSString * const FS_Location_Search_Key = @"LocationSearch";
@@ -41,6 +42,7 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
 + (void)startTrackingAnalytics {    
     [GAI sharedInstance].dispatchInterval = 20;
     [[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
+    [Crashlytics startWithAPIKey:@"a5e729783a2ccbc18626b6a118870aae9c94ed75"];
 }
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
@@ -91,6 +93,14 @@ NSString * const FS_Machine_Type_Event_Key = @"MachineType";
 
 + (void)logEmailedSupportEvent {
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"User Sent Email" withAction:@"Support Email" withLabel:nil withValue:nil];
+}
+
++ (void)logClickedSearchEvent {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"User Tapped" withAction:@"Search by city/province" withLabel:nil withValue:nil];
+}
+
++ (void)logClickedFindStoresWithLocationEvent {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:@"User Tapped" withAction:@"Search by Current Location" withLabel:nil withValue:nil];
 }
 
 + (void)logScreenViewWithName:(NSString *)name {

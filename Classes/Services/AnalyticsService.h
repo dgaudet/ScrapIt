@@ -25,5 +25,7 @@ extern void analyticsServiceUncaughtExceptionHandler(NSException *exception);
 + (void)logViewedArtworkEvent;
 + (void)logViewedYellowpagesEvent;
 + (void)logEmailedSupportEvent;
++ (void)logClickedFindStoresWithLocationEvent;
++ (void)logClickedSearchEvent;
 
 @end
