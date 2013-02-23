@@ -31,4 +31,6 @@
 #define kGoogleAnalyticsTrackingCode @"UA-38534491-1"
 #endif
 
+#define kCrashlyticsCode @"a5e729783a2ccbc18626b6a118870aae9c94ed75"
+
 #endif
