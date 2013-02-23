@@ -36,7 +36,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 + (void)startTrackingAnalytics {    
     [GAI sharedInstance].dispatchInterval = 20;
     [[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
-    [Crashlytics starƒtWithAPIKey:kCrashlyticsCode];
+    [Crashlytics startWithAPIKey:kCrashlyticsCode];
 }
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
@@ -51,7 +51,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
     NSString *label = [NSString stringWithFormat:@"Longitude: %@, Latitude: %@", longitude, latitude];
     
     [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Search_Key withAction:AS_Location_Event_Key withLabel:label withValue:nil];
-    [self logEventThroughCrashlytics:AS_Location_Event_Key forKey:AS_Business_Search_Key]
+    [self logEventThroughCrashlytics:AS_Location_Event_Key forKey:AS_Business_Search_Key];
 }
 
 + (void)logDetailViewEventForBusiness:(NSString *)businessName inCity:(NSString *)city andProvince:(NSString *)province {

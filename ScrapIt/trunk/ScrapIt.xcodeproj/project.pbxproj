@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		051970D9165978CE009F1A5E /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
+		0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */; };
 		052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C7D52613B2EBFC002D518F /* bradCrop.png */; };
 		052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
@@ -133,6 +134,7 @@
 		05B952E1140B067800786A6D /* BusinessListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E0140B067800786A6D /* BusinessListTableViewController.m */; };
 		05B952E4140B06E400786A6D /* ScrapItTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E3140B06E400786A6D /* ScrapItTableViewController.m */; };
 		05B952E9140B079100786A6D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E6140B079100786A6D /* MapViewController.m */; };
+		05BEC72A16D9564A002DD780 /* PaperTexture-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */; };
 		05C7D52713B2EBFD002D518F /* bradCrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C7D52613B2EBFC002D518F /* bradCrop.png */; };
 		05CC7B6B145E531900B672D5 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
 		05CC96501651A462009CC29D /* YellowPagesLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC964F1651A462009CC29D /* YellowPagesLogo@2x.png */; };
@@ -181,6 +183,7 @@
 		051970D7165978CE009F1A5E /* CreditsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsView.h; path = Domain/CreditsView.h; sourceTree = "<group>"; };
 		051970D8165978CE009F1A5E /* CreditsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsView.m; path = Domain/CreditsView.m; sourceTree = "<group>"; };
 		0522F02E1617A958007D9F48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PaperTexture-568h@2x.png"; sourceTree = "<group>"; };
 		052E009D16C55E2C00E5E178 /* ScrapIt_local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapIt_local.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		052E00A016C55E2E00E5E178 /* ScrapIt_local-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ScrapIt_local-Info.plist"; path = "/Users/Dean/Documents/Code/ScrapIt/trunk/ScrapIt_local-Info.plist"; sourceTree = "<absolute>"; };
 		05306D0016ACA43A0006777F /* EmailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailService.h; path = Services/EmailService.h; sourceTree = "<group>"; };
@@ -614,6 +617,7 @@
 				05C7D52613B2EBFC002D518F /* bradCrop.png */,
 				05B2B3731556F005001F15F4 /* PaperTexture.png */,
 				05B2B3741556F005001F15F4 /* PaperTexture@2x.png */,
+				0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */,
 				05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */,
 				05CC964F1651A462009CC29D /* YellowPagesLogo@2x.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -739,6 +743,7 @@
 				052E006116C55E2C00E5E178 /* BookIcon@2x.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
 				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
+				05BEC72A16D9564A002DD780 /* PaperTexture-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +770,7 @@
 				0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
 				05CC96501651A462009CC29D /* YellowPagesLogo@2x.png in Resources */,
+				0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
