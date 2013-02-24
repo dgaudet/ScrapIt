@@ -10,6 +10,16 @@
 
 @implementation DeviceUtil
 
++ (BOOL)isCurrentDeviceIPhone5 {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    return (screenRect.size.height == 568);
+}
+
++ (CGSize)screenSize {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    return screenRect.size;
+}
+
 + (BOOL)isCurrentDeviceOSOlderThanIos5 {
     NSString *version = [UIDevice currentDevice].systemVersion;
     if ([[version substringToIndex:1] intValue] < 5) {
