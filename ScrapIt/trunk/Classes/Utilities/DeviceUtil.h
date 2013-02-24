@@ -10,6 +10,8 @@
 
 @interface DeviceUtil : NSObject
 
++ (CGSize)screenSize;
++ (BOOL)isCurrentDeviceIPhone5;
 + (BOOL)isCurrentDeviceOSOlderThanIos5;
 + (BOOL)isCurrentDeviceOSOlderThanIos43;
 

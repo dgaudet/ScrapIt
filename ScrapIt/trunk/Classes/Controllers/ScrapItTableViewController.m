@@ -25,6 +25,7 @@
 #import "ProvinceService.h"
 #import "Province.h"
 #import "AnalyticsService.h"
+#import "DeviceUtil.h"
 
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY = @"SectionTitle";
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_DATA_KEY = @"SectionData";
@@ -53,6 +54,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)showLoadingIndicators;
 - (void)hideLoadingIndicators;
 - (void)setButtonSelectedFalseIfNeeded;
+- (void)addInfoButtonToView;
 
 - (void)setupLocationManager;
 
@@ -164,18 +166,29 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 {
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PaperTexture"]]];
+    NSString *imageName = @"PaperTexture";
+//    if ([DeviceUtil isCurrentDeviceIPhone5]) {
+//        imageName = @"PaperTexture-568h@2x";
+//    }
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
 
-    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [infoButton setFrame:CGRectMake(290, 385, infoButton.frame.size.width, infoButton.frame.size.height)];
-    [self.view addSubview:infoButton];
+    [self addInfoButtonToView];
     
     //Add gesture to hide keyboard when the background is tapped
     UITapGestureRecognizer *tapBackgroundViewGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     tapBackgroundViewGesture.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:tapBackgroundViewGesture];
     [tapBackgroundViewGesture release];
+}
+
+- (void)addInfoButtonToView {
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    CGFloat x = [DeviceUtil screenSize].width - 30;
+    CGFloat y = [DeviceUtil screenSize].height - 95;
+    [infoButton setFrame:CGRectMake(x, y, infoButton.frame.size.width, infoButton.frame.size.height)];
+    [self.view addSubview:infoButton];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
