@@ -8,6 +8,7 @@
 
 #import "YellowPagesFooterView.h"
 #import "AnalyticsService.h"
+#import "DeviceUtil.h"
 
 @interface YellowPagesFooterView (PrivateMethods)
 
@@ -18,7 +19,8 @@
 @implementation YellowPagesFooterView
 
 - (id)init {
-    return [self initWithFrame:CGRectMake(0, 416, 320, 20)];
+    float y = [DeviceUtil screenSize].height - 64;
+    return [self initWithFrame:CGRectMake(0, y, 320, 20)];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -38,7 +40,8 @@
 
 - (void)displayInView:(UIView *)view animated:(BOOL)animated {
     [view addSubview:self];
-    CGRect finalRect = CGRectMake(self.frame.origin.x, 396, self.frame.size.width, self.frame.size.height);
+    float y = [DeviceUtil screenSize].height - 84;
+    CGRect finalRect = CGRectMake(self.frame.origin.x, y, self.frame.size.width, self.frame.size.height);
     if (animated) {
         [UIView animateWithDuration:0.5 delay:0.3 options:UIViewAnimationCurveEaseOut animations:^{
             [self setFrame:finalRect];
