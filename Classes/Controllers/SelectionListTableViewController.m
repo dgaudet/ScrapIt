@@ -36,6 +36,7 @@
     [cancelButton release];
     
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = nil;
     tableData = [[NSArray alloc] initWithArray:[[[[ProvinceService sharedInstance] retrieveAllProvinces] allObjects] sortedArrayUsingSelector:@selector(compare:)]];
     currentSelectedRow = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     return self;

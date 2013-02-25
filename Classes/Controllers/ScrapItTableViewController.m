@@ -89,6 +89,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
         _userService = [UserService sharedInstance];        
     }
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = nil;
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightButtonClicked:)];
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked:)];
 //    self.navigationItem.rightBarButtonItem = rightButton;
@@ -167,9 +168,9 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
     NSString *imageName = @"PaperTexture";
-//    if ([DeviceUtil isCurrentDeviceIPhone5]) {
-//        imageName = @"PaperTexture-568h@2x";
-//    }
+    if ([DeviceUtil isCurrentDeviceIPhone5]) {
+        imageName = @"PaperTexture-568h@2x";
+    }
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
 
     [self addInfoButtonToView];
