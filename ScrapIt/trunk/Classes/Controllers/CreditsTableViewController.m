@@ -41,6 +41,8 @@ NSString *const Row_Key = @"Row";
         [doneButton release];
         _urlSelected = nil;
     }
+    self.tableView.backgroundView = nil;
+    
     return self;
 }
 

@@ -72,6 +72,7 @@ CGFloat const headerHeight = 40.0;
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Business Detail"];
 	self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = nil;
     self.title = @"Store Details";
     tableData = [[NSArray alloc] initWithArray:[self setupTableData:business]];
     lastSelectedIndex = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
