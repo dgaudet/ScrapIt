@@ -83,6 +83,8 @@
 		0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0537D9EC145E4CC800EEB730 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
+		054D1CDD16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
+		054D1CDE16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
 		054D67F015FEDA100092B234 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
 		0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
@@ -199,6 +201,8 @@
 		0534EE1616D2919900D82133 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0537D9EA145E4CC700EEB730 /* ScrapItBusinessService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapItBusinessService.h; path = Services/ScrapItBusinessService.h; sourceTree = "<group>"; };
 		0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapItBusinessService.m; path = Services/ScrapItBusinessService.m; sourceTree = "<group>"; };
+		054D1CDB16E067B000F05C2C /* ThemeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeHelper.h; path = Utilities/ThemeHelper.h; sourceTree = "<group>"; };
+		054D1CDC16E067B000F05C2C /* ThemeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeHelper.m; path = Utilities/ThemeHelper.m; sourceTree = "<group>"; };
 		054D67EE15FEDA100092B234 /* MultilineTwoRowTableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultilineTwoRowTableViewRow.h; path = Domain/MultilineTwoRowTableViewRow.h; sourceTree = "<group>"; };
 		054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultilineTwoRowTableViewRow.m; path = Domain/MultilineTwoRowTableViewRow.m; sourceTree = "<group>"; };
 		0560656916D70F7400D29E0F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -506,6 +510,8 @@
 				05B2F446146A1AAB008CE996 /* EncodingUtil.m */,
 				05D0213B16CC8AD7002CD9C1 /* JsonHelper.h */,
 				05D0213C16CC8AD7002CD9C1 /* JsonHelper.m */,
+				054D1CDB16E067B000F05C2C /* ThemeHelper.h */,
+				054D1CDC16E067B000F05C2C /* ThemeHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -871,6 +877,7 @@
 				05DEDAE116D1B9380058A861 /* UserRepository.m in Sources */,
 				05DEDAE616D1BA090058A861 /* User.m in Sources */,
 				05DEDAEB16D1BECF0058A861 /* UserService.m in Sources */,
+				054D1CDE16E067B000F05C2C /* ThemeHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +961,7 @@
 				05DEDAE016D1B9380058A861 /* UserRepository.m in Sources */,
 				05DEDAE516D1BA090058A861 /* User.m in Sources */,
 				05DEDAEA16D1BECF0058A861 /* UserService.m in Sources */,
+				054D1CDD16E067B000F05C2C /* ThemeHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
