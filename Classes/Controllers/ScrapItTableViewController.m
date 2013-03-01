@@ -26,6 +26,7 @@
 #import "Province.h"
 #import "AnalyticsService.h"
 #import "DeviceUtil.h"
+#import "ThemeHelper.h"
 
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY = @"SectionTitle";
 NSString * const SCRAP_IT_TABLE_VIEW_SECTION_DATA_KEY = @"SectionData";
@@ -88,8 +89,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
         _provinceService = [ProvinceService sharedInstance];
         _userService = [UserService sharedInstance];        
     }
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView = nil;
+    [ThemeHelper setBackgroundViewForTableView:self.tableView];
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightButtonClicked:)];
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked:)];
 //    self.navigationItem.rightBarButtonItem = rightButton;
@@ -167,11 +167,8 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 {
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
-    NSString *imageName = @"PaperTexture";
-    if ([DeviceUtil isCurrentDeviceIPhone5]) {
-        imageName = @"PaperTexture-568h@2x";
-    }
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
+
+    [ThemeHelper setBackgroundViewForTableView:self.tableView];
 
     [self addInfoButtonToView];
     
