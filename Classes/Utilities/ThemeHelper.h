@@ -10,7 +10,7 @@
 
 @interface ThemeHelper : NSObject
 
-+ (void)setBackgroundViewForTableView:(UITableView *)tableView;
++ (void)setDefaultBackgroundForTableView:(UITableView *)tableView;
 + (void)setBackgroundForCreditsTableView:(UITableView *)tableView;
 
 @end

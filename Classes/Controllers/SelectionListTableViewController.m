@@ -9,6 +9,7 @@
 #import "SelectionListTableViewController.h"
 #import "ProvinceService.h"
 #import "AnalyticsService.h"
+#import "ThemeHelper.h"
 
 @interface SelectionListTableViewController (PrivateMethods)
 - (void)donePressed;
@@ -26,7 +27,7 @@
         // Custom initialization
         self.title = @"Select a Province";
     }
-    
+
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
     self.navigationItem.rightBarButtonItem = doneButton;
     [doneButton release];
@@ -35,8 +36,6 @@
     self.navigationItem.leftBarButtonItem = cancelButton;
     [cancelButton release];
     
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView = nil;
     tableData = [[NSArray alloc] initWithArray:[[[[ProvinceService sharedInstance] retrieveAllProvinces] allObjects] sortedArrayUsingSelector:@selector(compare:)]];
     currentSelectedRow = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     return self;
@@ -68,11 +67,8 @@
 {
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Select Province"];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [ThemeHelper setDefaultBackgroundForTableView:self.tableView];
 }
 
 - (void)viewDidUnload

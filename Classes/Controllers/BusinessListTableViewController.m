@@ -15,6 +15,7 @@
 #import "EncodingUtil.h"
 #import "YellowPagesFooterView.h"
 #import "AnalyticsService.h"
+#import "ThemeHelper.h"
 
 NSString * const SECTION_NAME_KEY = @"sectionName";
 NSString * const SECTION_DATA_KEY = @"data";
@@ -71,8 +72,7 @@ CGFloat const headerHeight = 40.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Business Detail"];
-	self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView = nil;
+	[ThemeHelper setDefaultBackgroundForTableView:self.tableView];
     self.title = @"Store Details";
     tableData = [[NSArray alloc] initWithArray:[self setupTableData:business]];
     lastSelectedIndex = [[NSIndexPath indexPathForRow:0 inSection:0] retain];

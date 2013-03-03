@@ -11,7 +11,7 @@
 
 @implementation ThemeHelper
 
-+ (void)setBackgroundViewForTableView:(UITableView *)tableView {
++ (void)setDefaultBackgroundForTableView:(UITableView *)tableView {
     NSString *imageName = @"PaperTexture";
     if ([DeviceUtil isCurrentDeviceIPhone5]) {
         imageName = @"PaperTexture-568h";
