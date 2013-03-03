@@ -13,6 +13,7 @@
 #import "DeviceService.h"
 #import "EmailService.h"
 #import "AnalyticsService.h"
+#import "ThemeHelper.h"
 
 NSString *const Section_Key = @"section";
 NSString *const Row_Key = @"Row";
@@ -41,7 +42,6 @@ NSString *const Row_Key = @"Row";
         [doneButton release];
         _urlSelected = nil;
     }
-    self.tableView.backgroundView = nil;
     
     return self;
 }
@@ -168,7 +168,8 @@ NSString *const Row_Key = @"Row";
 {
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Credits and Info"];
-    [self.view setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
+    
+    [ThemeHelper setBackgroundForCreditsTableView:self.tableView];
 }
 
 - (void)viewDidUnload
