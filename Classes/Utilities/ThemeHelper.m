@@ -27,6 +27,11 @@
     [tableView setBackgroundView:backgroundView];
 }
 
++ (void)setBackgroundForCreditsTableView:(UITableView *)tableView {
+    [tableView setBackgroundView:nil];
+    [tableView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
+}
+
 //+ (void)setBackgroundViewForTableView:(UITableView *)tableView {
 //    tableView.backgroundColor = [UIColor clearColor];
 //    tableView.backgroundView = nil;
