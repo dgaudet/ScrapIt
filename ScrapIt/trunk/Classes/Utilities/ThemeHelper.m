@@ -32,9 +32,4 @@
     [tableView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
 }
 
-//+ (void)setBackgroundViewForTableView:(UITableView *)tableView {
-//    tableView.backgroundColor = [UIColor clearColor];
-//    tableView.backgroundView = nil;
-//}
-
 @end
