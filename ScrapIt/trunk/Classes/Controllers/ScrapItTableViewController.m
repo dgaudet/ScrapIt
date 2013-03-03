@@ -89,7 +89,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
         _provinceService = [ProvinceService sharedInstance];
         _userService = [UserService sharedInstance];        
     }
-    [ThemeHelper setBackgroundViewForTableView:self.tableView];
+
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightButtonClicked:)];
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked:)];
 //    self.navigationItem.rightBarButtonItem = rightButton;
@@ -168,7 +168,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
 
-    [ThemeHelper setBackgroundViewForTableView:self.tableView];
+    [ThemeHelper setDefaultBackgroundForTableView:self.tableView];
 
     [self addInfoButtonToView];
     
