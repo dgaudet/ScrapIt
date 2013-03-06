@@ -76,9 +76,9 @@
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
 		0534EDEA16D2848B00D82133 /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
 		0534EDEC16D284BD00D82133 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
-		0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; };
-		0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; };
-		0534EE1516D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; };
+		0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0534EE1516D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0534EE1716D2919A00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
