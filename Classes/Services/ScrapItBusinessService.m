@@ -16,10 +16,10 @@
 #import "JsonHelper.h"
 #import "NetworkErrors.h"
 
-NSString * const SBS_Bus_By_Id_Location = @"api/business/";
-NSString * const SBS_Bus_By_City_Location = @"api/businessByCity/";
-NSString * const SBS_Bus_By_Geo_Location = @"api/businessByGeoLocation";
-NSString * const SBS_Bus_By_Details_Location = @"api/businessByDetails";
+NSString * const SBS_Bus_By_Id_Location = @"api/v1/business/";
+NSString * const SBS_Bus_By_City_Location = @"api/v1/businessByCity/";
+NSString * const SBS_Bus_By_Geo_Location = @"api/v1/businessByGeoLocation";
+NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 
 @interface ScrapItBusinessService (PrivateMethods)
 
