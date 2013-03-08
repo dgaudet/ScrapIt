@@ -109,7 +109,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 - (NSString *)searchUrlWithBusinessSummary:(BusinessSummary *)business {
     NSString *encodedName = [self encodeBusinessName:business.name];
     NSString *encodedProvice = [self getLongFormProvinceFromAbbreviation:business.province];
-    NSString *queryParams = [NSString stringWithFormat:@"id=%@&province=%@&name=%@", business.yellowPagesId, encodedProvice, encodedName];
+    NSString *queryParams = [NSString stringWithFormat:@"id=%@&province=%@&name=%@", business.businessId, encodedProvice, encodedName];
     return [NSString stringWithFormat:@"%@%@?%@", kScrapItServicesBaseUrl, SBS_Bus_By_Details_Location, queryParams];
 }
 
@@ -150,14 +150,14 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 		double lat = [[geoCode valueForKey:@"latitude"] doubleValue];
 		double longitude = [[geoCode valueForKey:@"longitude"] doubleValue];
 		CLLocationCoordinate2D location = {lat, longitude};
-		BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location yellowPagesId:businessId] autorelease];
+		BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location businessId:businessId] autorelease];
 		
 		return business;
 	} else {
         NSError *error = nil;
         CLLocationCoordinate2D location = [[SearchService sharedInstance] retrieveCoordinatesForStreet:street city:city province:province country:@"ca" error:&error];
         if(!error){
-            BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location yellowPagesId:businessId] autorelease];
+            BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location businessId:businessId] autorelease];
             return business;
         }
     }
