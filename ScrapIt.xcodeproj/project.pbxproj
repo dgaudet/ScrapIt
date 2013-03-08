@@ -36,7 +36,6 @@
 		052E007116C55E2C00E5E178 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
 		052E007216C55E2C00E5E178 /* BusinessSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA965140750F5007CDEFC /* BusinessSummary.m */; };
 		052E007316C55E2C00E5E178 /* PlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C1140AFFF700786A6D /* PlaceMark.m */; };
-		052E007416C55E2C00E5E178 /* YellowPagesBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C5140B020800786A6D /* YellowPagesBusinessService.m */; };
 		052E007516C55E2C00E5E178 /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
 		052E007616C55E2C00E5E178 /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952CC140B036900786A6D /* SearchService.m */; };
 		052E007716C55E2C00E5E178 /* GoogleSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952D8140B041B00786A6D /* GoogleSearchService.m */; };
@@ -126,8 +125,6 @@
 		05B8F6A41500532100136D6A /* MultilineTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8F6A31500532100136D6A /* MultilineTableViewRow.m */; };
 		05B952C2140AFFF700786A6D /* PlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C1140AFFF700786A6D /* PlaceMark.m */; };
 		05B952C3140B002900786A6D /* PlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C1140AFFF700786A6D /* PlaceMark.m */; };
-		05B952C6140B020800786A6D /* YellowPagesBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C5140B020800786A6D /* YellowPagesBusinessService.m */; };
-		05B952C7140B020800786A6D /* YellowPagesBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C5140B020800786A6D /* YellowPagesBusinessService.m */; };
 		05B952CA140B02A900786A6D /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
 		05B952CD140B036900786A6D /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952CC140B036900786A6D /* SearchService.m */; };
 		05B952CE140B036900786A6D /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952CC140B036900786A6D /* SearchService.m */; };
@@ -264,8 +261,6 @@
 		05B8F6A31500532100136D6A /* MultilineTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultilineTableViewRow.m; path = Domain/MultilineTableViewRow.m; sourceTree = "<group>"; };
 		05B952C0140AFFF700786A6D /* PlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceMark.h; path = Domain/PlaceMark.h; sourceTree = "<group>"; };
 		05B952C1140AFFF700786A6D /* PlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceMark.m; path = Domain/PlaceMark.m; sourceTree = "<group>"; };
-		05B952C4140B020800786A6D /* YellowPagesBusinessService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YellowPagesBusinessService.h; path = Services/YellowPagesBusinessService.h; sourceTree = "<group>"; };
-		05B952C5140B020800786A6D /* YellowPagesBusinessService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YellowPagesBusinessService.m; path = Services/YellowPagesBusinessService.m; sourceTree = "<group>"; };
 		05B952C8140B02A900786A6D /* ProvinceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProvinceService.h; path = Services/ProvinceService.h; sourceTree = "<group>"; };
 		05B952C9140B02A900786A6D /* ProvinceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProvinceService.m; path = Services/ProvinceService.m; sourceTree = "<group>"; };
 		05B952CB140B036900786A6D /* SearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchService.h; path = Services/SearchService.h; sourceTree = "<group>"; };
@@ -493,8 +488,6 @@
 				0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */,
 				05B952CB140B036900786A6D /* SearchService.h */,
 				05B952CC140B036900786A6D /* SearchService.m */,
-				05B952C4140B020800786A6D /* YellowPagesBusinessService.h */,
-				05B952C5140B020800786A6D /* YellowPagesBusinessService.m */,
 				05306D0016ACA43A0006777F /* EmailService.h */,
 				05306D0116ACA43A0006777F /* EmailService.m */,
 				05DEDAE816D1BECF0058A861 /* UserService.h */,
@@ -846,7 +839,6 @@
 				052E007116C55E2C00E5E178 /* Business.m in Sources */,
 				052E007216C55E2C00E5E178 /* BusinessSummary.m in Sources */,
 				052E007316C55E2C00E5E178 /* PlaceMark.m in Sources */,
-				052E007416C55E2C00E5E178 /* YellowPagesBusinessService.m in Sources */,
 				052E007516C55E2C00E5E178 /* ProvinceService.m in Sources */,
 				052E007616C55E2C00E5E178 /* SearchService.m in Sources */,
 				052E007716C55E2C00E5E178 /* GoogleSearchService.m in Sources */,
@@ -894,7 +886,6 @@
 				05ACA9691407516B007CDEFC /* BusinessSummary.m in Sources */,
 				056BD3E013DCD6FB0045FF79 /* Unit_Tests.m in Sources */,
 				056BD3E613DCD7F80045FF79 /* ScrapItBusinessServiceTest.m in Sources */,
-				05B952C7140B020800786A6D /* YellowPagesBusinessService.m in Sources */,
 				05B952CE140B036900786A6D /* SearchService.m in Sources */,
 				05B952DA140B041B00786A6D /* GoogleSearchService.m in Sources */,
 				05F240BC16001F9700B2CDD1 /* Reachability.m in Sources */,
@@ -930,7 +921,6 @@
 				05ACA966140750F5007CDEFC /* Business.m in Sources */,
 				05ACA967140750F5007CDEFC /* BusinessSummary.m in Sources */,
 				05B952C2140AFFF700786A6D /* PlaceMark.m in Sources */,
-				05B952C6140B020800786A6D /* YellowPagesBusinessService.m in Sources */,
 				05B952CA140B02A900786A6D /* ProvinceService.m in Sources */,
 				05B952CD140B036900786A6D /* SearchService.m in Sources */,
 				05B952D9140B041B00786A6D /* GoogleSearchService.m in Sources */,
