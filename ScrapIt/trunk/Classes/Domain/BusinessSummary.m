@@ -10,10 +10,10 @@
 
 @implementation BusinessSummary
 
-@synthesize name, country, city, province, street, geoLocation, yellowPagesId;
+@synthesize name, country, city, province, street, geoLocation, businessId;
 
 - (id)initWithName:(NSString*)bus_name city:(NSString *)_city province:(NSString *)bus_prov street:(NSString *)bus_street 
-	   geoLocation:(CLLocationCoordinate2D)bus_loc yellowPagesId:(NSString *)pagesId {
+	   geoLocation:(CLLocationCoordinate2D)bus_loc businessId:(NSString *)pagesId {
 	self = [super init];
     if (self) {
         // Custom initialization.
@@ -28,8 +28,8 @@
 		street = [NSString stringWithString:bus_street];
 		[street retain];
 		geoLocation = bus_loc;		
-		yellowPagesId = pagesId;
-		[yellowPagesId retain];
+		businessId = pagesId;
+		[businessId retain];
     }
 	
 	return self;
@@ -40,7 +40,7 @@
 	[country release];
 	[province release];
 	[street release];
-	[yellowPagesId release];
+	[businessId release];
 	[super dealloc];
 }
 

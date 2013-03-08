@@ -16,7 +16,7 @@
 	NSString *province;
 	NSString *street;
 	CLLocationCoordinate2D geoLocation;
-	NSString *yellowPagesId;
+	NSString *businessId;
 }
 
 @property (nonatomic, readonly) NSString *name;
@@ -25,9 +25,9 @@
 @property (nonatomic, readonly) NSString *province;
 @property (nonatomic, readonly) NSString *street;
 @property (nonatomic, readonly) CLLocationCoordinate2D geoLocation;
-@property (nonatomic, readonly) NSString *yellowPagesId;
+@property (nonatomic, readonly) NSString *businessId;
 
 - (id)initWithName:(NSString*)bus_name city:(NSString *)_city province:(NSString *)bus_prov street:(NSString *)bus_street 
-	   geoLocation:(CLLocationCoordinate2D)bus_loc yellowPagesId:(NSString *)pagesId;
+	   geoLocation:(CLLocationCoordinate2D)bus_loc businessId:(NSString *)pagesId;
 
 @end
