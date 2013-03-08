@@ -48,7 +48,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
     return master;
 }
 
-- (NSString *)retrieveURLForBusinessWithYellowPagesId:(NSString *)ypId {
+- (NSString *)retrieveURLForBusinessWithId:(NSString *)ypId {
     NSString *businessUrl = nil;
     NSString *request = [NSString stringWithFormat:@"%@%@%@", kScrapItServicesBaseUrl, SBS_Bus_By_Id_Location, ypId];
 	NSURL *url = [NSURL URLWithString:request];
@@ -134,7 +134,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store {
 	NSString *name = [NSString stringWithString:[store valueForKey:@"name"]];
-	NSString *yellowPagesId = [NSString stringWithString:[store valueForKey:@"yellowpages_id"]];
+	NSString *businessId = [NSString stringWithString:[store valueForKey:@"yellowpages_id"]];
 	NSString *city;
 	NSString *province;
 	NSString *street;
@@ -150,14 +150,14 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 		double lat = [[geoCode valueForKey:@"latitude"] doubleValue];
 		double longitude = [[geoCode valueForKey:@"longitude"] doubleValue];
 		CLLocationCoordinate2D location = {lat, longitude};
-		BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location yellowPagesId:yellowPagesId] autorelease];
+		BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location yellowPagesId:businessId] autorelease];
 		
 		return business;
 	} else {
         NSError *error = nil;
         CLLocationCoordinate2D location = [[SearchService sharedInstance] retrieveCoordinatesForStreet:street city:city province:province country:@"ca" error:&error];
         if(!error){
-            BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location yellowPagesId:yellowPagesId] autorelease];
+            BusinessSummary *business = [[[BusinessSummary alloc] initWithName:name city:city province:province street:street geoLocation:location yellowPagesId:businessId] autorelease];
             return business;
         }
     }
