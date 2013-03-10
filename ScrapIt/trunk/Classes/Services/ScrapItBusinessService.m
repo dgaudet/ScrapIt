@@ -134,7 +134,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store {
 	NSString *name = [NSString stringWithString:[store valueForKey:@"name"]];
-	NSString *businessId = [NSString stringWithString:[store valueForKey:@"yellowpages_id"]];
+	NSString *businessId = [NSString stringWithString:[store valueForKey:@"business_id"]];
 	NSString *city;
 	NSString *province;
 	NSString *street;
