@@ -43,7 +43,7 @@
     float y = [DeviceUtil screenSize].height - 84;
     CGRect finalRect = CGRectMake(self.frame.origin.x, y, self.frame.size.width, self.frame.size.height);
     if (animated) {
-        [UIView animateWithDuration:0.5 delay:0.3 options:UIViewAnimationCurveEaseOut animations:^{
+        [UIView animateWithDuration:0.5 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
             [self setFrame:finalRect];
         } completion:^(BOOL finished) {    }];
     } else {

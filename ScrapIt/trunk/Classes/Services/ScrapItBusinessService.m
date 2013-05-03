@@ -82,7 +82,7 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
     }
 	NSArray *results = [responseString JSONValue];
 	
-	NSString *phoneNum, *busUrl;
+	NSString *phoneNum = @"", *busUrl = @"";
 	if ([results valueForKey:@"phoneNumber"]) {
 		phoneNum = [JsonHelper stringForJsonValue:[results valueForKey:@"phoneNumber"]];
 	}

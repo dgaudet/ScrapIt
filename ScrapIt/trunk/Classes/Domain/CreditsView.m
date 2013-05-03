@@ -54,7 +54,7 @@
 - (void)showInView:(UIView *)view {
     [view addSubview:self];
     CGRect finalRect = CGRectMake(self.frame.origin.x, 50, self.frame.size.width, self.frame.size.height);
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         [self setFrame:finalRect];
     } completion:^(BOOL finished) {    }];
 }
