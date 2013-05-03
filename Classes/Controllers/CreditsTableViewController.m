@@ -64,7 +64,7 @@ NSString *const Row_Key = @"Row";
     NSString *dedicationTitle = @"I would like to dedicate this app to my Family.";
     NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible.";
     TwoTableViewRow *row1 = [[TwoTableViewRow alloc] initWithValue:dedicationTitle andValueTwo:dedicationText andMethod:nil];
-    [row1 setCellSelectionStyle:UITableViewCellEditingStyleNone];
+    [row1 setCellSelectionStyle:UITableViewCellSelectionStyleNone];
     [row1 setTextAlignment:UITextAlignmentCenter];
     [row1 setLabel1Color:[UIColor whiteColor]];
     [row1 setLabel2Color:[UIColor blackColor]];
@@ -75,7 +75,7 @@ NSString *const Row_Key = @"Row";
     
     NSString *legalText = kYellowPagesLegalText;
     TwoTableViewRow *row2 = [[TwoTableViewRow alloc] initWithValue:@"Thanks to Yellow Pages for their great api." andValueTwo:legalText andMethod:nil];
-    [row2 setCellSelectionStyle:UITableViewCellEditingStyleNone];
+    [row2 setCellSelectionStyle:UITableViewCellSelectionStyleNone];
     [row2 setTextAlignment:UITextAlignmentCenter];
     [row2 setLabel1Color:[UIColor whiteColor]];
     [row2 setLabel2Color:[UIColor blackColor]];
@@ -96,7 +96,7 @@ NSString *const Row_Key = @"Row";
     
     NSString *versionText = [DeviceService getApplicationVersion];
     TwoTableViewRow *row4 = [[TwoTableViewRow alloc] initWithValue:@"App Version:" andValueTwo:versionText andMethod:nil];
-    [row4 setCellSelectionStyle:UITableViewCellEditingStyleNone];
+    [row4 setCellSelectionStyle:UITableViewCellSelectionStyleNone];
     [row4 setTextAlignment:UITextAlignmentCenter];
     [row4 setLabel1Color:[UIColor whiteColor]];
     [row4 setLabel2Color:[UIColor blackColor]];
