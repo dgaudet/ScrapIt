@@ -308,7 +308,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* ScrapItAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapItAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ScrapItAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapItAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* ScrapIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Find Scraps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find Scraps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -576,7 +576,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* ScrapIt.app */,
+				1D6058910D05DD3D006BFB54 /* Find Scraps.app */,
 				056BD3D213DCD6FB0045FF79 /* Unit Tests.octest */,
 				052E009D16C55E2C00E5E178 /* ScrapIt_local.app */,
 			);
@@ -696,7 +696,7 @@
 			);
 			name = ScrapIt;
 			productName = ScrapIt;
-			productReference = 1D6058910D05DD3D006BFB54 /* ScrapIt.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Find Scraps.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1111,7 +1111,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
-				PRODUCT_NAME = ScrapIt;
+				PRODUCT_NAME = "Find Scraps";
 			};
 			name = Debug;
 		};
@@ -1123,6 +1123,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					armv6,
 				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dean Gaudet";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1136,7 +1137,8 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
-				PRODUCT_NAME = ScrapIt;
+				PRODUCT_NAME = "Find Scraps";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1FB110A8-3C65-4E7C-8B57-8ABDE8DB9335";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
