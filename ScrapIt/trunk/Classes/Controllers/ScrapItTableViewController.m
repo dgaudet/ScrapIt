@@ -85,7 +85,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.title = @"Scrap It!";
+        self.title = @"Find Scraps";
         _provinceService = [ProvinceService sharedInstance];
         _userService = [UserService sharedInstance];        
     }
