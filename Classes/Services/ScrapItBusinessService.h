@@ -14,7 +14,6 @@
 @interface ScrapItBusinessService : NSObject
 
 + (id)sharedInstance;
-- (NSString *)retrieveURLForBusinessWithId:(NSString *)ypId;
 - (NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate;
 - (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business error:(NSError **)error;
 

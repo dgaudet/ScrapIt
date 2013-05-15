@@ -16,10 +16,9 @@
 #import "JsonHelper.h"
 #import "NetworkErrors.h"
 
-NSString * const SBS_Bus_By_Id_Location = @"api/v1/business/";
-NSString * const SBS_Bus_By_City_Location = @"api/v1/businessByCity/";
 NSString * const SBS_Bus_By_Geo_Location = @"api/v1/businessByGeoLocation";
 NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
+NSString * const SBS_API_Key_Prefix = @"apikey";
 
 @interface ScrapItBusinessService (PrivateMethods)
 
@@ -46,22 +45,6 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 			master = [self new];
 	}
     return master;
-}
-
-- (NSString *)retrieveURLForBusinessWithId:(NSString *)ypId {
-    NSString *businessUrl = nil;
-    NSString *request = [NSString stringWithFormat:@"%@%@%@", kScrapItServicesBaseUrl, SBS_Bus_By_Id_Location, ypId];
-	NSURL *url = [NSURL URLWithString:request];
-	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-	
-    if ([responseString isEqualToString:@"null"]) {
-        return nil;
-    } else {
-        NSDictionary *results = [responseString JSONValue];
-        businessUrl = [results valueForKey:@"url"];
-	}
-    
-    return businessUrl;
 }
 
 - (NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate {
@@ -103,14 +86,14 @@ NSString * const SBS_Bus_By_Details_Location = @"api/v1/businessByDetails";
 
 - (NSString *)searchUrlWithCoordinates:(CLLocationCoordinate2D)coordinate {
     NSString *queryParams = [NSString stringWithFormat:@"longitude=%.8f&latitude=%.8f", coordinate.longitude, coordinate.latitude];
-    return [NSString stringWithFormat:@"%@%@?%@", kScrapItServicesBaseUrl, SBS_Bus_By_Geo_Location, queryParams];
+    return [NSString stringWithFormat:@"%@%@?%@=%@&%@", kScrapItServicesBaseUrl, SBS_Bus_By_Geo_Location, SBS_API_Key_Prefix, kScrapItServicesApiKey, queryParams];
 }
 
 - (NSString *)searchUrlWithBusinessSummary:(BusinessSummary *)business {
     NSString *encodedName = [self encodeBusinessName:business.name];
     NSString *encodedProvice = [self getLongFormProvinceFromAbbreviation:business.province];
     NSString *queryParams = [NSString stringWithFormat:@"id=%@&province=%@&name=%@", business.businessId, encodedProvice, encodedName];
-    return [NSString stringWithFormat:@"%@%@?%@", kScrapItServicesBaseUrl, SBS_Bus_By_Details_Location, queryParams];
+    return [NSString stringWithFormat:@"%@%@?%@=%@&%@", kScrapItServicesBaseUrl, SBS_Bus_By_Details_Location, SBS_API_Key_Prefix, kScrapItServicesApiKey, queryParams];
 }
 
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl {

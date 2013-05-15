@@ -23,6 +23,12 @@
 #endif
 
 #ifdef Test
+#define kScrapItServicesApiKey @"1B9133B7-42F5-4597-9E5C-3BCF14D69B2D"
+#else
+#define kScrapItServicesApiKey @"53E00A51-6CAD-4E34-B75A-2E2A18957104"
+#endif
+
+#ifdef Test
 #define kGoogleAnalyticsTrackingCode @"UA-38534491-2"
 #else
 #define kGoogleAnalyticsTrackingCode @"UA-38534491-1"
