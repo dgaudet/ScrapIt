@@ -86,6 +86,10 @@
 		054D1CDD16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
 		054D1CDE16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
 		054D67F015FEDA100092B234 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
+		055399631745D239005191C2 /* MapsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 055399621745D239005191C2 /* MapsHelper.m */; };
+		055399641745D239005191C2 /* MapsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 055399621745D239005191C2 /* MapsHelper.m */; };
+		055399661745DD13005191C2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055399651745DD12005191C2 /* AddressBook.framework */; };
+		055399671745DD1B005191C2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055399651745DD12005191C2 /* AddressBook.framework */; };
 		0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		056BD3D313DCD6FB0045FF79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -203,6 +207,9 @@
 		054D1CDC16E067B000F05C2C /* ThemeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeHelper.m; path = Utilities/ThemeHelper.m; sourceTree = "<group>"; };
 		054D67EE15FEDA100092B234 /* MultilineTwoRowTableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultilineTwoRowTableViewRow.h; path = Domain/MultilineTwoRowTableViewRow.h; sourceTree = "<group>"; };
 		054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultilineTwoRowTableViewRow.m; path = Domain/MultilineTwoRowTableViewRow.m; sourceTree = "<group>"; };
+		055399611745D239005191C2 /* MapsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapsHelper.h; path = Utilities/MapsHelper.h; sourceTree = "<group>"; };
+		055399621745D239005191C2 /* MapsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapsHelper.m; path = Utilities/MapsHelper.m; sourceTree = "<group>"; };
+		055399651745DD12005191C2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		0560656916D70F7400D29E0F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		056BD3D213DCD6FB0045FF79 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056BD3D813DCD6FB0045FF79 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
@@ -322,6 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055399671745DD1B005191C2 /* AddressBook.framework in Frameworks */,
 				0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */,
 				052E009216C55E2C00E5E178 /* MessageUI.framework in Frameworks */,
 				052E009316C55E2C00E5E178 /* MapKit.framework in Frameworks */,
@@ -355,6 +363,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055399661745DD13005191C2 /* AddressBook.framework in Frameworks */,
 				0534EE1716D2919A00D82133 /* CoreData.framework in Frameworks */,
 				05306D0516ACA8D60006777F /* MessageUI.framework in Frameworks */,
 				05F240B516001EAF00B2CDD1 /* MapKit.framework in Frameworks */,
@@ -507,6 +516,8 @@
 				05D0213C16CC8AD7002CD9C1 /* JsonHelper.m */,
 				054D1CDB16E067B000F05C2C /* ThemeHelper.h */,
 				054D1CDC16E067B000F05C2C /* ThemeHelper.m */,
+				055399611745D239005191C2 /* MapsHelper.h */,
+				055399621745D239005191C2 /* MapsHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -586,6 +597,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				055399651745DD12005191C2 /* AddressBook.framework */,
 				0534EE1616D2919900D82133 /* CoreData.framework */,
 				05306D0416ACA8D60006777F /* MessageUI.framework */,
 				05F240B416001EAF00B2CDD1 /* MapKit.framework */,
@@ -872,6 +884,7 @@
 				05DEDAE616D1BA090058A861 /* User.m in Sources */,
 				05DEDAEB16D1BECF0058A861 /* UserService.m in Sources */,
 				054D1CDE16E067B000F05C2C /* ThemeHelper.m in Sources */,
+				055399641745D239005191C2 /* MapsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +967,7 @@
 				05DEDAE516D1BA090058A861 /* User.m in Sources */,
 				05DEDAEA16D1BECF0058A861 /* UserService.m in Sources */,
 				054D1CDD16E067B000F05C2C /* ThemeHelper.m in Sources */,
+				055399631745D239005191C2 /* MapsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

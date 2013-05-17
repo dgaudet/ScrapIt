@@ -16,6 +16,7 @@
 #import "YellowPagesFooterView.h"
 #import "AnalyticsService.h"
 #import "ThemeHelper.h"
+#import "MapsHelper.h"
 
 NSString * const SECTION_NAME_KEY = @"sectionName";
 NSString * const SECTION_DATA_KEY = @"data";
@@ -334,7 +335,8 @@ CGFloat const headerHeight = 40.0;
         } else {
             if ([[UIApplication sharedApplication] canOpenURL:[self locationUrl]]) {
                 [AnalyticsService logViewBusinessInMapsWithBusinessSummary:business.businessSummary];
-                [[UIApplication sharedApplication] openURL:[self locationUrl]];
+//                [[UIApplication sharedApplication] openURL:[self locationUrl]];
+                [MapsHelper loadMapsWithLocation:business];
             }
         }
     }
