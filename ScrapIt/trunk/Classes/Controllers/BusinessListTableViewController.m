@@ -32,7 +32,6 @@ CGFloat const headerHeight = 40.0;
 - (void)loadAlertViewWithMessage:(NSString *)message andOkButtonTile:(NSString *)okTitle;
 - (NSURL *)phoneUrl;
 - (NSURL *)storeUrl;
-- (NSURL *)locationUrl;
 - (void)phoneCellClicked;
 - (void)addressCellClicked;
 - (void)urlCellClicked;
@@ -133,11 +132,6 @@ CGFloat const headerHeight = 40.0;
 - (NSURL *)storeUrl {
     NSString *urlText = business.url;
     urlText = [urlText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    return [NSURL URLWithString:urlText];
-}
-
-- (NSURL *)locationUrl {
-    NSString *urlText = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%f,%f+(%@)", business.businessSummary.geoLocation.latitude, business.businessSummary.geoLocation.longitude, [EncodingUtil urlEncodedString:business.businessSummary.name]];
     return [NSURL URLWithString:urlText];
 }
 
@@ -301,9 +295,7 @@ CGFloat const headerHeight = 40.0;
 }
 
 - (void)addressCellClicked {
-    if ([[UIApplication sharedApplication] canOpenURL:[self locationUrl]]) {
-        [self loadAlertViewWithMessage:@"Leave scrap it and view this location in Google Maps?" andOkButtonTile:@"Leave"];
-    }
+    [self loadAlertViewWithMessage:@"Leave scrap it and view this location in Google Maps?" andOkButtonTile:@"Leave"];
 }
 
 - (void)urlCellClicked {
@@ -333,11 +325,7 @@ CGFloat const headerHeight = 40.0;
                 [[UIApplication sharedApplication] openURL:[self phoneUrl]];
             }
         } else {
-            if ([[UIApplication sharedApplication] canOpenURL:[self locationUrl]]) {
-                [AnalyticsService logViewBusinessInMapsWithBusinessSummary:business.businessSummary];
-//                [[UIApplication sharedApplication] openURL:[self locationUrl]];
-                [MapsHelper loadMapsWithLocation:business];
-            }
+            [MapsHelper loadMapsWithLocation:business];
         }
     }
 }
