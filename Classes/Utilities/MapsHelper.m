@@ -25,8 +25,9 @@
     
     if (itemClass && [itemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
         [self loadMapsIniOS6AndAboveWithLocation:business];
+    } else {
+        [self loadMapsBelowiOS6WithLocation:business];
     }
-    [self loadMapsBelowiOS6WithLocation:business];
 }
 
 + (void)loadMapsIniOS6AndAboveWithLocation:(Business *)business {
@@ -37,11 +38,16 @@
                               (NSString *)kABPersonAddressCountryCodeKey: @"CA"
                               };
     MKPlacemark *placemark = [[[MKPlacemark alloc] initWithCoordinate:business.businessSummary.geoLocation addressDictionary:address] autorelease];
-    MKMapItem *mapItem = [[[MKMapItem alloc] initWithPlacemark:placemark] autorelease];
-    [mapItem setName:business.businessSummary.name];
-    [mapItem setPhoneNumber:business.phoneNumber];
-    [mapItem setUrl:[NSURL URLWithString:business.url]];
-    [mapItem openInMapsWithLaunchOptions:nil];
+    MKMapItem *businessMapItem = [[[MKMapItem alloc] initWithPlacemark:placemark] autorelease];
+    [businessMapItem setName:business.businessSummary.name];
+    [businessMapItem setPhoneNumber:business.phoneNumber];
+    [businessMapItem setUrl:[NSURL URLWithString:business.url]];
+    [businessMapItem openInMapsWithLaunchOptions:nil];
+    
+//    NSArray *mapItems = [NSArray arrayWithObjects:[MKMapItem mapItemForCurrentLocation], businessMapItem, nil];
+//    NSDictionary *options = @{ MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving };
+//    
+//    [MKMapItem openMapsWithItems:mapItems launchOptions:options];
 }
 
 + (void)loadMapsBelowiOS6WithLocation:(Business *)business {
