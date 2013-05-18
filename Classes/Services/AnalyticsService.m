@@ -25,6 +25,8 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 @interface AnalyticsService (PrivateMethods)
 
 + (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary;
++ (void)logEventWithCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label;
++ (void)logEventThroughGoogleCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label;
 + (void)logEventThroughCrashlytics:(NSString *)value forKey:(NSString *)key;
 
 @end
@@ -41,8 +43,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
     NSString *label = [NSString stringWithFormat:@"Province: %@, City: %@", province, city];
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Search_Key withAction:AS_City_Search_Key withLabel:label withValue:nil];
-    [self logEventThroughCrashlytics:AS_City_Search_Key forKey:AS_City_Search_Key];
+    [self logEventWithCategory:AS_Business_Search_Key withAction:AS_City_Search_Key withLabel:label];
 }
 
 + (void)logBusinessEventForStoresWithLocation:(CLLocationCoordinate2D)location {
@@ -50,62 +51,61 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
     NSString *longitude = [NSString stringWithFormat:@"%f", location.longitude];
     NSString *label = [NSString stringWithFormat:@"Longitude: %@, Latitude: %@", longitude, latitude];
     
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Search_Key withAction:AS_Location_Event_Key withLabel:label withValue:nil];
-    [self logEventThroughCrashlytics:AS_Location_Event_Key forKey:AS_Business_Search_Key];
+    [self logEventWithCategory:AS_Business_Search_Key withAction:AS_Location_Event_Key withLabel:label];
 }
 
 + (void)logDetailViewEventForBusiness:(NSString *)businessName inCity:(NSString *)city andProvince:(NSString *)province {
     NSString *label = [NSString stringWithFormat:@"Business: %@, Province: %@, City: %@", businessName, province, city];
     
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Detail_Key withAction:AS_City_Search_Key withLabel:label withValue:nil];
-    [self logEventThroughCrashlytics:AS_City_Search_Key forKey:AS_Business_Detail_Key];
+    [self logEventWithCategory:AS_Business_Detail_Key withAction:AS_City_Search_Key withLabel:label];
 }
 
 + (void)logViewBusinessInMapsWithBusinessSummary:(BusinessSummary *)businessSummary {
     NSString *action = @"View in Maps";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Detail_Key withAction:action withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
+    
+    [self logEventThroughGoogleCategory:AS_Business_Detail_Key withAction:action withLabel:[self businessSummaryDataForLogging:businessSummary]];
     [self logEventThroughCrashlytics:AS_Business_Detail_Key forKey:action];
 }
 
 + (void)logViewBusinessUrlInSafariWithBusinessSummary:(BusinessSummary *)businessSummary {
     NSString *action = @"View in Safari";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Detail_Key withAction:action withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
+    [self logEventThroughGoogleCategory:AS_Business_Detail_Key withAction:action withLabel:[self businessSummaryDataForLogging:businessSummary]];
     [self logEventThroughCrashlytics:AS_Business_Detail_Key forKey:action];
 }
 
 + (void)logCallBusinessWithBusinessSummary:(BusinessSummary *)businessSummary {
     NSString *action = @"Call Business";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Business_Detail_Key withAction:action withLabel:[self businessSummaryDataForLogging:businessSummary] withValue:nil];
+    [self logEventThroughGoogleCategory:AS_Business_Detail_Key withAction:action withLabel:[self businessSummaryDataForLogging:businessSummary]];
     [self logEventThroughCrashlytics:AS_Business_Detail_Key forKey:action];
 }
 
 + (void)logViewedArtworkEvent {
     NSString *action = @"Viewed Artwork";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_External_Resource_Event_Key withAction:action withLabel:nil withValue:nil];
+    [self logEventThroughGoogleCategory:AS_External_Resource_Event_Key withAction:action withLabel:nil];
     [self logEventThroughCrashlytics:AS_External_Resource_Event_Key forKey:action];
 }
 
 + (void)logViewedYellowpagesEvent {
     NSString *action = @"Viewed Yellowpages";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_External_Resource_Event_Key withAction:action withLabel:nil withValue:nil];
+    [self logEventThroughGoogleCategory:AS_External_Resource_Event_Key withAction:action withLabel:nil];
     [self logEventThroughCrashlytics:AS_External_Resource_Event_Key forKey:action];
 }
 
 + (void)logEmailedSupportEvent {
     NSString *action = @"Support Email";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_Email_Key withAction:action withLabel:nil withValue:nil];
+    [self logEventThroughGoogleCategory:AS_Email_Key withAction:action withLabel:nil];
     [self logEventThroughCrashlytics:AS_Email_Key forKey:action];
 }
 
 + (void)logClickedSearchEvent {
     NSString *action = @"Search by city/province";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_User_Tapped_Key withAction:action withLabel:nil withValue:nil];
+    [self logEventThroughGoogleCategory:AS_User_Tapped_Key withAction:action withLabel:nil];
     [self logEventThroughCrashlytics:AS_User_Tapped_Key forKey:action];
 }
 
 + (void)logClickedFindStoresWithLocationEvent {
     NSString *action = @"Search by Current Location";
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:AS_User_Tapped_Key withAction:action withLabel:nil withValue:nil];
+    [self logEventThroughGoogleCategory:AS_User_Tapped_Key withAction:action withLabel:nil];
     [self logEventThroughCrashlytics:AS_User_Tapped_Key forKey:action];
 }
 
@@ -115,6 +115,15 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 
 + (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary {
     return [NSString stringWithFormat:@"Business: %@, Province: %@, City: %@", summary.name, summary.province, summary.city];
+}
+
++ (void)logEventWithCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label {
+    [self logEventThroughGoogleCategory:category withAction:action withLabel:label];
+    [self logEventThroughCrashlytics:action forKey:category];
+}
+
++ (void)logEventThroughGoogleCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label {
+    [[GAI sharedInstance].defaultTracker sendEventWithCategory:category withAction:action withLabel:label withValue:nil];
 }
 
 + (void)logEventThroughCrashlytics:(NSString *)value forKey:(NSString *)key {
