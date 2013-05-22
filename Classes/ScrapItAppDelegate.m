@@ -31,7 +31,8 @@
     navController.navigationBar.tintColor = [UIColor purpleColor];
     [viewController release];
 	
-    [window addSubview:navController.view];
+    window.rootViewController = navController;
+    [window makeKeyAndVisible];
 
     [AnalyticsService startTrackingAnalytics];
     
