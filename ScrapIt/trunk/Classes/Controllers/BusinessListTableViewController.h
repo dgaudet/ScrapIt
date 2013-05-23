@@ -16,6 +16,8 @@
     NSIndexPath *urlIndex;
     NSIndexPath *locationIndex;
     NSIndexPath *lastSelectedIndex;
+    CGFloat headerWidth;
+    CGFloat titleLabelWidth;
 }
 
 @property (nonatomic, retain) Business *business;

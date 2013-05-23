@@ -21,6 +21,7 @@
 NSString * const SECTION_NAME_KEY = @"sectionName";
 NSString * const SECTION_DATA_KEY = @"data";
 CGFloat const headerHeight = 40.0;
+CGFloat const labelPadding = 20.0;
 
 @interface BusinessListTableViewController (PrivateMethods)
 
@@ -43,7 +44,6 @@ CGFloat const headerHeight = 40.0;
 @implementation BusinessListTableViewController
 
 //ToDo: Add ability to copy the information in each row
-//ToDo: Handle really long business names that span multiple lines
 //ToDo: Change the color/font of the section titles to make them look nicer
 //ToDo: Change the size of the city row to match the size of the text, for example, regina returned a store with no street address, in that case we only need one line of text not two, the size of the cell should match
 //ToDo: Make the view scrollable again, by making the table view a subview
@@ -71,6 +71,9 @@ CGFloat const headerHeight = 40.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    headerWidth = self.view.frame.size.width;
+    titleLabelWidth = headerWidth - 2 * labelPadding;
+    
     [AnalyticsService logScreenViewWithName:@"Business Detail"];
 	[ThemeHelper setDefaultBackgroundForTableView:self.tableView];
     self.title = @"Store Details";
@@ -91,7 +94,7 @@ CGFloat const headerHeight = 40.0;
     BusinessSummary *businessSummary = bus.businessSummary;
     
     NSMutableArray *data = [[NSMutableArray alloc] init];
-    
+
     NSDictionary *section0 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray array], SECTION_DATA_KEY, businessSummary.name, SECTION_NAME_KEY, nil];
     NSString *phoneSectionTitle = @"Phone";
     MultilineTwoRowTableViewRow *phoneRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.phoneNumber andValueTwo:@"- Call -" andMethod:@selector(phoneCellClicked)];
@@ -182,34 +185,41 @@ CGFloat const headerHeight = 40.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {    
-    CGFloat parentWidth = self.view.frame.size.width;
-    CGFloat viewHeight = headerHeight;
-
-    UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, parentWidth, viewHeight)] autorelease];
+    CGFloat viewHeight = [self tableView:self.tableView heightForHeaderInSection:section];
+    CGFloat mainTitlePadding = 0;
+    CGFloat labelY = 0;
+    
+    if (section == 0) {
+        mainTitlePadding = 10;
+        labelY = mainTitlePadding/2+3;
+    }
+    
+    UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, headerWidth, viewHeight + mainTitlePadding)] autorelease];
     view.backgroundColor = [UIColor clearColor];
-    CGFloat labelPadding = 20.0;
-    CGFloat labelWidth = parentWidth - 2 * labelPadding;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelPadding, 0.0, labelWidth, viewHeight)];
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelPadding, labelY, titleLabelWidth, viewHeight)];
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     label.textColor = [UIColor whiteColor];
-    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
+    label.font = [ThemeHelper tableViewTitleFont];
+    label.lineBreakMode = UILineBreakModeWordWrap;
+    label.numberOfLines = 999;
+    label.backgroundColor = [UIColor clearColor];
     if (section == 0) {
         label.textAlignment = UITextAlignmentCenter;
     } else {
         label.textAlignment = UITextAlignmentLeft;
     }
     
-    label.backgroundColor = [UIColor clearColor];
     [view addSubview:label];
     [label release];
     return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return headerHeight - 20.0;
-    }
-    return headerHeight;
+    NSString *titleText = [self tableView:self.tableView titleForHeaderInSection:section];
+    CGSize size = [titleText sizeWithFont:[ThemeHelper tableViewTitleFont] constrainedToSize:CGSizeMake(titleLabelWidth, 485.0) lineBreakMode:UILineBreakModeWordWrap];
+
+    return size.height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -295,7 +305,7 @@ CGFloat const headerHeight = 40.0;
 }
 
 - (void)addressCellClicked {
-    [self loadAlertViewWithMessage:@"Leave scrap it and view this location in Google Maps?" andOkButtonTile:@"Leave"];
+    [self loadAlertViewWithMessage:@"Leave scrap it and view this location in Maps?" andOkButtonTile:@"Leave"];
 }
 
 - (void)urlCellClicked {
