@@ -12,5 +12,6 @@
 
 + (void)setDefaultBackgroundForTableView:(UITableView *)tableView;
 + (void)setBackgroundForCreditsTableView:(UITableView *)tableView;
++ (UIFont *)tableViewTitleFont;
 
 @end

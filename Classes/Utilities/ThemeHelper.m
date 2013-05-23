@@ -32,4 +32,8 @@
     [tableView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
 }
 
++ (UIFont *)tableViewTitleFont {
+    return [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
+}
+
 @end
