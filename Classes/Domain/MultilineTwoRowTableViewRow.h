@@ -16,6 +16,7 @@
 }
 
 @property UITextAlignment textAlignment;
+@property UITableViewCellSelectionStyle cellSelectionStyle;
 
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method;
 
