@@ -101,7 +101,7 @@ CGFloat const labelPadding = 20.0;
     NSString *callString = nil;
     SEL phoneTappedSelector = nil;
     UITableViewCellSelectionStyle phoneSelectionStyle = UITableViewCellSelectionStyleNone;
-    if (![[UIApplication sharedApplication] canOpenURL:[self phoneUrl]]) {
+    if ([[UIApplication sharedApplication] canOpenURL:[self phoneUrl]]) {
         callString = @"- Call -";
         phoneTappedSelector = @selector(phoneCellClicked);
         phoneSelectionStyle = UITableViewCellSelectionStyleBlue;
