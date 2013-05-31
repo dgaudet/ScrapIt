@@ -97,7 +97,17 @@ CGFloat const labelPadding = 20.0;
 
     NSDictionary *section0 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray array], SECTION_DATA_KEY, businessSummary.name, SECTION_NAME_KEY, nil];
     NSString *phoneSectionTitle = @"Phone";
-    MultilineTwoRowTableViewRow *phoneRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.phoneNumber andValueTwo:@"- Call -" andMethod:@selector(phoneCellClicked)];
+    
+    NSString *callString = nil;
+    SEL phoneTappedSelector = nil;
+    UITableViewCellSelectionStyle phoneSelectionStyle = UITableViewCellSelectionStyleNone;
+    if (![[UIApplication sharedApplication] canOpenURL:[self phoneUrl]]) {
+        callString = @"- Call -";
+        phoneTappedSelector = @selector(phoneCellClicked);
+        phoneSelectionStyle = UITableViewCellSelectionStyleBlue;
+    }
+    MultilineTwoRowTableViewRow *phoneRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.phoneNumber andValueTwo:callString andMethod:@selector(phoneCellClicked)];
+    [phoneRow setCellSelectionStyle:phoneSelectionStyle];
     [data addObject:section0];
     
     NSDictionary *section1 = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:phoneRow, nil], SECTION_DATA_KEY, phoneSectionTitle, SECTION_NAME_KEY, nil];
@@ -293,8 +303,9 @@ CGFloat const labelPadding = 20.0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     lastSelectedIndex = [indexPath retain];
     SEL selector = [(TableViewRow *)[self rowForIndexPath:indexPath] selector];
-    [self performSelectorOnMainThread:selector withObject:nil waitUntilDone:NO];
-    
+    if (selector) {
+        [self performSelectorOnMainThread:selector withObject:nil waitUntilDone:NO];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
