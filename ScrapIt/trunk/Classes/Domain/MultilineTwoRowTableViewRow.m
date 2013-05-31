@@ -22,6 +22,7 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
 @implementation MultilineTwoRowTableViewRow
 
 @synthesize textAlignment;
+@synthesize cellSelectionStyle = _cellSelectionStyle;
 
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method {
     self = [super initWithValue:val andMethod:method];
@@ -30,6 +31,7 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
         _alignment = UITextAlignmentLeft;
         textAlignment = _alignment;
         _value2 = val2;
+        _cellSelectionStyle = UITableViewCellSelectionStyleBlue;
     }
     return self;
 }
@@ -78,6 +80,8 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
     subLabel.frame = subLabelRect;
 	subLabel.text = _value2;
 	
+    [cell setSelectionStyle:_cellSelectionStyle];
+    
     return cell;
 }
 
@@ -88,7 +92,13 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
 
 - (CGFloat)heightForRow {
     CGFloat mainLabelHeight = [self heightForString:value withWidth:[self groupedInnerContentRect].size.width withFont:_font];
-    return mainLabelHeight + MTRTVR_ROW_PADDING;
+    CGFloat height = mainLabelHeight;
+    if (_value2) {
+        height = height + MTRTVR_ROW_PADDING;
+    } else {
+        height = height + 5.0;
+    }
+    return height;
 }
 
 - (CGRect)groupedInnerContentRect {
