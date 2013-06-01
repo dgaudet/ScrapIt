@@ -11,6 +11,30 @@
 		051970D9165978CE009F1A5E /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
 		0521D26116E85540004AB781 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */; };
+		052DCC2E1759875200A39C0B /* ScrapItTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */; };
+		052DCC3517598CBE00A39C0B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052DCC2F17598BD900A39C0B /* OCHamcrestIOS.framework */; };
+		052DCC3617598CC800A39C0B /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052DCC3117598C0D00A39C0B /* OCMockitoIOS.framework */; };
+		052DCC3717598CFC00A39C0B /* ScrapItTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E3140B06E400786A6D /* ScrapItTableViewController.m */; };
+		052DCC3817598D3800A39C0B /* CreditsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EBEE45165C858000F5FAD4 /* CreditsTableViewController.m */; };
+		052DCC3917598D4400A39C0B /* TableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D37A1A14859BE000C9842D /* TableViewRow.m */; };
+		052DCC3A17598D4A00A39C0B /* MultilineTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8F6A31500532100136D6A /* MultilineTableViewRow.m */; };
+		052DCC3B17598D5C00A39C0B /* TwoTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DCAF12167995190098363B /* TwoTableViewRow.m */; };
+		052DCC3C17598D7500A39C0B /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05306D0116ACA43A0006777F /* EmailService.m */; };
+		052DCC3D17598D8900A39C0B /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
+		052DCC3E17598E0400A39C0B /* FeedbackSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B12D5914A2E5A100A8B661 /* FeedbackSelectionTableViewController.m */; };
+		052DCC3F17598E0F00A39C0B /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B6429014EE022C005F59C0 /* LocationHelper.m */; };
+		052DCC4017598E2200A39C0B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E6140B079100786A6D /* MapViewController.m */; };
+		052DCC4117598E2600A39C0B /* SelectionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952DD140B05BA00786A6D /* SelectionListTableViewController.m */; };
+		052DCC4217598E3700A39C0B /* TextInputTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8A9631485B208002D65A1 /* TextInputTableViewRow.m */; };
+		052DCC4317598E3D00A39C0B /* UILoadingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B58FDB14EC837200BB007D /* UILoadingAlertView.m */; };
+		052DCC4417598E4C00A39C0B /* BusinessListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952E0140B067800786A6D /* BusinessListTableViewController.m */; };
+		052DCC4517598E6800A39C0B /* YellowPagesFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CC96521651A713009CC29D /* YellowPagesFooterView.m */; };
+		052DCC4617598E7C00A39C0B /* MapsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 055399621745D239005191C2 /* MapsHelper.m */; };
+		052DCC4717598EA600A39C0B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05306D0416ACA8D60006777F /* MessageUI.framework */; };
+		052DCC4817598EB900A39C0B /* MultilineTextInputTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B3028414C369D700D74AF8 /* MultilineTextInputTableViewRow.m */; };
+		052DCC4917598EBC00A39C0B /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
+		052DCC4A17598EEA00A39C0B /* SelectionTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8A9691485C5CC002D65A1 /* SelectionTableViewRow.m */; };
+		052DCC4B17598F3500A39C0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055399651745DD12005191C2 /* AddressBook.framework */; };
 		052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C7D52613B2EBFC002D518F /* bradCrop.png */; };
 		052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
@@ -188,6 +212,10 @@
 		051970D8165978CE009F1A5E /* CreditsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsView.m; path = Domain/CreditsView.m; sourceTree = "<group>"; };
 		0522F02E1617A958007D9F48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PaperTexture-568h@2x.png"; sourceTree = "<group>"; };
+		052DCC2C1759875200A39C0B /* ScrapItTableViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapItTableViewControllerTest.h; path = Controllers/ScrapItTableViewControllerTest.h; sourceTree = "<group>"; };
+		052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapItTableViewControllerTest.m; path = Controllers/ScrapItTableViewControllerTest.m; sourceTree = "<group>"; };
+		052DCC2F17598BD900A39C0B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = "Unit Tests/Vendors/OCHamcrest/OCHamcrestIOS.framework"; sourceTree = "<group>"; };
+		052DCC3117598C0D00A39C0B /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockitoIOS.framework; path = "Unit Tests/Vendors/OCMockito/OCMockitoIOS.framework"; sourceTree = "<group>"; };
 		052E009D16C55E2C00E5E178 /* ScrapIt_local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapIt_local.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		052E00A016C55E2E00E5E178 /* ScrapIt_local-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ScrapIt_local-Info.plist"; path = "/Users/Dean/Documents/Code/ScrapIt/trunk/ScrapIt_local-Info.plist"; sourceTree = "<absolute>"; };
 		05306D0016ACA43A0006777F /* EmailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailService.h; path = Services/EmailService.h; sourceTree = "<group>"; };
@@ -347,6 +375,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052DCC4B17598F3500A39C0B /* AddressBook.framework in Frameworks */,
+				052DCC4717598EA600A39C0B /* MessageUI.framework in Frameworks */,
+				052DCC3617598CC800A39C0B /* OCMockitoIOS.framework in Frameworks */,
+				052DCC3517598CBE00A39C0B /* OCHamcrestIOS.framework in Frameworks */,
 				0521D26116E85540004AB781 /* Crashlytics.framework in Frameworks */,
 				0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */,
 				05F240BB16001F6800B2CDD1 /* SystemConfiguration.framework in Frameworks */,
@@ -380,6 +412,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052DCC2B1759872C00A39C0B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				052DCC2C1759875200A39C0B /* ScrapItTableViewControllerTest.h */,
+				052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		0534EDED16D28EE800D82133 /* Google */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +437,7 @@
 		056BD3D613DCD6FB0045FF79 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				052DCC2B1759872C00A39C0B /* Controllers */,
 				056BD3D713DCD6FB0045FF79 /* Supporting Files */,
 				056BD3DD13DCD6FB0045FF79 /* Unit_Tests.h */,
 				056BD3DF13DCD6FB0045FF79 /* Unit_Tests.m */,
@@ -597,6 +639,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				052DCC3117598C0D00A39C0B /* OCMockitoIOS.framework */,
+				052DCC2F17598BD900A39C0B /* OCHamcrestIOS.framework */,
 				055399651745DD12005191C2 /* AddressBook.framework */,
 				0534EE1616D2919900D82133 /* CoreData.framework */,
 				05306D0416ACA8D60006777F /* MessageUI.framework */,
@@ -912,6 +956,26 @@
 				05DEDAEC16D1BECF0058A861 /* UserService.m in Sources */,
 				0534EDEA16D2848B00D82133 /* ProvinceService.m in Sources */,
 				0534EDEC16D284BD00D82133 /* Province.m in Sources */,
+				052DCC2E1759875200A39C0B /* ScrapItTableViewControllerTest.m in Sources */,
+				052DCC3717598CFC00A39C0B /* ScrapItTableViewController.m in Sources */,
+				052DCC3817598D3800A39C0B /* CreditsTableViewController.m in Sources */,
+				052DCC3917598D4400A39C0B /* TableViewRow.m in Sources */,
+				052DCC3A17598D4A00A39C0B /* MultilineTableViewRow.m in Sources */,
+				052DCC3B17598D5C00A39C0B /* TwoTableViewRow.m in Sources */,
+				052DCC3C17598D7500A39C0B /* EmailService.m in Sources */,
+				052DCC3D17598D8900A39C0B /* ThemeHelper.m in Sources */,
+				052DCC3E17598E0400A39C0B /* FeedbackSelectionTableViewController.m in Sources */,
+				052DCC3F17598E0F00A39C0B /* LocationHelper.m in Sources */,
+				052DCC4017598E2200A39C0B /* MapViewController.m in Sources */,
+				052DCC4117598E2600A39C0B /* SelectionListTableViewController.m in Sources */,
+				052DCC4217598E3700A39C0B /* TextInputTableViewRow.m in Sources */,
+				052DCC4317598E3D00A39C0B /* UILoadingAlertView.m in Sources */,
+				052DCC4417598E4C00A39C0B /* BusinessListTableViewController.m in Sources */,
+				052DCC4517598E6800A39C0B /* YellowPagesFooterView.m in Sources */,
+				052DCC4617598E7C00A39C0B /* MapsHelper.m in Sources */,
+				052DCC4817598EB900A39C0B /* MultilineTextInputTableViewRow.m in Sources */,
+				052DCC4917598EBC00A39C0B /* MultilineTwoRowTableViewRow.m in Sources */,
+				052DCC4A17598EEA00A39C0B /* SelectionTableViewRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,6 +1061,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCHamcrest\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCMockito\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1026,6 +1092,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCHamcrest\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCMockito\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ScrapIt_Prefix.pch;
@@ -1053,6 +1121,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCHamcrest\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCMockito\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1084,6 +1154,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCHamcrest\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCMockito\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1116,6 +1188,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCHamcrest\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCMockito\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1144,6 +1218,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCHamcrest\"",
+					"\"$(SRCROOT)/Unit Tests/Vendors/OCMockito\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ScrapIt_Prefix.pch;
