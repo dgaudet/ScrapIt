@@ -168,3 +168,13 @@
  *** didChangeAuthStatus called
  *** automatically asked to turn on location services by os
 */
+
+/* Issues found
+* Currently iOS 5.0, 5.1, and 6.1 simulators will ask the user if they want to allow the app to use their location, if the setupLocationManager method calls either the startMonitoringSignificantLocationChanges or startUpdatingLocation methods on the CLLocationManager. However I found that Sam's iPod running iOS 5.1.1 will not ask when calling startMonitoringSignificantLocationChanges, and will ask when calling startUpdatingLocation.
+ * I also found that Nyik San's iPhone running 5.1.1 will ask when calling startMonitoringSignificantLocationChanges. So I do not know if there is a bug with Sam's iPod, or if all iPods require calling startUpdatingLocation, I still need to test a different iPod, especially one running iOS 6.
+ * startMonitoringSignificantLocationChanges
+ ** Works iPhone 4S - iOS 5.1.1, iPhone 4 - iOS 6
+ ** Does not work iPod 4th gen - iOS 5.1.1
+ * startUpdatingLocation
+ ** Works iPhone 3 - iOS 4.2, iPod 4th gen - iOS 5.1.1
+*/
