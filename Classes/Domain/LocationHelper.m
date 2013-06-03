@@ -8,6 +8,7 @@
 
 #import "LocationHelper.h"
 #import "DeviceUtil.h"
+#import "MapsHelper.h"
 
 //ToDo: possibly have the calling class pass in mehtods to be called when manager fails or when a location is found
 //ToDo: when setting up locaiton manager, if there is already a location set, check the timestamp, if it is older than "an hour" then don't return it or something
@@ -44,11 +45,11 @@
 - (void)setupLocationManager {
     NSLog(@"Authorization status before start: %i", [CLLocationManager authorizationStatus]);
     if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
-        if ([DeviceUtil isCurrentDeviceOSOlderThanIos5]) {
+        if ([CLLocationManager significantLocationChangeMonitoringAvailable]) {
+            [locationManager startMonitoringSignificantLocationChanges];
+        } else {
             locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
             [locationManager startUpdatingLocation];
-        } else {
-            [locationManager startMonitoringSignificantLocationChanges];
         }
     }
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
@@ -102,7 +103,8 @@
         [alert show];
         [alert release];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services are currently off.\nYou must go to Settings -> General -> Location Services to Allow us to Determine Your Location"
+        NSString *locationString = [NSString stringWithFormat:@"Location Services are currently off.\n%@", [MapsHelper locationServicesSettingsLocation]];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:locationString
                                                         message:[locationManager purpose]
                                                        delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alert show];
