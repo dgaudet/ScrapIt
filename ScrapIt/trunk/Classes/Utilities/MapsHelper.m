@@ -10,6 +10,7 @@
 #import "EncodingUtil.h"
 #import "Business.h"
 #import "BusinessSummary.h"
+#import "DeviceUtil.h"
 
 @interface MapsHelper (PrivateMethods)
 
@@ -54,6 +55,16 @@
     NSString *urlText = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%f,%f+(%@)", business.businessSummary.geoLocation.latitude, business.businessSummary.geoLocation.longitude, [EncodingUtil urlEncodedString:business.businessSummary.name]];
     NSURL *url = [NSURL URLWithString:urlText];
     [[UIApplication sharedApplication] openURL:url];
+}
+
++ (NSString *)locationServicesSettingsLocation {
+    //iOS 4.2
+    NSString *locationString = @"You must go to Settings -> General -> Location Services to Allow us to Determine Your Location";
+    //iOS 5.1.1
+    // @"You must go to Settings -> Location Services to Allow us to Determine Your Location";
+    //iOS 6.1.3
+    // @"You must go to Settings -> Privacy -> Location Services to Allow us to Determine Your Location";
+    return locationString;
 }
 
 @end

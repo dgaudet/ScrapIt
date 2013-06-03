@@ -16,5 +16,6 @@
 @interface MapsHelper : NSObject
 
 + (void)loadMapsWithLocation:(Business *)business;
++ (NSString *)locationServicesSettingsLocation;
 
 @end
