@@ -20,6 +20,14 @@
     return screenRect.size;
 }
 
++ (BOOL)isCurrentDeviceOSMainVersionEqualTo:(int)versionNum {
+    NSString *version = [UIDevice currentDevice].systemVersion;
+    if ([[version substringToIndex:1] intValue] == versionNum) {
+        return YES;
+    }
+    return NO;
+}
+
 + (BOOL)isCurrentDeviceOSOlderThanIos5 {
     NSString *version = [UIDevice currentDevice].systemVersion;
     if ([[version substringToIndex:1] intValue] < 5) {

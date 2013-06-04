@@ -14,5 +14,6 @@
 + (BOOL)isCurrentDeviceIPhone5;
 + (BOOL)isCurrentDeviceOSOlderThanIos5;
 + (BOOL)isCurrentDeviceOSOlderThanIos43;
++ (BOOL)isCurrentDeviceOSMainVersionEqualTo:(int)versionNum;
 
 @end

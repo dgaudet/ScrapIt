@@ -58,13 +58,17 @@
 }
 
 + (NSString *)locationServicesSettingsLocation {
-    //iOS 4.2
-    NSString *locationString = @"You must go to Settings -> General -> Location Services to Allow us to Determine Your Location";
-    //iOS 5.1.1
-    // @"You must go to Settings -> Location Services to Allow us to Determine Your Location";
     //iOS 6.1.3
-    // @"You must go to Settings -> Privacy -> Location Services to Allow us to Determine Your Location";
-    return locationString;
+    NSString *locationLocation = @"Settings -> Privacy -> Location Services";
+    
+    if ([DeviceUtil isCurrentDeviceOSMainVersionEqualTo:5]) {
+        locationLocation = @"Settings -> Location Services";
+    }
+    if ([DeviceUtil isCurrentDeviceOSOlderThanIos5]) {
+        locationLocation = @"Settings -> General -> Location Services";
+    }
+    
+    return [NSString stringWithFormat:@"You must go to %@ to Allow us to Determine Your Location", locationLocation];
 }
 
 @end
