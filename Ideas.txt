@@ -1,3 +1,12 @@
+* iOS 7 things to do
+** possibly change backgrounds and TableViewController styles
+** Map yellow pages footer is messed up
+*** maybe change the footer to be a white see through style
+** map pin callout should use arrow instead of i
+** Credits and info looks horrible
+** Loading alert doesn't show spinner - not a big deal
+** Province selection background is pretty much useless
+
 * Map screen
 ** Possibly the main screen should have some location search inputs, as well as a current location button
 *** However I am not sure what to do if the current location doesn't yield a valid/usefull city
