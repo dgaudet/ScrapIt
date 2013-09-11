@@ -278,7 +278,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     selectionController.initialCheckedItem = [self textForIndexPath:provRowIndexPath];
     
     UINavigationController *modalNavController = [[UINavigationController alloc] initWithRootViewController:selectionController];
-    modalNavController.navigationBar.tintColor = [UIColor purpleColor];
+    [ThemeHelper setColorForNavBar:modalNavController.navigationBar];
     [selectionController release];
     [self presentModalViewController:modalNavController animated:YES];
     [modalNavController release];
@@ -482,7 +482,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:creditsController];
     [creditsController release];
     
-    navigationController.navigationBar.tintColor = [UIColor purpleColor];
+    [ThemeHelper setColorForNavBar:navigationController.navigationBar];
     [self.navigationController presentModalViewController:navigationController animated:YES];
 }
 
