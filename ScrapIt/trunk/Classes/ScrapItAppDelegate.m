@@ -10,6 +10,7 @@
 #import "ScrapItTableViewController.h"
 #import "AnalyticsService.h"
 #import "DeviceUtil.h"
+#import "ThemeHelper.h"
 
 @implementation ScrapItAppDelegate
 
@@ -28,7 +29,7 @@
     
     ScrapItTableViewController *viewController = [[ScrapItTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    navController.navigationBar.tintColor = [UIColor purpleColor];
+    [ThemeHelper setColorForNavBar:navController.navigationBar];
     [viewController release];
 	
     window.rootViewController = navController;
