@@ -32,6 +32,15 @@
     [tableView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
 }
 
++ (void)setColorForNavBar:(UINavigationBar *)navBar {
+    if ([navBar respondsToSelector:@selector(setBarTintColor:)]) {
+        //iOS 7 style
+        [navBar setBarTintColor:nil];
+    } else {
+        navBar.tintColor = [UIColor purpleColor];
+    }
+}
+
 + (UIFont *)tableViewTitleFont {
     return [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
 }

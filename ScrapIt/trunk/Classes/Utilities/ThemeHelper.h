@@ -12,6 +12,7 @@
 
 + (void)setDefaultBackgroundForTableView:(UITableView *)tableView;
 + (void)setBackgroundForCreditsTableView:(UITableView *)tableView;
++ (void)setColorForNavBar:(UINavigationBar *)navBar;
 + (UIFont *)tableViewTitleFont;
 
 @end
