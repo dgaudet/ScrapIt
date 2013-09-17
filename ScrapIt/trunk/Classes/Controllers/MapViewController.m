@@ -68,13 +68,6 @@
 	
 	[self.view addSubview:mapView];
 	[self addAnnotationsWithPlaceMarks:placemarksForCity];
-    [self addYellowPagesFooterToView:self.view];
-}
-
-- (void)addYellowPagesFooterToView:(UIView *)view {
-    YellowPagesFooterView *footer = [[YellowPagesFooterView alloc] init];
-    [footer displayInView:view animated:YES];
-    [footer release];
 }
 
 /*
@@ -176,17 +169,36 @@
     // Release any cached data, images, etc. that aren't in use.
 }
 
+- (void)addYellowPagesFooterToView:(UIView *)view {
+    if (!footer) {
+        footer = [[YellowPagesFooterView alloc] init];
+    }
+    [footer displayInView:view animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self addYellowPagesFooterToView:self.view];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [footer setHidden:YES];
+}
+
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
 	[mapView release];
     if (alertView) {
         [alertView release];
+    }
+    if (footer) {
+        [footer release];
     }
 	[placemarksForCity release];
     [super dealloc];
