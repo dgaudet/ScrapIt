@@ -41,7 +41,10 @@ float footerHeight = 20.0;
 
 - (void)displayInView:(UIView *)view animated:(BOOL)animated {
     [view addSubview:self];
-    float y = view.frame.size.height - 44;
+    if (self.hidden) {
+        [self setHidden:NO];
+    }
+    float y = view.frame.size.height;
     CGRect startFrame = CGRectMake(view.frame.origin.x, y, view.frame.size.width, footerHeight);
     [self setFrame:startFrame];
     

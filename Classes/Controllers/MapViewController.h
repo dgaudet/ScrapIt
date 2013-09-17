@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 @class UILoadingAlertView;
+@class YellowPagesFooterView;
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
 	MKMapView *mapView;
 	CLLocationCoordinate2D mapCenter;
 	NSArray *placemarksForCity;
     UILoadingAlertView *alertView;
+    YellowPagesFooterView *footer;
 }
 
 @property (nonatomic, retain) NSArray *placemarksForCity;

@@ -80,8 +80,6 @@ CGFloat const labelPadding = 20.0;
     tableData = [[NSArray alloc] initWithArray:[self setupTableData:business]];
     lastSelectedIndex = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     [self.tableView setScrollEnabled:NO];
-    
-    [self addYellowPagesFooterToView:self.view];
 }
 
 - (void)addYellowPagesFooterToView:(UIView *)view {
@@ -153,11 +151,12 @@ CGFloat const labelPadding = 20.0;
     [super viewWillAppear:animated];
 }
 */
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self addYellowPagesFooterToView:self.view];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
