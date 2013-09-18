@@ -35,14 +35,14 @@
         UILabel *dedication = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, frame.size.width, 42)];
         NSString *dedicationText = @"I would like to thank my family for giving me the time, and idea for this project. Without their support none of this would be possible";
         CGSize size = CGSizeMake(frame.size.width, CGFLOAT_MAX);
-        CGSize dedicationLabelSize = [dedicationText sizeWithFont:kSystemDefaultFont constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+        CGSize dedicationLabelSize = [dedicationText sizeWithFont:kSystemDefaultFont constrainedToSize:size lineBreakMode:NSLineBreakByWordWrapping];
         NSLog(@"height: %f width: %f", dedicationLabelSize.height, dedicationLabelSize.width);
         [dedication setFrame:CGRectMake(dedication.frame.origin.x, dedication.frame.origin.y, dedicationLabelSize.width, dedicationLabelSize.height)];
         [dedication setFont:kSystemDefaultFont];
         [dedication setTextColor:[UIColor lightGrayColor]];
-        [dedication setTextAlignment:UITextAlignmentCenter];
+        [dedication setTextAlignment:NSTextAlignmentCenter];
         [dedication setBackgroundColor:[UIColor clearColor]];
-        [dedication setLineBreakMode:UILineBreakModeWordWrap];
+        [dedication setLineBreakMode:NSLineBreakByWordWrapping];
         [dedication setNumberOfLines:0];
         [dedication setText:dedicationText];
         

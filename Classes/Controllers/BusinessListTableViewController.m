@@ -226,7 +226,7 @@ CGFloat const labelPadding = 20.0;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     NSString *titleText = [self tableView:self.tableView titleForHeaderInSection:section];
-    CGSize size = [titleText sizeWithFont:[ThemeHelper tableViewTitleFont] constrainedToSize:CGSizeMake(titleLabelWidth, 485.0) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize size = [titleText sizeWithFont:[ThemeHelper tableViewTitleFont] constrainedToSize:CGSizeMake(titleLabelWidth, 485.0) lineBreakMode:NSLineBreakByWordWrapping];
 
     return size.height;
 }

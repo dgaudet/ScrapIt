@@ -80,14 +80,14 @@
 - (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)businessSummary error:(NSError **)error {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
         *error = [NetworkErrors noWifiError];
-        return [NSArray array];
+        return nil;
     }
     
     NSError *businessError = nil;
     Business *business = [[ScrapItBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary error:&businessError];
     if (businessError) {
         *error = businessError;
-        return [NSArray array];
+        return nil;
     }
     [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
 	return business;
