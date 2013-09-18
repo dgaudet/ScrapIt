@@ -6,6 +6,7 @@
 ** Credits and info looks horrible
 ** Loading alert doesn't show spinner - not a big deal
 ** Province selection background is pretty much useless
+** Need 120x120 icon for iOS 7 Retina iPhone
 
 * Map screen
 ** Possibly the main screen should have some location search inputs, as well as a current location button

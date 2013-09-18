@@ -30,8 +30,8 @@
         self.navigationItem.rightBarButtonItem = rightButton;
         [rightButton release];
         
-        MultilineTextInputTableViewRow *commentsRow = [[MultilineTextInputTableViewRow alloc] initWithValue:nil andNumberOfLines:6 andDelegate:self andMethod:@selector(touchedRow:)];
-        TextInputTableViewRow *emailRow = [[TextInputTableViewRow alloc] initWithValue:nil andLabel:@"Email:" andDelegate:self andMethod:@selector(touchedRow:)];
+        MultilineTextInputTableViewRow *commentsRow = [[MultilineTextInputTableViewRow alloc] initWithValue:nil andNumberOfLines:6 andDelegate:self andMethod:@selector(touchedRow)];
+        TextInputTableViewRow *emailRow = [[TextInputTableViewRow alloc] initWithValue:nil andLabel:@"Email:" andDelegate:self andMethod:@selector(touchedRow)];
         tableData = [[NSArray alloc] initWithObjects:commentsRow, emailRow, nil];
         [emailRow release];
         [commentsRow release];
@@ -50,7 +50,7 @@
 }
 
 - (void)touchedRow {
-    
+    NSLog(@"Touched row called!!");
 }
 
 - (BOOL)isFormValid {
