@@ -173,7 +173,7 @@
     if (!footer) {
         footer = [[YellowPagesFooterView alloc] init];
     }
-    [footer displayInView:view animated:YES];
+    [footer displayInUIViewController:self animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
