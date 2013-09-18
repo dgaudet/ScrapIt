@@ -99,7 +99,7 @@ NSString * const TTVR_CELL_IDENTIFIER = @"TTVR_CELL_IDENTIFIER";
 }
 
 - (CGFloat)heightForString:(NSString *)string withWidth:(CGFloat)width withFont:(UIFont *)font {
-    CGSize size = [string sizeWithFont:font constrainedToSize:CGSizeMake(width, 485.0) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize size = [string sizeWithFont:font constrainedToSize:CGSizeMake(width, 485.0) lineBreakMode:NSLineBreakByWordWrapping];
     CGFloat height = size.height + 5;
     return height;
 }
