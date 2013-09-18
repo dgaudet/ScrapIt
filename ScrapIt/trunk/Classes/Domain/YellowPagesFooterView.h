@@ -13,6 +13,7 @@
     UIButton *_button;
 }
 
-- (void)displayInView:(UIView *)view animated:(BOOL)animated;
+- (void)displayInUIViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (void)displayInUITableViewController:(UITableViewController *)tableViewController animated:(BOOL)animated;
 
 @end

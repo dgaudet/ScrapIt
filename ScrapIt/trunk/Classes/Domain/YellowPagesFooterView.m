@@ -13,6 +13,7 @@
 @interface YellowPagesFooterView (PrivateMethods)
 
 - (void)logoPressed;
+- (void)displayInView:(UIView *)view animated:(BOOL)animated withYOffset:(float)yOffset;
 
 @end
 
@@ -39,12 +40,24 @@ float footerHeight = 20.0;
     return self;
 }
 
-- (void)displayInView:(UIView *)view animated:(BOOL)animated {
+- (void)displayInUITableViewController:(UITableViewController *)tableViewController animated:(BOOL)animated {
+    float yOffset = 0;
+    if ([DeviceUtil isCurrentDeviceOSMainVersionEqualTo:7]) {
+        yOffset = 64;
+    }
+    [self displayInView:tableViewController.view animated:animated withYOffset:yOffset];
+}
+
+- (void)displayInUIViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [self displayInView:viewController.view animated:animated withYOffset:0];
+}
+
+- (void)displayInView:(UIView *)view animated:(BOOL)animated withYOffset:(float)yOffset {
     [view addSubview:self];
     if (self.hidden) {
         [self setHidden:NO];
     }
-    float y = view.frame.size.height;
+    float y = view.frame.size.height - yOffset;
     CGRect startFrame = CGRectMake(view.frame.origin.x, y, view.frame.size.width, footerHeight);
     [self setFrame:startFrame];
     

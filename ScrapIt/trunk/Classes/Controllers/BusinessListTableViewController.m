@@ -84,7 +84,7 @@ CGFloat const labelPadding = 20.0;
 
 - (void)addYellowPagesFooterToView:(UIView *)view {
     YellowPagesFooterView *footer = [[YellowPagesFooterView alloc] init];
-    [footer displayInView:view animated:YES];
+    [footer displayInUITableViewController:self animated:YES];
     [footer release];
 }
 
