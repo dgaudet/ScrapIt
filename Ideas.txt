@@ -1,6 +1,6 @@
 * iOS 7 things to do
 ** possibly change backgrounds and TableViewController styles
-** Map yellow pages footer is messed up
+** Map yellow pages footer
 *** maybe change the footer to be a white see through style
 ** map pin callout should use arrow instead of i
 ** Credits and info looks horrible
