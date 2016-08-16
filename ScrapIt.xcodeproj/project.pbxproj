@@ -735,7 +735,7 @@
 			name = "Unit Tests";
 			productName = "Unit Tests";
 			productReference = 056BD3D213DCD6FB0045FF79 /* Unit Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		1D6058900D05DD3D006BFB54 /* ScrapIt */ = {
 			isa = PBXNativeTarget;
