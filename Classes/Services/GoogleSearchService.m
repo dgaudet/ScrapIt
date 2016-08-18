@@ -38,7 +38,7 @@ NSString * const GOOGLE_OK_STATUS = @"OK";
 	//http://maps.googleapis.com/maps/api/geocode/xml?address=saskatoon,+sk&sensor=false
 	NSString *address = [city stringByAppendingFormat:@", %@", province.code];
     NSString *encodedAddress = [EncodingUtil urlEncodedString:address];
-	NSString *request = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true&region=ca", encodedAddress];
+	NSString *request = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true&region=ca", encodedAddress];
 //    NSLog(@"Google Request: %@", request);
 	NSURL *url = [NSURL URLWithString:request];
 	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
@@ -72,7 +72,7 @@ NSString * const GOOGLE_OK_STATUS = @"OK";
     }
     
     NSString *encodedSearchAddress = [EncodingUtil urlEncodedString:searchAddress];
-    NSString *request = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true&region=ca", encodedSearchAddress];
+    NSString *request = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true&region=ca", encodedSearchAddress];
     
 //    NSLog(@"Request: %@", request);
     
