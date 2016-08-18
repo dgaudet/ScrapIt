@@ -11,11 +11,11 @@
 
 @interface MultilineTwoRowTableViewRow : TableViewRow {
     UIFont *_font;
-    UITextAlignment _alignment;
+    NSTextAlignment _alignment;
     NSString *_value2;
 }
 
-@property UITextAlignment textAlignment;
+@property NSTextAlignment textAlignment;
 @property UITableViewCellSelectionStyle cellSelectionStyle;
 
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method;

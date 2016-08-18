@@ -30,7 +30,7 @@ NSString * const TTVR_CELL_IDENTIFIER = @"TTVR_CELL_IDENTIFIER";
 - (id)initWithValue:(NSString *)val andValueTwo:(NSString *)val2 andMethod:(SEL)method {
     self = [super initWithValue:val andMethod:method];
     if (self) {
-        _textAlignment = UITextAlignmentLeft;
+        _textAlignment = NSTextAlignmentLeft;
         _cellSelectionStyle = UITableViewCellSelectionStyleGray;
         _value2 = val2;
         _label1Font = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];

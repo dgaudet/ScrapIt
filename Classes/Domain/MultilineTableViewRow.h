@@ -11,9 +11,9 @@
 
 @interface MultilineTableViewRow : TableViewRow {
     UIFont *_font;
-    UITextAlignment _alignment;
+    NSTextAlignment _alignment;
 }
 
-@property UITextAlignment textAlignment;
+@property NSTextAlignment textAlignment;
 
 @end

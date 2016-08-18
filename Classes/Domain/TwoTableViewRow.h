@@ -12,7 +12,7 @@
     NSString *_value2;
 }
 
-@property UITextAlignment textAlignment;
+@property NSTextAlignment textAlignment;
 @property (nonatomic, retain) UIFont *label1Font;
 @property (nonatomic, retain) UIColor *label1Color;
 @property (nonatomic, retain) UIFont *label2Font;

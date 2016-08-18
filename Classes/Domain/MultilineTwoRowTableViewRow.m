@@ -28,7 +28,7 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
     self = [super initWithValue:val andMethod:method];
     if (self) {
         _font = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
-        _alignment = UITextAlignmentLeft;
+        _alignment = NSTextAlignmentLeft;
         textAlignment = _alignment;
         _value2 = val2;
         _cellSelectionStyle = UITableViewCellSelectionStyleBlue;
