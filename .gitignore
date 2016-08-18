@@ -1,4 +1,4 @@
-*/*.DS_STORE
+**/*.DS_STORE
 **/xcuserdata
 Podfile.lock
 Pods/
