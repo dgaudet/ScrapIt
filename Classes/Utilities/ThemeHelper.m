@@ -30,6 +30,7 @@
 + (void)setBackgroundForCreditsTableView:(UITableView *)tableView {
     [tableView setBackgroundView:nil];
     [tableView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 + (void)setColorForNavBar:(UINavigationBar *)navBar {
