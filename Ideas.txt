@@ -4,6 +4,8 @@
 *** maybe change the footer to be a white see through style
 ** Loading alert doesn't show spinner - not a big deal
 ** Need 120x120 icon for iOS 7 Retina iPhone
+** Get rid of JsonFramework and probably use a cocoapods json framework instead
+** Use Asset Catalog for images
 
 * Map screen
 ** Possibly the main screen should have some location search inputs, as well as a current location button

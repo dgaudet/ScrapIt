@@ -100,8 +100,8 @@
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
 		0534EDEA16D2848B00D82133 /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
 		0534EDEC16D284BD00D82133 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
-		0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
-		0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		0534EE1516D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0534EE1716D2919A00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
@@ -133,12 +133,12 @@
 		05856EAF13987F2E00BCA74E /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA513987F2E00BCA74E /* SBJsonTokeniser.m */; };
 		05856EB013987F2E00BCA74E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA713987F2E00BCA74E /* SBJsonWriter.m */; };
 		0587664B13C104570005F9A1 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
-		0598D35A1D971FBD00604353 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; settings = {ASSET_TAGS = (); }; };
-		0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; settings = {ASSET_TAGS = (); }; };
-		0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; settings = {ASSET_TAGS = (); }; };
-		0598D3781D9819F700604353 /* BookIconTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3761D9819F700604353 /* BookIconTest.png */; settings = {ASSET_TAGS = (); }; };
-		0598D3791D9819F700604353 /* BookIconTest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3771D9819F700604353 /* BookIconTest@2x.png */; settings = {ASSET_TAGS = (); }; };
-		0598D37B1D981D9200604353 /* ScrapIt_local-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */; settings = {ASSET_TAGS = (); }; };
+		0598D35A1D971FBD00604353 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; };
+		0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; };
+		0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; };
+		0598D3781D9819F700604353 /* BookIconTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3761D9819F700604353 /* BookIconTest.png */; };
+		0598D3791D9819F700604353 /* BookIconTest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3771D9819F700604353 /* BookIconTest@2x.png */; };
+		0598D37B1D981D9200604353 /* ScrapIt_local-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */; };
 		05A1FCDD14DA34CB000E87CE /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05ACA96114074EBB007CDEFC /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
 		05ACA966140750F5007CDEFC /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
@@ -777,7 +777,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ScrapIt" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1098,6 +1098,7 @@
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
 				OTHER_CFLAGS = "-DTest";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deansapps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScrapIt_local;
 			};
 			name = Debug;
@@ -1130,6 +1131,7 @@
 					"-DNS_BLOCK_ASSERTIONS=1",
 					"-DTest",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deansapps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScrapIt_local;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1163,6 +1165,7 @@
 					"-framework",
 					SenTestingKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scrapit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1193,6 +1196,7 @@
 					"-framework",
 					SenTestingKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scrapit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1224,6 +1228,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deangaudet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Find Scraps";
 			};
 			name = Debug;
@@ -1253,6 +1258,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deangaudet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Find Scraps";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1FB110A8-3C65-4E7C-8B57-8ABDE8DB9335";
 				VALIDATE_PRODUCT = YES;
@@ -1262,19 +1268,29 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.0.0;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1282,17 +1298,25 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.0.0;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
