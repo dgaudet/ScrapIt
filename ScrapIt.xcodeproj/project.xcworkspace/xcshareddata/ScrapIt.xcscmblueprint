@@ -1,18 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++A51DB4B",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++8242E57",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++5DEA4D9" : 0,
-    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++A51DB4B" : 0,
-    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++7B6E681" : 0
+    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++B1C1E57" : 0,
+    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++D1D3DB2" : 0,
+    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++8242E57" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "89D02AFD-AD0F-486C-ACB7-FC558018A8A4",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++5DEA4D9" : "..\/..\/..\/Dean\/Documents\/Code\/ScrapIt",
-    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++A51DB4B" : "ScrapIt\/",
-    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++7B6E681" : "..\/..\/..\/Dean\/Documents\/Code\/ScrapIt"
+    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++B1C1E57" : "..\/..\/..\/Dean\/Documents\/Code\/ScrapIt",
+    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++D1D3DB2" : "..\/..\/..\/Dean\/Documents\/Code\/ScrapIt",
+    "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++8242E57" : "ScrapIt\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ScrapIt",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -21,17 +21,17 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dgaudet\/ScrapIt.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++5DEA4D9"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++8242E57"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dgaudet\/ScrapIt.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++7B6E681"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++B1C1E57"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dgaudet\/ScrapIt.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++A51DB4B"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED5D78884DFF68ADC2DCD2E6BEE050C8AD3F2CF8+++D1D3DB2"
     }
   ]
 }
