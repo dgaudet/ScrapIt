@@ -28,14 +28,6 @@
         self.title = @"Select a Province";
     }
 
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
-    self.navigationItem.rightBarButtonItem = doneButton;
-    [doneButton release];
-    
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed)];
-    self.navigationItem.leftBarButtonItem = cancelButton;
-    [cancelButton release];
-    
     tableData = [[NSArray alloc] initWithArray:[[[[ProvinceService sharedInstance] retrieveAllProvinces] allObjects] sortedArrayUsingSelector:@selector(compare:)]];
     currentSelectedRow = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     return self;
@@ -189,7 +181,7 @@
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     
-//    [tableView reloadData];
+    [self donePressed];
 }
 
 - (void)dealloc {

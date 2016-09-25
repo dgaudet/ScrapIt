@@ -273,15 +273,12 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)selectedProvinceCell {
     [self hideKeyboard];
     
-    SelectionListTableViewController *selectionController = [[SelectionListTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    SelectionListTableViewController *selectionController = [[SelectionListTableViewController alloc] initWithStyle:UITableViewStylePlain];
     selectionController.delegate = self;
     selectionController.initialCheckedItem = [self textForIndexPath:provRowIndexPath];
     
-    UINavigationController *modalNavController = [[UINavigationController alloc] initWithRootViewController:selectionController];
-    [ThemeHelper setColorForNavBar:modalNavController.navigationBar];
+    [self.navigationController pushViewController:selectionController animated:YES];
     [selectionController release];
-    [self presentModalViewController:modalNavController animated:YES];
-    [modalNavController release];
 }
 
 - (void)selectedLocationCell {
@@ -416,7 +413,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     
     [self updateProvince:selectedItem];
     [self.tableView reloadData];
-    [controller dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Loading Progress UI
