@@ -31,7 +31,6 @@
 * We need to do the leg work to find out information about each business in each city, that's where the money is, in the ability to know infomration about all the stores out there
 
 * Items Required for next release
-** update settings
 ** get required images
 *** required icons
 **** https://developer.apple.com/library/content/qa/qa1686/_index.html
@@ -46,4 +45,4 @@
 ** ensure that this log message -canOpenURL: failed for URL: "tel:403-451-9930" - error: "This app is not allowed to query for scheme tel
 *** should not show up on a phone, it happens when you go to the detail view
 * nice to have *
-** map pin callout should use arrow instead of i
+** Does map callout chevron work on iPhone 5s?

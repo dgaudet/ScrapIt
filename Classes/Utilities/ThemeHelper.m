@@ -33,6 +33,9 @@
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
++ (void)setBackgroundForProvinceTableView:(UITableView *)tableView {
+}
+
 + (void)setColorForNavBar:(UINavigationBar *)navBar {
     if ([navBar respondsToSelector:@selector(setBarTintColor:)]) {
         //iOS 7 style
@@ -40,6 +43,14 @@
     } else {
         navBar.tintColor = [UIColor purpleColor];
     }
+}
+
++ (UIView *)viewForMapAnnotationCallout {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIImage *disclosureImage = [[UIImage imageNamed:@"chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    button.frame = CGRectMake(0, 0, disclosureImage.size.width, disclosureImage.size.height);
+    [button setImage:disclosureImage forState:UIControlStateNormal];
+    return button;
 }
 
 + (UIFont *)tableViewTitleFont {

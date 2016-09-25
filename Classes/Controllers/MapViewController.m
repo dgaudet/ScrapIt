@@ -13,6 +13,7 @@
 #import "UILoadingAlertView.h"
 #import "YellowPagesFooterView.h"
 #import "AnalyticsService.h"
+#import "ThemeHelper.h"
 
 //ToDo: do the correct thing? when you try to get a cities location but there isn't one found
 
@@ -95,12 +96,7 @@
 		annotationView.canShowCallout = YES;
 	}
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    UIImage *disclosureImage = [[UIImage imageNamed:@"chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    button.frame = CGRectMake(0, 0, disclosureImage.size.width, disclosureImage.size.height);
-    [button setImage:disclosureImage forState:UIControlStateNormal];
-    
-	annotationView.rightCalloutAccessoryView = button;
+	annotationView.rightCalloutAccessoryView = [ThemeHelper viewForMapAnnotationCallout];
 	annotationView.annotation = annotation;
 	
 	return annotationView;

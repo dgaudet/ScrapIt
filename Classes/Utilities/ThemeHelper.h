@@ -12,7 +12,9 @@
 
 + (void)setDefaultBackgroundForTableView:(UITableView *)tableView;
 + (void)setBackgroundForCreditsTableView:(UITableView *)tableView;
++ (void)setBackgroundForProvinceTableView:(UITableView *)tableView;
 + (void)setColorForNavBar:(UINavigationBar *)navBar;
++ (UIView *)viewForMapAnnotationCallout;
 + (UIFont *)tableViewTitleFont;
 
 @end
