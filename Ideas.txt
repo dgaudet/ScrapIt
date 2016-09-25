@@ -36,6 +36,7 @@
 *** required icons
 **** https://developer.apple.com/library/content/qa/qa1686/_index.html
 *** required startup image
+**** https://developer.apple.com/ios/human-interface-guidelines/graphics/launch-screen/
 *** required background
 *** iTunes Connect/App Store images
 **** https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Appendices/Properties.html#//apple_ref/doc/uid/TP40011225-CH26-SW2

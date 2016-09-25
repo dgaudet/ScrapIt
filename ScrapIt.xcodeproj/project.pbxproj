@@ -133,6 +133,9 @@
 		05856EAF13987F2E00BCA74E /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA513987F2E00BCA74E /* SBJsonTokeniser.m */; };
 		05856EB013987F2E00BCA74E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA713987F2E00BCA74E /* SBJsonWriter.m */; };
 		0587664B13C104570005F9A1 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
+		0598D35A1D971FBD00604353 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; settings = {ASSET_TAGS = (); }; };
+		0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; settings = {ASSET_TAGS = (); }; };
+		0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; settings = {ASSET_TAGS = (); }; };
 		05A1FCDD14DA34CB000E87CE /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05ACA96114074EBB007CDEFC /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
 		05ACA966140750F5007CDEFC /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
@@ -267,6 +270,9 @@
 		05856EA613987F2E00BCA74E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		05856EA713987F2E00BCA74E /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		0587664A13C104570005F9A1 /* Ideas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ideas.txt; sourceTree = "<group>"; };
+		0598D3581D971FBD00604353 /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
+		0598D3591D971FBD00604353 /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
+		0598D35C1D9721AC00604353 /* chevron@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@3x.png"; sourceTree = "<group>"; };
 		05A1FCDB14DA34CB000E87CE /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceUtil.h; path = Utilities/DeviceUtil.h; sourceTree = "<group>"; };
 		05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceUtil.m; path = Utilities/DeviceUtil.m; sourceTree = "<group>"; };
 		05ACA95F14074EBB007CDEFC /* Province.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Province.h; path = Domain/Province.h; sourceTree = "<group>"; };
@@ -669,6 +675,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0598D35C1D9721AC00604353 /* chevron@3x.png */,
+				0598D3581D971FBD00604353 /* chevron.png */,
+				0598D3591D971FBD00604353 /* chevron@2x.png */,
 				05FBC3F015916B6500C8CC2A /* BookIcon.png */,
 				0502CC40162E47C900DB0C2C /* BookIcon@2x.png */,
 				05C7D52613B2EBFC002D518F /* bradCrop.png */,
@@ -820,14 +829,17 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				05C7D52713B2EBFD002D518F /* bradCrop.png in Resources */,
 				0587664B13C104570005F9A1 /* Ideas.txt in Resources */,
+				0598D35A1D971FBD00604353 /* chevron.png in Resources */,
 				05B1C9871475F339009F0719 /* LocationTest.gpx in Resources */,
 				05B2B3751556F005001F15F4 /* PaperTexture.png in Resources */,
 				05B2B3761556F005001F15F4 /* PaperTexture@2x.png in Resources */,
+				0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */,
 				05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */,
 				0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
 				05CC96501651A462009CC29D /* YellowPagesLogo@2x.png in Resources */,
 				0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */,
+				0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

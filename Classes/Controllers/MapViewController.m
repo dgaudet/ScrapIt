@@ -94,8 +94,12 @@
 //		annotationView.image = [UIImage imageNamed:@"bradCrop.png"];
 		annotationView.canShowCallout = YES;
 	}
-	
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIImage *disclosureImage = [[UIImage imageNamed:@"chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    button.frame = CGRectMake(0, 0, disclosureImage.size.width, disclosureImage.size.height);
+    [button setImage:disclosureImage forState:UIControlStateNormal];
+    
 	annotationView.rightCalloutAccessoryView = button;
 	annotationView.annotation = annotation;
 	
