@@ -10,7 +10,7 @@
 #import "DeviceUtil.h"
 #import "Constants.h"
 #import "DeviceService.h"
-#import "GAI.h"
+//#import "GAI.h"
 #import "BusinessSummary.h"
 #import <Crashlytics/Crashlytics.h>
 
@@ -36,8 +36,8 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 @implementation AnalyticsService
 
 + (void)startTrackingAnalytics {    
-    [GAI sharedInstance].dispatchInterval = 20;
-    [[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
+    //[GAI sharedInstance].dispatchInterval = 20;
+    //[[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
     [Crashlytics startWithAPIKey:kCrashlyticsCode];
 }
 
@@ -110,7 +110,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logScreenViewWithName:(NSString *)name {
-    [[GAI sharedInstance].defaultTracker sendView:name];
+    //[[GAI sharedInstance].defaultTracker sendView:name];
 }
 
 + (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary {
@@ -123,7 +123,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logEventThroughGoogleCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label {
-    [[GAI sharedInstance].defaultTracker sendEventWithCategory:category withAction:action withLabel:label withValue:nil];
+    //[[GAI sharedInstance].defaultTracker sendEventWithCategory:category withAction:action withLabel:label withValue:nil];
 }
 
 + (void)logEventThroughCrashlytics:(NSString *)value forKey:(NSString *)key {
