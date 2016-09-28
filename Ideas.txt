@@ -55,4 +55,5 @@
 ** Fix 'Find Stores Near You'
 ** Fix issue when you choose Yukon -> Yellowknife, and with keyboard still displaying hit search, the keyboard does some odd stuff
 ** fix viewing the map for the first time does some odd stuff
-** Turn off device rotation
+** -Turn off device rotation-
+** fix warnings

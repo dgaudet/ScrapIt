@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
+		0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */; };
 		051782121D9A093400A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
 		051782141D9A093B00A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
 		051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
@@ -141,7 +142,6 @@
 		0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; };
 		0598D3781D9819F700604353 /* BookIconTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3761D9819F700604353 /* BookIconTest.png */; };
 		0598D3791D9819F700604353 /* BookIconTest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3771D9819F700604353 /* BookIconTest@2x.png */; };
-		0598D37B1D981D9200604353 /* ScrapIt_local-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */; };
 		05A1FCDD14DA34CB000E87CE /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05ACA96114074EBB007CDEFC /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
 		05ACA966140750F5007CDEFC /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
@@ -829,6 +829,7 @@
 				052E006116C55E2C00E5E178 /* BookIcon@2x.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
 				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
+				0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */,
 				05BEC72A16D9564A002DD780 /* PaperTexture-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -846,7 +847,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0598D37B1D981D9200604353 /* ScrapIt_local-Info.plist in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				05C7D52713B2EBFD002D518F /* bradCrop.png in Resources */,
 				0587664B13C104570005F9A1 /* Ideas.txt in Resources */,
