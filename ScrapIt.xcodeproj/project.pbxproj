@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
+		051782121D9A093400A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
+		051782141D9A093B00A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
+		051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
+		051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
 		051970D9165978CE009F1A5E /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
 		0521D26116E85540004AB781 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */; };
@@ -38,7 +42,6 @@
 		052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C7D52613B2EBFC002D518F /* bradCrop.png */; };
 		052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
-		052E005D16C55E2C00E5E178 /* LocationTest.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 05B1C9861475F339009F0719 /* LocationTest.gpx */; };
 		052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3731556F005001F15F4 /* PaperTexture.png */; };
 		052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3741556F005001F15F4 /* PaperTexture@2x.png */; };
 		052E006016C55E2C00E5E178 /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
@@ -146,7 +149,6 @@
 		05ACA9681407516B007CDEFC /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
 		05ACA9691407516B007CDEFC /* BusinessSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA965140750F5007CDEFC /* BusinessSummary.m */; };
 		05B12D5A14A2E5A100A8B661 /* FeedbackSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B12D5914A2E5A100A8B661 /* FeedbackSelectionTableViewController.m */; };
-		05B1C9871475F339009F0719 /* LocationTest.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 05B1C9861475F339009F0719 /* LocationTest.gpx */; };
 		05B2B3751556F005001F15F4 /* PaperTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3731556F005001F15F4 /* PaperTexture.png */; };
 		05B2B3761556F005001F15F4 /* PaperTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3741556F005001F15F4 /* PaperTexture@2x.png */; };
 		05B2F447146A1AAB008CE996 /* EncodingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B2F446146A1AAB008CE996 /* EncodingUtil.m */; };
@@ -214,6 +216,8 @@
 
 /* Begin PBXFileReference section */
 		0502CC40162E47C900DB0C2C /* BookIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookIcon@2x.png"; sourceTree = "<group>"; };
+		051782101D9A093400A65672 /* Calgary.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Calgary.gpx; sourceTree = "<group>"; };
+		051782161D9A0D5000A65672 /* Saskatoon.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Saskatoon.gpx; sourceTree = "<group>"; };
 		051970D7165978CE009F1A5E /* CreditsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsView.h; path = Domain/CreditsView.h; sourceTree = "<group>"; };
 		051970D8165978CE009F1A5E /* CreditsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsView.m; path = Domain/CreditsView.m; sourceTree = "<group>"; };
 		0522F02E1617A958007D9F48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -288,7 +292,6 @@
 		05ACA965140750F5007CDEFC /* BusinessSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BusinessSummary.m; path = Domain/BusinessSummary.m; sourceTree = "<group>"; };
 		05B12D5814A2E5A100A8B661 /* FeedbackSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackSelectionTableViewController.h; path = Controllers/FeedbackSelectionTableViewController.h; sourceTree = "<group>"; };
 		05B12D5914A2E5A100A8B661 /* FeedbackSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackSelectionTableViewController.m; path = Controllers/FeedbackSelectionTableViewController.m; sourceTree = "<group>"; };
-		05B1C9861475F339009F0719 /* LocationTest.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LocationTest.gpx; sourceTree = "<group>"; };
 		05B2B3731556F005001F15F4 /* PaperTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperTexture.png; sourceTree = "<group>"; };
 		05B2B3741556F005001F15F4 /* PaperTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PaperTexture@2x.png"; sourceTree = "<group>"; };
 		05B2F445146A1AAB008CE996 /* EncodingUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EncodingUtil.h; path = Utilities/EncodingUtil.h; sourceTree = "<group>"; };
@@ -680,6 +683,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				051782161D9A0D5000A65672 /* Saskatoon.gpx */,
+				051782101D9A093400A65672 /* Calgary.gpx */,
 				0598D3761D9819F700604353 /* BookIconTest.png */,
 				0598D3771D9819F700604353 /* BookIconTest@2x.png */,
 				0598D35C1D9721AC00604353 /* chevron@3x.png */,
@@ -697,7 +702,6 @@
 				8D1107310486CEB800E47090 /* ScrapIt-Info.plist */,
 				0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */,
 				0587664A13C104570005F9A1 /* Ideas.txt */,
-				05B1C9861475F339009F0719 /* LocationTest.gpx */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -814,10 +818,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051782141D9A093B00A65672 /* Calgary.gpx in Resources */,
 				052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */,
+				051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */,
 				052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */,
 				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
-				052E005D16C55E2C00E5E178 /* LocationTest.gpx in Resources */,
 				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
 				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
 				052E006016C55E2C00E5E178 /* BookIcon.png in Resources */,
@@ -847,10 +852,11 @@
 				0587664B13C104570005F9A1 /* Ideas.txt in Resources */,
 				0598D35A1D971FBD00604353 /* chevron.png in Resources */,
 				0598D3791D9819F700604353 /* BookIconTest@2x.png in Resources */,
-				05B1C9871475F339009F0719 /* LocationTest.gpx in Resources */,
 				05B2B3751556F005001F15F4 /* PaperTexture.png in Resources */,
 				05B2B3761556F005001F15F4 /* PaperTexture@2x.png in Resources */,
+				051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */,
 				0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */,
+				051782121D9A093400A65672 /* Calgary.gpx in Resources */,
 				0598D3781D9819F700604353 /* BookIconTest.png in Resources */,
 				05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */,
 				0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */,

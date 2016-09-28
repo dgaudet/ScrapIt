@@ -19,6 +19,7 @@
 - (void)setupLocationManager;
 - (void)displayCheckSettingsAlert;
 - (BOOL)canSendUserToSettings;
+- (NSString *)locationUsePurpose;
 
 @end
 
@@ -37,14 +38,16 @@
 - (void)initializeLocationManager {
     if (locationManager == nil) {
         locationManager = [[CLLocationManager alloc] init];
-        [locationManager setPurpose:@"Used to Find stores close to you"];
         [locationManager setDelegate:self];
     }
 }
 
 - (void)setupLocationManager {
     NSLog(@"Authorization status before start: %i", [CLLocationManager authorizationStatus]);
-    if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [locationManager requestWhenInUseAuthorization];
+    }
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
         if ([CLLocationManager significantLocationChangeMonitoringAvailable]) {
             [locationManager startMonitoringSignificantLocationChanges];
         } else {
@@ -59,7 +62,10 @@
             [self.delegate locationHelper:self didFailWithError:error];
         }
     }
-    
+}
+
+- (NSString *)locationUsePurpose {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"];
 }
 
 - (BOOL)canSendUserToSettings {
@@ -71,7 +77,7 @@
 
 -(CLLocation *)findCurrentLocation {
     [self setupLocationManager];
-    if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         if(locationManager.location){
             return locationManager.location;
         }
@@ -79,9 +85,11 @@
     return nil;
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations {
+    CLLocation *newLocation = locations.lastObject;
+    NSLog(@"DID_UPDATE_TO_LOCATION - New Location: %.5f, longitude: %.5f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     if ([delegate respondsToSelector:@selector(locationHelper:didUpdateToLocation:fromLocation:)]) {
-        [self.delegate locationHelper:self didUpdateToLocation:newLocation fromLocation:oldLocation];
+        [self.delegate locationHelper:self didUpdateToLocation:newLocation fromLocation:nil];
     }
 }
 
@@ -93,19 +101,26 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     NSLog(@"DID_CHANGE_AUTH_STATUS - Authorization status has changed: %i", status);
+    NSLog(@"Location: %@", locationManager.location);
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways) {
+        [self locationManager:locationManager didUpdateLocations:[NSArray arrayWithObject:locationManager.location]];
+    } else if(status == kCLAuthorizationStatusDenied){
+        NSError *error = [NSError errorWithDomain:kCLErrorDomain code:kCLErrorDenied userInfo:nil];
+        [self locationManager:locationManager didFailWithError:error];
+    }
 }
 
 - (void)displayCheckSettingsAlert {
     if ([self canSendUserToSettings]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Turn On Location Services to Allow us to Determine Your Location"
-                                                        message:[locationManager purpose]
+                                                        message:[self locationUsePurpose]
                                                        delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Settings", nil];
         [alert show];
         [alert release];
     } else {
         NSString *locationString = [NSString stringWithFormat:@"Location Services are currently off.\n%@", [MapsHelper locationServicesSettingsLocation]];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:locationString
-                                                        message:[locationManager purpose]
+                                                        message:[self locationUsePurpose]
                                                        delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alert show];
         [alert release];
