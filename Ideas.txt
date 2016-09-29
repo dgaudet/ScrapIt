@@ -12,6 +12,7 @@
 ** If there are more than one store in a city with no location, they show up in the middle of the city, and clicking on the pin
 *** multiple times loads different stores, not sure what to do about this but probably something
 ** If a store has no address the address row in store details should be different
+** Replace all UIAlertView's with UIAlertController
 
 * Map screen
 ** Possibly the main screen should have some location search inputs, as well as a current location button
@@ -52,8 +53,8 @@
 *** should not show up on a phone, it happens when you go to the detail view
 * nice to have *
 ** Does map callout chevron work anywhere?
-** Fix 'Find Stores Near You'
-** Fix issue when you choose Yukon -> Yellowknife, and with keyboard still displaying hit search, the keyboard does some odd stuff
-** fix viewing the map for the first time does some odd stuff
+** -Fix 'Find Stores Near You'-
+** -Fix issue when you choose Yukon -> Yellowknife, and with keyboard still displaying hit search, the keyboard does some odd stuff-
+** -fix viewing the map for the first time does some odd stuff-
 ** -Turn off device rotation-
 ** fix warnings

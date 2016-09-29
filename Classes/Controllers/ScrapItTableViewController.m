@@ -430,7 +430,8 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 
 #pragma mark - User Location Methods
 #pragma mark - Location Manager Region
-- (void)setupLocationManager {    
+- (void)setupLocationManager {
+    [self setButtonSelectedFalseIfNeeded];
     if (!locationHelper) {
         locationHelper = [[LocationHelper alloc] init];
         locationHelper.delegate = self;
