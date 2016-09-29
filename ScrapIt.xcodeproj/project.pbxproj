@@ -788,6 +788,7 @@
 					};
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = GEK772SQ7W;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1217,7 +1218,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1245,8 +1248,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dean Gaudet";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1264,7 +1269,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deangaudet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Find Scraps";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1FB110A8-3C65-4E7C-8B57-8ABDE8DB9335";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

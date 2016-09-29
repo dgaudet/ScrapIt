@@ -6,6 +6,7 @@
 ** Need 120x120 icon for iOS 7 Retina iPhone
 ** Get rid of JsonFramework and probably use a cocoapods json framework instead
 ** Use Asset Catalog for images
+*** The App Distribution Guide has information on migrating assets to an Asset Catalog
 ** Switch to ARC
 ** Get Crashyltics Working
 ** Get GoogleAnalytics Working
