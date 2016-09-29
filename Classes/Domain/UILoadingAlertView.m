@@ -10,31 +10,28 @@
 
 @implementation UILoadingAlertView
 
-- (id)init {
-    return [self initWithTitle:@"Loading ..."];
-}
-
-- (id)initWithTitle:(NSString *)title {
+- (id)initWithTitle:(NSString *)title inController:(UIViewController *)controller {
     self = [super init];
     if(self){
-        alertView = [[UIAlertView alloc] initWithTitle:title message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-        UIApplication* app = [UIApplication sharedApplication]; 
+        alertView = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+        _parentController = controller;
+        UIApplication* app = [UIApplication sharedApplication];
         app.networkActivityIndicatorVisible = YES;
         spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];        
         [spinner startAnimating];
         spinner.frame = CGRectMake(130, 50, 25, 25);
         
-        [alertView addSubview:spinner];
+        //[alertView addSubview:spinner];
     }
     return self;
 }
 
 
-- (void)show {
-    [alertView show];
+- (void)showAnimated:(BOOL)animated completion:(void (^)(void))completion {
+    [_parentController presentViewController:alertView animated:animated completion:completion];
 }
 
-- (void)dismiss {
+- (void)dismissAnimated:(BOOL)animated completion:(void (^)(void))completion {
     if (spinner) {
         UIApplication* app = [UIApplication sharedApplication]; 
         app.networkActivityIndicatorVisible = NO;
@@ -43,7 +40,7 @@
         [spinner release];
         spinner = nil;
     }
-    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+    [_parentController dismissViewControllerAnimated:animated completion:completion];
 }
 
 - (void)dealloc {

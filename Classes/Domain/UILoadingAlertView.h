@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface UILoadingAlertView : NSObject {
-    UIAlertView *alertView;
+    UIAlertController *alertView;
+    UIViewController *_parentController;
     UIActivityIndicatorView *spinner;
 }
 
-- (id)initWithTitle:(NSString *)title;
-- (void)show;
-- (void)dismiss;
+- (id)initWithTitle:(NSString *)title inController:(UIViewController *)controller;
+- (void)showAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)dismissAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
 @end

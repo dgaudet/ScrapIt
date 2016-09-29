@@ -49,10 +49,10 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)displayErrorToUser:(NSError *)error;
 - (void)displayNoResultsErrorToUser;
 - (void)displayLocationHelperErrorToUser;
-+ (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message;
+- (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message;
 - (void)loadMapViewOrDisplayErrorForLocation:(CLLocationCoordinate2D)location andTitle:(NSString *)title;
 - (void)loadMapViewControllerwithTitle:(NSString *)title mapCenter:(CLLocationCoordinate2D)mapCenter placemarks:(NSArray *)placemarks;
-- (void)showLoadingIndicators;
+- (void)showLoadingIndicatorsCompletion:(void (^)(void))completion;
 - (void)hideLoadingIndicators;
 - (void)setButtonSelectedFalseIfNeeded;
 - (void)addInfoButtonToView;
@@ -295,7 +295,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
         Province *province = [[ProvinceService sharedInstance] retrieveProvinceWithName:[self textForIndexPath:provRowIndexPath]];
         [self findStoresforCity:textField.text inProvince:province];
     } else {
-        [ScrapItTableViewController displayAlertWithTitle:nil message:@"Please enter a city"];
+        [self displayAlertWithTitle:nil message:@"Please enter a city"];
         [self setButtonSelectedFalseIfNeeded];
     }
 }
@@ -306,89 +306,83 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 
 - (void)findStoresforCity:(NSString *)city inProvince:(Province *)province {
 //    http://developer.apple.com/library/ios/#documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationQueues/OperationQueues.html
-//    Adding tasks to a queue    
-    [self showLoadingIndicators];
-    dispatch_queue_t myCustomQueue;
-    myCustomQueue = dispatch_queue_create([[[NSBundle mainBundle] bundleIdentifier] UTF8String], NULL);
-    
-    dispatch_async(myCustomQueue, ^{        
+//    Adding tasks to a queue
+    [self showLoadingIndicatorsCompletion:^{
         NSError *error = nil;
         CLLocationCoordinate2D cityCoords = [[SearchService sharedInstance] retrieveCenterCoordinatesForCity:city inProvince:province error:&error];
+        [self setButtonSelectedFalseIfNeeded];
         if (error) {
-            [self performSelectorOnMainThread:@selector(displayErrorToUser:) withObject:error waitUntilDone:NO];
+            [self displayErrorToUser:error];
         } else {
             [self loadMapViewOrDisplayErrorForLocation:cityCoords andTitle:city];
         }
-    });
+    }];
 }
 
 - (void)findStoresforCoords:(CLLocationCoordinate2D)location {
-    //    Adding tasks to a queue    
-    [self showLoadingIndicators];
-    dispatch_queue_t myCustomQueue;    
-    myCustomQueue = dispatch_queue_create([[[NSBundle mainBundle] bundleIdentifier] UTF8String], NULL);    
-    dispatch_async(myCustomQueue, ^{        
+    [self showLoadingIndicatorsCompletion:^{
         [self loadMapViewOrDisplayErrorForLocation:location andTitle:@"Mapped Stores"];
-    });
+    }];
 }
 
 - (void)loadMapViewOrDisplayErrorForLocation:(CLLocationCoordinate2D)location andTitle:(NSString *)title {
     NSError *error = nil;
     NSArray *placemarks = [[SearchService sharedInstance] retrievePlacemarksForCoordinates:location error:&error];
+    [self setButtonSelectedFalseIfNeeded];
     if (error) {
-        [self performSelectorOnMainThread:@selector(displayErrorToUser:) withObject:error waitUntilDone:NO];
+        [self displayErrorToUser:error];
     } else {
         if ([placemarks count] > 0) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self loadMapViewControllerwithTitle:title mapCenter:location placemarks:placemarks];
-            });
+            [self loadMapViewControllerwithTitle:title mapCenter:location placemarks:placemarks];
         } else {
-            [self performSelectorOnMainThread:@selector(displayNoResultsErrorToUser) withObject:nil waitUntilDone:NO];
+            [self displayNoResultsErrorToUser];
         }
     }
 }
 
 - (void)loadMapViewControllerwithTitle:(NSString *)title mapCenter:(CLLocationCoordinate2D)mapCenter placemarks:(NSArray *)placemarks {
-    [self hideLoadingIndicators];
-    MapViewController *mapController = [[MapViewController alloc] init];
-    mapController.title = [title capitalizedString];
-    mapController.mapCenter = mapCenter;
-    mapController.placemarksForCity = placemarks;
-    [self.navigationController pushViewController:mapController animated:YES];
-    [mapController release];
+    [self hideLoadingIndicatorsCompletion:^{
+        MapViewController *mapController = [[MapViewController alloc] init];
+        mapController.title = [title capitalizedString];
+        mapController.mapCenter = mapCenter;
+        mapController.placemarksForCity = placemarks;
+        [self.navigationController pushViewController:mapController animated:YES];
+        [mapController release];
+    }];
 }
 
 - (void)displayErrorToUser:(NSError *)error {
-    [self hideLoadingIndicators];
-    [self setButtonSelectedFalseIfNeeded];
-    NSDictionary *errorInfo = [error userInfo];
-    NSString *message = @"There was a problem completing your search.\nPlease try again.";
-    if (errorInfo) {
-        if ([errorInfo objectForKey:NSLocalizedDescriptionKey]) {
-            message = [errorInfo objectForKey:NSLocalizedDescriptionKey];
+    [self hideLoadingIndicatorsCompletion:^{
+        NSDictionary *errorInfo = [error userInfo];
+        NSString *message = @"There was a problem completing your search.\nPlease try again.";
+        if (errorInfo) {
+            if ([errorInfo objectForKey:NSLocalizedDescriptionKey]) {
+                message = [errorInfo objectForKey:NSLocalizedDescriptionKey];
+            }
         }
-    }
-    [ScrapItTableViewController displayAlertWithTitle:nil message:[errorInfo objectForKey:NSLocalizedDescriptionKey]];
+        [self displayAlertWithTitle:nil message:[errorInfo objectForKey:NSLocalizedDescriptionKey]];
+    }];
 }
 
 - (void)displayNoResultsErrorToUser {
-    [self hideLoadingIndicators];
-    [self setButtonSelectedFalseIfNeeded];
-    [ScrapItTableViewController displayAlertWithTitle:nil message:@"There were no results found\nPlease search again."];
+    [self hideLoadingIndicatorsCompletion:^{
+        [self displayAlertWithTitle:nil message:@"There were no results found\nPlease search again."];
+    }];
 }
 
 - (void)displayLocationHelperErrorToUser {
-    [self hideLoadingIndicators];
-    [self setButtonSelectedFalseIfNeeded];
-    [ScrapItTableViewController displayAlertWithTitle:nil message:@"There was an error while determining your location\nPlease search again."];
+    [self hideLoadingIndicatorsCompletion:^{
+        [self setButtonSelectedFalseIfNeeded];
+        [self displayAlertWithTitle:nil message:@"There was an error while determining your location\nPlease search again."];
+    }];
 }
 
-+ (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
+- (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                             handler:nil];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)setButtonSelectedFalseIfNeeded {
@@ -403,7 +397,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 }
 
 - (void)selectionListTableViewControllerDidCancelController:(SelectionListTableViewController *)controller {
-    [controller dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)selectionListTableViewController:(SelectionListTableViewController *)controller didSelectItem:(NSString *)selectedItem {
@@ -418,18 +412,18 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 
 #pragma mark - Loading Progress UI
 
-- (void)showLoadingIndicators {
+- (void)showLoadingIndicatorsCompletion:(void (^)(void))completion {
     if (!loadingAlert) {
         loadingData = TRUE;
-        loadingAlert = [[UILoadingAlertView alloc] initWithTitle:@"Loading Stores ..."];
-        [loadingAlert show];
+        loadingAlert = [[UILoadingAlertView alloc] initWithTitle:@"Loading Stores ..." inController:self];
+        [loadingAlert showAnimated:YES completion:completion];
     }
 }
 
-- (void)hideLoadingIndicators {
+- (void)hideLoadingIndicatorsCompletion:(void (^)(void))completion {
     loadingData = FALSE;
     if (loadingAlert) {
-        [loadingAlert dismiss];
+        [loadingAlert dismissAnimated:YES completion:completion];
         loadingAlert = nil;
     }
 }
@@ -464,9 +458,10 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)locationHelper:(LocationHelper *)locationHelper didFailWithError:(NSError *)error {
     NSLog(@"Failed called in ScrapItTableViewController");
     if ([error code] == kCLErrorDenied) {
-        [self hideLoadingIndicators];
-        [self setButtonSelectedFalseIfNeeded];
-        currentLocationClicked = false;
+        [self hideLoadingIndicatorsCompletion:^{
+            [self setButtonSelectedFalseIfNeeded];
+            currentLocationClicked = false;
+        }];
     } else {
         [self displayLocationHelperErrorToUser];
     }

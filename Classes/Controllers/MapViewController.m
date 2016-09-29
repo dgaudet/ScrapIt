@@ -21,8 +21,8 @@
 
 - (void)addAnnotationsWithPlaceMarks:(NSArray *)placemarks;
 - (void)loadBusinessListTableViewControllerWithBusiness:(Business *)business;
-- (void)showLoadingIndicators;
-- (void)hideLoadingIndicators;
+- (void)showLoadingIndicatorsCompetion:(void (^)(void))completion;
+- (void)hideLoadingIndicatorsCompletion:(void (^)(void))completion;
 + (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message;
 - (void)addYellowPagesFooterToView:(UIView *)view;
 
@@ -105,39 +105,37 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     PlaceMark *placeMark = view.annotation;	
     
-    [self showLoadingIndicators];
-    dispatch_queue_t myCustomQueue;
-    myCustomQueue = dispatch_queue_create([[[NSBundle mainBundle] bundleIdentifier] UTF8String], NULL);
-    
-    dispatch_async(myCustomQueue, ^{
+    [self showLoadingIndicatorsCompetion:^{
         NSError *error = nil;
         Business *business = [[SearchService sharedInstance] retrieveBusinessFromBusinessSummary:placeMark.businessSummary error:&error];
         if (error) {
-            [self performSelectorOnMainThread:@selector(displayErrorToUser:) withObject:error waitUntilDone:NO];
+            [self displayErrorToUser:error];
         } else {
-            [self performSelectorOnMainThread:@selector(loadBusinessListTableViewControllerWithBusiness:) withObject:business waitUntilDone:NO];
+            [self loadBusinessListTableViewControllerWithBusiness:business];
         }
-    });
+    }];
 }
 
 - (void)loadBusinessListTableViewControllerWithBusiness:(Business *)business {
-    [self hideLoadingIndicators];
-    BusinessListTableViewController *businessController = [[BusinessListTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	businessController.business = business;
-	[self.navigationController pushViewController:businessController animated:YES];
-	[businessController release];
+    [self hideLoadingIndicatorsCompletion:^{
+        BusinessListTableViewController *businessController = [[BusinessListTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        businessController.business = business;
+        [self.navigationController pushViewController:businessController animated:YES];
+        [businessController release];
+    }];
 }
 
 - (void)displayErrorToUser:(NSError *)error {
-    [self hideLoadingIndicators];
-    NSDictionary *errorInfo = [error userInfo];
-    NSString *message = @"There was a problem completing your search.\nPlease try again.";
-    if (errorInfo) {
-        if ([errorInfo objectForKey:NSLocalizedDescriptionKey]) {
-            message = [errorInfo objectForKey:NSLocalizedDescriptionKey];
+    [self hideLoadingIndicatorsCompletion:^{
+        NSDictionary *errorInfo = [error userInfo];
+        NSString *message = @"There was a problem completing your search.\nPlease try again.";
+        if (errorInfo) {
+            if ([errorInfo objectForKey:NSLocalizedDescriptionKey]) {
+                message = [errorInfo objectForKey:NSLocalizedDescriptionKey];
+            }
         }
-    }
-    [MapViewController displayAlertWithTitle:nil message:[errorInfo objectForKey:NSLocalizedDescriptionKey]];
+        [MapViewController displayAlertWithTitle:nil message:[errorInfo objectForKey:NSLocalizedDescriptionKey]];
+    }];
 }
 
 + (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message {
@@ -148,16 +146,16 @@
     [alert release];
 }
 
-- (void)showLoadingIndicators {
+- (void)showLoadingIndicatorsCompetion:(void (^)(void))completion {
     if(!alertView){
-        alertView = [[UILoadingAlertView alloc] initWithTitle:@"Loading Business ..."];
-        [alertView show];
+        alertView = [[UILoadingAlertView alloc] initWithTitle:@"Loading Business ..." inController:self];
+        [alertView showAnimated:YES completion:completion];
     }
 }
 
-- (void)hideLoadingIndicators {
+- (void)hideLoadingIndicatorsCompletion:(void (^)(void))completion {
     if (alertView) {
-        [alertView dismiss];
+        [alertView dismissAnimated:YES completion:completion];
         alertView = nil;
     }
 }
