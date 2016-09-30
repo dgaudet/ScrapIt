@@ -45,8 +45,6 @@
 		052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
 		052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3731556F005001F15F4 /* PaperTexture.png */; };
 		052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B2B3741556F005001F15F4 /* PaperTexture@2x.png */; };
-		052E006016C55E2C00E5E178 /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
-		052E006116C55E2C00E5E178 /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
 		052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC964F1651A462009CC29D /* YellowPagesLogo@2x.png */; };
 		052E006516C55E2C00E5E178 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -111,6 +109,11 @@
 		0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0537D9EC145E4CC800EEB730 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
+		053CBD831D9E054E00E21745 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; };
+		053CBD851D9E05D400E21745 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; };
+		053CBD861D9E05D800E21745 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; };
+		053CBD871D9E05FD00E21745 /* BookIconTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3761D9819F700604353 /* BookIconTest.png */; };
+		053CBD881D9E060000E21745 /* BookIconTest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3771D9819F700604353 /* BookIconTest@2x.png */; };
 		054D1CDD16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
 		054D1CDE16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
 		054D67F015FEDA100092B234 /* MultilineTwoRowTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D67EF15FEDA100092B234 /* MultilineTwoRowTableViewRow.m */; };
@@ -140,8 +143,6 @@
 		0598D35A1D971FBD00604353 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; };
 		0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; };
 		0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; };
-		0598D3781D9819F700604353 /* BookIconTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3761D9819F700604353 /* BookIconTest.png */; };
-		0598D3791D9819F700604353 /* BookIconTest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3771D9819F700604353 /* BookIconTest@2x.png */; };
 		05A1FCDD14DA34CB000E87CE /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05ACA96114074EBB007CDEFC /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
 		05ACA966140750F5007CDEFC /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
@@ -819,16 +820,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053CBD881D9E060000E21745 /* BookIconTest@2x.png in Resources */,
+				053CBD861D9E05D800E21745 /* chevron@2x.png in Resources */,
 				051782141D9A093B00A65672 /* Calgary.gpx in Resources */,
 				052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */,
 				051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */,
 				052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */,
 				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
+				053CBD851D9E05D400E21745 /* chevron@3x.png in Resources */,
 				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
 				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
-				052E006016C55E2C00E5E178 /* BookIcon.png in Resources */,
-				052E006116C55E2C00E5E178 /* BookIcon@2x.png in Resources */,
+				053CBD831D9E054E00E21745 /* chevron.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
+				053CBD871D9E05FD00E21745 /* BookIconTest.png in Resources */,
 				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
 				0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */,
 				05BEC72A16D9564A002DD780 /* PaperTexture-568h@2x.png in Resources */,
@@ -852,13 +856,11 @@
 				05C7D52713B2EBFD002D518F /* bradCrop.png in Resources */,
 				0587664B13C104570005F9A1 /* Ideas.txt in Resources */,
 				0598D35A1D971FBD00604353 /* chevron.png in Resources */,
-				0598D3791D9819F700604353 /* BookIconTest@2x.png in Resources */,
 				05B2B3751556F005001F15F4 /* PaperTexture.png in Resources */,
 				05B2B3761556F005001F15F4 /* PaperTexture@2x.png in Resources */,
 				051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */,
 				0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */,
 				051782121D9A093400A65672 /* Calgary.gpx in Resources */,
-				0598D3781D9819F700604353 /* BookIconTest.png in Resources */,
 				05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */,
 				0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
