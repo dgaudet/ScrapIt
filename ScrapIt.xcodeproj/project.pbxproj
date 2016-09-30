@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */; };
 		051782121D9A093400A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
 		051782141D9A093B00A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
@@ -109,9 +108,6 @@
 		0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0537D9EC145E4CC800EEB730 /* ScrapItBusinessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */; };
-		053CBD831D9E054E00E21745 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; };
-		053CBD851D9E05D400E21745 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; };
-		053CBD861D9E05D800E21745 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; };
 		053CBD871D9E05FD00E21745 /* BookIconTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3761D9819F700604353 /* BookIconTest.png */; };
 		053CBD881D9E060000E21745 /* BookIconTest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3771D9819F700604353 /* BookIconTest@2x.png */; };
 		054D1CDD16E067B000F05C2C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D1CDC16E067B000F05C2C /* ThemeHelper.m */; };
@@ -130,6 +126,16 @@
 		056BD3DE13DCD6FB0045FF79 /* Unit_Tests.h in Resources */ = {isa = PBXBuildFile; fileRef = 056BD3DD13DCD6FB0045FF79 /* Unit_Tests.h */; };
 		056BD3E013DCD6FB0045FF79 /* Unit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 056BD3DF13DCD6FB0045FF79 /* Unit_Tests.m */; };
 		056BD3E613DCD7F80045FF79 /* ScrapItBusinessServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 056BD3E513DCD7F80045FF79 /* ScrapItBusinessServiceTest.m */; };
+		0578760B1D9E09310013B0EB /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057876081D9E09310013B0EB /* chevron@2x.png */; };
+		0578760C1D9E09310013B0EB /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057876091D9E09310013B0EB /* chevron@3x.png */; };
+		0578760D1D9E09310013B0EB /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0578760A1D9E09310013B0EB /* chevron.png */; };
+		0578760E1D9E093A0013B0EB /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0578760A1D9E09310013B0EB /* chevron.png */; };
+		0578760F1D9E093D0013B0EB /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057876091D9E09310013B0EB /* chevron@3x.png */; };
+		057876101D9E09420013B0EB /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057876081D9E09310013B0EB /* chevron@2x.png */; };
+		057876131D9E0A3C0013B0EB /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
+		057876141D9E0A3D0013B0EB /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
+		057876151D9E0A400013B0EB /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
+		057876161D9E0A400013B0EB /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		05856EA813987F2E00BCA74E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9713987F2E00BCA74E /* NSObject+JSON.m */; };
 		05856EA913987F2E00BCA74E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9913987F2E00BCA74E /* SBJsonParser.m */; };
 		05856EAA13987F2E00BCA74E /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9B13987F2E00BCA74E /* SBJsonStreamParser.m */; };
@@ -140,9 +146,6 @@
 		05856EAF13987F2E00BCA74E /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA513987F2E00BCA74E /* SBJsonTokeniser.m */; };
 		05856EB013987F2E00BCA74E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856EA713987F2E00BCA74E /* SBJsonWriter.m */; };
 		0587664B13C104570005F9A1 /* Ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0587664A13C104570005F9A1 /* Ideas.txt */; };
-		0598D35A1D971FBD00604353 /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3581D971FBD00604353 /* chevron.png */; };
-		0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D3591D971FBD00604353 /* chevron@2x.png */; };
-		0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0598D35C1D9721AC00604353 /* chevron@3x.png */; };
 		05A1FCDD14DA34CB000E87CE /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
 		05ACA96114074EBB007CDEFC /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
 		05ACA966140750F5007CDEFC /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA963140750F5007CDEFC /* Business.m */; };
@@ -206,7 +209,6 @@
 		05F240C01600226500B2CDD1 /* NetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F240BE1600216400B2CDD1 /* NetworkErrors.m */; };
 		05F4B9E11609580B0062C8F5 /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB10E916069B8200FF01AD /* AnalyticsService.m */; };
 		05F4B9E3160964500062C8F5 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A1FCDC14DA34CB000E87CE /* DeviceUtil.m */; };
-		05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
 		1D3623260D0F684500981E51 /* ScrapItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ScrapItAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -257,6 +259,9 @@
 		056BD3DF13DCD6FB0045FF79 /* Unit_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unit_Tests.m; sourceTree = "<group>"; };
 		056BD3E413DCD7F80045FF79 /* ScrapItBusinessServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapItBusinessServiceTest.h; sourceTree = "<group>"; };
 		056BD3E513DCD7F80045FF79 /* ScrapItBusinessServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapItBusinessServiceTest.m; sourceTree = "<group>"; };
+		057876081D9E09310013B0EB /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
+		057876091D9E09310013B0EB /* chevron@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@3x.png"; sourceTree = "<group>"; };
+		0578760A1D9E09310013B0EB /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
 		05856E9513987F2E00BCA74E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		05856E9613987F2E00BCA74E /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
 		05856E9713987F2E00BCA74E /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
@@ -277,9 +282,6 @@
 		05856EA613987F2E00BCA74E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		05856EA713987F2E00BCA74E /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		0587664A13C104570005F9A1 /* Ideas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ideas.txt; sourceTree = "<group>"; };
-		0598D3581D971FBD00604353 /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
-		0598D3591D971FBD00604353 /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
-		0598D35C1D9721AC00604353 /* chevron@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@3x.png"; sourceTree = "<group>"; };
 		0598D3761D9819F700604353 /* BookIconTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BookIconTest.png; sourceTree = "<group>"; };
 		0598D3771D9819F700604353 /* BookIconTest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookIconTest@2x.png"; sourceTree = "<group>"; };
 		0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ScrapIt_local-Info.plist"; sourceTree = "<group>"; };
@@ -684,13 +686,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				057876091D9E09310013B0EB /* chevron@3x.png */,
+				057876081D9E09310013B0EB /* chevron@2x.png */,
+				0578760A1D9E09310013B0EB /* chevron.png */,
 				051782161D9A0D5000A65672 /* Saskatoon.gpx */,
 				051782101D9A093400A65672 /* Calgary.gpx */,
 				0598D3761D9819F700604353 /* BookIconTest.png */,
 				0598D3771D9819F700604353 /* BookIconTest@2x.png */,
-				0598D35C1D9721AC00604353 /* chevron@3x.png */,
-				0598D3581D971FBD00604353 /* chevron.png */,
-				0598D3591D971FBD00604353 /* chevron@2x.png */,
 				05FBC3F015916B6500C8CC2A /* BookIcon.png */,
 				0502CC40162E47C900DB0C2C /* BookIcon@2x.png */,
 				05C7D52613B2EBFC002D518F /* bradCrop.png */,
@@ -820,21 +822,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057876101D9E09420013B0EB /* chevron@2x.png in Resources */,
 				053CBD881D9E060000E21745 /* BookIconTest@2x.png in Resources */,
-				053CBD861D9E05D800E21745 /* chevron@2x.png in Resources */,
 				051782141D9A093B00A65672 /* Calgary.gpx in Resources */,
 				052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */,
 				051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */,
 				052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */,
+				0578760F1D9E093D0013B0EB /* chevron@3x.png in Resources */,
+				057876141D9E0A3D0013B0EB /* BookIcon.png in Resources */,
 				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
-				053CBD851D9E05D400E21745 /* chevron@3x.png in Resources */,
 				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
 				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
-				053CBD831D9E054E00E21745 /* chevron.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
 				053CBD871D9E05FD00E21745 /* BookIconTest.png in Resources */,
 				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
+				0578760E1D9E093A0013B0EB /* chevron.png in Resources */,
 				0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */,
+				057876161D9E0A400013B0EB /* BookIcon@2x.png in Resources */,
 				05BEC72A16D9564A002DD780 /* PaperTexture-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -855,18 +859,18 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				05C7D52713B2EBFD002D518F /* bradCrop.png in Resources */,
 				0587664B13C104570005F9A1 /* Ideas.txt in Resources */,
-				0598D35A1D971FBD00604353 /* chevron.png in Resources */,
 				05B2B3751556F005001F15F4 /* PaperTexture.png in Resources */,
+				057876151D9E0A400013B0EB /* BookIcon@2x.png in Resources */,
 				05B2B3761556F005001F15F4 /* PaperTexture@2x.png in Resources */,
 				051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */,
-				0598D35D1D9721AC00604353 /* chevron@3x.png in Resources */,
 				051782121D9A093400A65672 /* Calgary.gpx in Resources */,
-				05FBC3F215916B6500C8CC2A /* BookIcon.png in Resources */,
-				0502CC41162E47C900DB0C2C /* BookIcon@2x.png in Resources */,
+				0578760C1D9E09310013B0EB /* chevron@3x.png in Resources */,
+				0578760D1D9E09310013B0EB /* chevron.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
 				05CC96501651A462009CC29D /* YellowPagesLogo@2x.png in Resources */,
 				0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */,
-				0598D35B1D971FBD00604353 /* chevron@2x.png in Resources */,
+				0578760B1D9E09310013B0EB /* chevron@2x.png in Resources */,
+				057876131D9E0A3C0013B0EB /* BookIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
