@@ -24,6 +24,8 @@ NSString *const Row_Key = @"Row";
 - (void)doneButtonTapped:(id)sender;
 - (void)paperArtworkRowTapped:(id)sender;
 - (void)supportRowTapped:(id)sender;
+- (BOOL)canSendMail;
+- (NSString *)mailMessage;
 
 @end
 
@@ -52,7 +54,11 @@ NSString *const Row_Key = @"Row";
     UIFont *smallTextFont = [UIFont fontWithName:@"Helvetica" size:14.0];
     UIFont *mediumTextFont = [UIFont fontWithName:@"Helvetica" size:16.0];
 
-    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need help, or want to suggest an improvement?" andValueTwo:@"- Tap To Email Support - " andMethod:@selector(supportRowTapped:)];
+    SEL supportRowTapped = nil;
+    if ([self canSendMail]) {
+        supportRowTapped = @selector(supportRowTapped:);
+    }
+    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need help, or want to suggest an improvement?" andValueTwo:[self mailMessage] andMethod:nil];
     [row0 setTextAlignment:NSTextAlignmentCenter];
     [row0 setLabel1Color:[UIColor whiteColor]];
     [row0 setLabel2Color:[UIColor blackColor]];
@@ -114,27 +120,45 @@ NSString *const Row_Key = @"Row";
     }
 }
 
+#pragma mark Mail Methods
+- (BOOL)canSendMail {
+    if ([MFMailComposeViewController canSendMail]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSString *)mailMessage {
+    NSString *message = @"- Tap To Email Support - ";
+    if (![self canSendMail]) {
+        message = @"Send email to support@deangaudet.com";
+    }
+    return message;
+}
+
 - (void)supportRowTapped:(id)sender {
-    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-    [mailController setMailComposeDelegate:self];
-    [EmailService setupSupportEmailForMailController:mailController];
-    [mailController setToRecipients:[NSArray arrayWithObject:kSystemAppSupportEmail]];
-    [self.navigationController presentModalViewController:mailController animated:YES];
-    
-    [mailController release];
+    if ([self canSendMail]) {
+        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+        [mailController setMailComposeDelegate:self];
+        [EmailService setupSupportEmailForMailController:mailController];
+        [mailController setToRecipients:[NSArray arrayWithObject:kSystemAppSupportEmail]];
+        [self.navigationController presentViewController:mailController animated:YES completion:nil];
+        
+        [mailController release];
+    }
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
     switch (result) {
         case MFMailComposeResultSent:
             [AnalyticsService logEmailedSupportEvent];
-            [self.navigationController dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
             break;
         case MFMailComposeResultFailed:
             [self loadAlertViewWithMessage:@"There was a problem sending your email, please try again." andOkButtonTitle:nil];
             break;
         default:
-            [self.navigationController dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
             break;
     }
 }

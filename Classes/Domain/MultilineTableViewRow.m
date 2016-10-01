@@ -46,7 +46,7 @@ CGFloat MTVR_ROW_PADDING = 20.0;
         mainLabel.textAlignment = textAlignment;
 		mainLabel.font = _font;
         mainLabel.textColor = [UIColor blackColor];
-		mainLabel.lineBreakMode = UILineBreakModeWordWrap;
+		mainLabel.lineBreakMode = NSLineBreakByWordWrapping;
 		mainLabel.numberOfLines = 999;
         mainLabel.tag = mainLabelTag;		
 		[cell.contentView addSubview:mainLabel];

@@ -69,6 +69,9 @@
 
 - (NSArray *)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate error:(NSError **)error {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
+        if (error == NULL) {
+            error = nil;
+        }
         *error = [NetworkErrors noWifiError];
         return [NSArray array];
     }

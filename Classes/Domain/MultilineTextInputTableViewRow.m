@@ -41,7 +41,7 @@ CGFloat const MTITVR_LINE_HEIGHT_SIZE = 25.0;
         textView.font = [UIFont fontWithName:@"Helvetica" size:17.0];
         textView.textColor = cell.detailTextLabel.textColor;
         textView.backgroundColor = [UIColor clearColor];
-        textView.textAlignment = UITextAlignmentLeft;
+        textView.textAlignment = NSTextAlignmentLeft;
 		[cell.contentView addSubview:textView];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }

@@ -208,13 +208,13 @@ CGFloat const labelPadding = 20.0;
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     label.textColor = [UIColor whiteColor];
     label.font = [ThemeHelper tableViewTitleFont];
-    label.lineBreakMode = UILineBreakModeWordWrap;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
     label.numberOfLines = 999;
     label.backgroundColor = [UIColor clearColor];
     if (section == 0) {
-        label.textAlignment = UITextAlignmentCenter;
+        label.textAlignment = NSTextAlignmentCenter;
     } else {
-        label.textAlignment = UITextAlignmentLeft;
+        label.textAlignment = NSTextAlignmentLeft;
     }
     
     [view addSubview:label];

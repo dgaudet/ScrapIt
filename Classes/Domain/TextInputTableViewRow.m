@@ -43,7 +43,7 @@ int const TITVR_TEXTFIELD_TAG = 2;
         textField.returnKeyType = UIReturnKeyDone;
         textField.font = [UIFont fontWithName:@"Helvetica" size:17.0];
         textField.textColor = cell.detailTextLabel.textColor;
-        textField.textAlignment = UITextAlignmentRight;
+        textField.textAlignment = NSTextAlignmentRight;
 		[cell.contentView addSubview:textField];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }

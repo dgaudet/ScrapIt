@@ -48,3 +48,4 @@
 *** required startup image
 **** https://developer.apple.com/ios/human-interface-guidelines/graphics/launch-screen/
 *** required background
+* Get working with iPod
