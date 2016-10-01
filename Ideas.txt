@@ -39,25 +39,12 @@
 * We need to do the leg work to find out information about each business in each city, that's where the money is, in the ability to know infomration about all the stores out there
 
 * Items Required for next release
-** get required images
-*** required icons
+* nice to have *
+** fix warnings
+** Get Crashlytics and Google Analytics working
+** Fix -Cannot snapshot view- error
+** Fix 120 x 120 icons
 **** https://developer.apple.com/library/content/qa/qa1686/_index.html
 *** required startup image
 **** https://developer.apple.com/ios/human-interface-guidelines/graphics/launch-screen/
 *** required background
-*** iTunes Connect/App Store images
-**** https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Appendices/Properties.html#//apple_ref/doc/uid/TP40011225-CH26-SW2
-**** One screenshot per locale is required, and up to 4 allowed
-** test features to ensure they work on device
-** make sure app version is correct
-** ensure that this log message -canOpenURL: failed for URL: "tel:403-451-9930" - error: "This app is not allowed to query for scheme tel
-*** should not show up on a phone, it happens when you go to the detail view
-* nice to have *
-** Does map callout chevron work anywhere?
-** -Fix 'Find Stores Near You'-
-** -Fix issue when you choose Yukon -> Yellowknife, and with keyboard still displaying hit search, the keyboard does some odd stuff-
-** -fix viewing the map for the first time does some odd stuff-
-** -Turn off device rotation-
-** fix warnings
-** Get Crashlytics and Google Analytics working
-** Fix -Cannot snapshot view- error
