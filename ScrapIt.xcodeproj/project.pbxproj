@@ -21,6 +21,8 @@
 		05228D0B1DA04A320075F183 /* BookIcon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05228D031DA04A0A0075F183 /* BookIcon-60@3x.png */; };
 		05228D0C1DA04A360075F183 /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05228D041DA04A0A0075F183 /* BookIcon.png */; };
 		05228D0D1DA04A390075F183 /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05228D051DA04A0A0075F183 /* BookIcon@2x.png */; };
+		05228D161DA04FCF0075F183 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05228D141DA04FA30075F183 /* Images.xcassets */; };
+		05228D171DA04FDE0075F183 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05228D141DA04FA30075F183 /* Images.xcassets */; };
 		0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */; };
 		052DCC2E1759875200A39C0B /* ScrapItTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */; };
 		052DCC3517598CBE00A39C0B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052DCC2F17598BD900A39C0B /* OCHamcrestIOS.framework */; };
@@ -225,6 +227,7 @@
 		05228D031DA04A0A0075F183 /* BookIcon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookIcon-60@3x.png"; path = "App Store Resources/Icons/BookIcon-60@3x.png"; sourceTree = "<group>"; };
 		05228D041DA04A0A0075F183 /* BookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BookIcon.png; path = "App Store Resources/Icons/BookIcon.png"; sourceTree = "<group>"; };
 		05228D051DA04A0A0075F183 /* BookIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookIcon@2x.png"; path = "App Store Resources/Icons/BookIcon@2x.png"; sourceTree = "<group>"; };
+		05228D141DA04FA30075F183 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ScrapIt_Assets/Images.xcassets; sourceTree = "<group>"; };
 		0522F02E1617A958007D9F48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PaperTexture-568h@2x.png"; sourceTree = "<group>"; };
 		052DCC2C1759875200A39C0B /* ScrapItTableViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapItTableViewControllerTest.h; path = Controllers/ScrapItTableViewControllerTest.h; sourceTree = "<group>"; };
@@ -684,6 +687,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05228D141DA04FA30075F183 /* Images.xcassets */,
 				05228D021DA04A0A0075F183 /* BookIcon-60@2x.png */,
 				05228D031DA04A0A0075F183 /* BookIcon-60@3x.png */,
 				05228D041DA04A0A0075F183 /* BookIcon.png */,
@@ -830,6 +834,7 @@
 				0578760F1D9E093D0013B0EB /* chevron@3x.png in Resources */,
 				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
 				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
+				05228D161DA04FCF0075F183 /* Images.xcassets in Resources */,
 				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
 				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
@@ -862,6 +867,7 @@
 				051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */,
 				051782121D9A093400A65672 /* Calgary.gpx in Resources */,
 				0578760C1D9E09310013B0EB /* chevron@3x.png in Resources */,
+				05228D171DA04FDE0075F183 /* Images.xcassets in Resources */,
 				0578760D1D9E09310013B0EB /* chevron.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
 				05CC96501651A462009CC29D /* YellowPagesLogo@2x.png in Resources */,
@@ -1092,6 +1098,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Local";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = GEK772SQ7W;
@@ -1123,6 +1131,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Local";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = GEK772SQ7W;
@@ -1221,6 +1231,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1251,6 +1263,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
