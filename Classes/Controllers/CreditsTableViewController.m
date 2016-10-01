@@ -239,6 +239,7 @@ NSString *const Row_Key = @"Row";
     UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [testView setBackgroundColor:[UIColor clearColor]];
     [cell setBackgroundView:testView];
+    [testView release];
     return cell;
 }
 

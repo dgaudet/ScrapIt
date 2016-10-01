@@ -97,11 +97,9 @@ CGFloat const labelPadding = 20.0;
     NSString *phoneSectionTitle = @"Phone";
     
     NSString *callString = nil;
-    SEL phoneTappedSelector = nil;
     UITableViewCellSelectionStyle phoneSelectionStyle = UITableViewCellSelectionStyleNone;
     if ([[UIApplication sharedApplication] canOpenURL:[self phoneUrl]]) {
         callString = @"- Call -";
-        phoneTappedSelector = @selector(phoneCellClicked);
         phoneSelectionStyle = UITableViewCellSelectionStyleBlue;
     }
     MultilineTwoRowTableViewRow *phoneRow = [[MultilineTwoRowTableViewRow alloc] initWithValue:bus.phoneNumber andValueTwo:callString andMethod:@selector(phoneCellClicked)];
@@ -363,6 +361,7 @@ CGFloat const labelPadding = 20.0;
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+    [super viewDidUnload];
 }
 
 

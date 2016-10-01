@@ -134,7 +134,7 @@
                 message = [errorInfo objectForKey:NSLocalizedDescriptionKey];
             }
         }
-        [MapViewController displayAlertWithTitle:nil message:[errorInfo objectForKey:NSLocalizedDescriptionKey]];
+        [MapViewController displayAlertWithTitle:nil message:message];
     }];
 }
 

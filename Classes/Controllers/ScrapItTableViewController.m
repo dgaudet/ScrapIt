@@ -112,17 +112,18 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     cityRowIndexPath = [[NSIndexPath indexPathForRow:1 inSection:0] retain];
     NSArray *section1rows = [NSArray arrayWithObjects:provinceRow, cityRow, nil];
     [provinceRow release];
+    [cityRow release];
     NSMutableDictionary *section1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:section1rows, SCRAP_IT_TABLE_VIEW_SECTION_DATA_KEY, @"Please Enter a location to Search:", SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY, nil];    
     
     MultilineTableViewRow *searchRow = [[MultilineTableViewRow alloc] initWithValue:@"Search" andMethod:@selector(selectedSearchCell)];
-    searchRow.textAlignment = UITextAlignmentCenter;
+    searchRow.textAlignment = NSTextAlignmentCenter;
     NSArray *section2rows = [NSArray arrayWithObject:searchRow];
     [searchRow release];
     searchButtonIndexPath = [[NSIndexPath indexPathForRow:0 inSection:1] retain];
     NSMutableDictionary *section3 = [NSMutableDictionary dictionaryWithObjectsAndKeys:section2rows, SCRAP_IT_TABLE_VIEW_SECTION_DATA_KEY, @"", SCRAP_IT_TABLE_VIEW_SECTION_TITLE_KEY, nil];
     
     MultilineTableViewRow *locationRow = [[MultilineTableViewRow alloc] initWithValue:@"Find Stores Near You" andMethod:@selector(selectedLocationCell)];
-    locationRow.textAlignment = UITextAlignmentCenter;
+    locationRow.textAlignment = NSTextAlignmentCenter;
     NSArray *section3row = [NSArray arrayWithObject:locationRow];
     [locationRow release];
     locationButtonIndexPath = [[NSIndexPath indexPathForRow:0 inSection:2] retain];    
@@ -222,7 +223,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     label.textColor = [UIColor whiteColor];
     label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
-    label.textAlignment = UITextAlignmentLeft;
+    label.textAlignment = NSTextAlignmentLeft;
     
     label.backgroundColor = [UIColor clearColor];
     [view addSubview:label];
@@ -360,7 +361,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
                 message = [errorInfo objectForKey:NSLocalizedDescriptionKey];
             }
         }
-        [self displayAlertWithTitle:nil message:[errorInfo objectForKey:NSLocalizedDescriptionKey]];
+        [self displayAlertWithTitle:nil message:message];
     }];
 }
 
@@ -469,6 +470,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     NSLog(@"Manager failed %@", [error localizedDescription]);   
 }
 
+#pragma mark Info Controller Methods
 - (void)infoButtonTapped:(id)sender {
     CreditsTableViewController *creditsController = [[CreditsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     [creditsController setDelegate:self];
@@ -476,11 +478,12 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     [creditsController release];
     
     [ThemeHelper setColorForNavBar:navigationController.navigationBar];
-    [self.navigationController presentModalViewController:navigationController animated:YES];
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+    [navigationController release];
 }
 
 - (void)creditsTableViewControllerFinished:(CreditsTableViewController *)controller {
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dealloc {

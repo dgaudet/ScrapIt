@@ -187,6 +187,7 @@
 - (void)dealloc {
     [tableData release];
     [currentSelectedRow release];
+    [initialCheckedItem release];
     [super dealloc];
 }
 
