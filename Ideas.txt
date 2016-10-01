@@ -59,3 +59,4 @@
 ** -fix viewing the map for the first time does some odd stuff-
 ** -Turn off device rotation-
 ** fix warnings
+** Get Crashlytics and Google Analytics working
