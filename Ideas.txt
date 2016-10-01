@@ -60,3 +60,4 @@
 ** -Turn off device rotation-
 ** fix warnings
 ** Get Crashlytics and Google Analytics working
+** Fix -Cannot snapshot view- error

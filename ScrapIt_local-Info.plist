@@ -21,11 +21,11 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-                <string>BookIcon.png</string>
-                <string>BookIcon@2x.png</string>
-                <string>BookIcon-40.png</string>
-                <string>BookIcon-40@2x.png</string>
-                <string>BookIcon-40@3x.png</string>
+				<string>BookIcon.png</string>
+				<string>BookIcon@2x.png</string>
+				<string>BookIcon-40.png</string>
+				<string>BookIcon-40@2x.png</string>
+				<string>BookIcon-40@3x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -73,6 +73,10 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
 	</array>
 </dict>
 </plist>
