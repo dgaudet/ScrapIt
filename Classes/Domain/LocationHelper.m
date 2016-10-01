@@ -102,8 +102,14 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     NSLog(@"DID_CHANGE_AUTH_STATUS - Authorization status has changed: %i", status);
     NSLog(@"Location: %@", locationManager.location);
+    
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways) {
-        [self locationManager:locationManager didUpdateLocations:[NSArray arrayWithObject:locationManager.location]];
+        if(locationManager.location == NULL){
+            NSError *error = nil;
+            [self locationManager:locationManager didFailWithError:error];
+        } else {
+            [self locationManager:locationManager didUpdateLocations:[NSArray arrayWithObject:locationManager.location]];
+        }
     } else if(status == kCLAuthorizationStatusDenied){
         NSError *error = [NSError errorWithDomain:kCLErrorDomain code:kCLErrorDenied userInfo:nil];
         [self locationManager:locationManager didFailWithError:error];

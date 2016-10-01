@@ -97,7 +97,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     
     _user = [[_userService retrieveUser] retain];
     tableData = [[NSArray alloc] initWithArray:[self loadTableData]];
-    loadingData = FALSE;
+    loadingData = NO;
     return self;
 }
 
@@ -415,17 +415,21 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 
 - (void)showLoadingIndicatorsCompletion:(void (^)(void))completion {
     if (!loadingAlert) {
-        loadingData = TRUE;
+        loadingData = YES;
         loadingAlert = [[UILoadingAlertView alloc] initWithTitle:@"Loading Stores ..." inController:self];
         [loadingAlert showAnimated:YES completion:completion];
     }
 }
 
 - (void)hideLoadingIndicatorsCompletion:(void (^)(void))completion {
-    loadingData = FALSE;
-    if (loadingAlert) {
-        [loadingAlert dismissAnimated:YES completion:completion];
-        loadingAlert = nil;
+    if (!loadingData) {
+        completion();
+    } else {
+        loadingData = NO;
+        if (loadingAlert) {
+            [loadingAlert dismissAnimated:YES completion:completion];
+            loadingAlert = nil;
+        }
     }
 }
 
