@@ -58,7 +58,7 @@ NSString *const Row_Key = @"Row";
     if ([self canSendMail]) {
         supportRowTapped = @selector(supportRowTapped:);
     }
-    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need help, or want to suggest an improvement?" andValueTwo:[self mailMessage] andMethod:nil];
+    TwoTableViewRow *row0 = [[TwoTableViewRow alloc] initWithValue:@"Need help, or want to suggest an improvement?" andValueTwo:[self mailMessage] andMethod:supportRowTapped];
     [row0 setTextAlignment:NSTextAlignmentCenter];
     [row0 setLabel1Color:[UIColor whiteColor]];
     [row0 setLabel2Color:[UIColor blackColor]];
