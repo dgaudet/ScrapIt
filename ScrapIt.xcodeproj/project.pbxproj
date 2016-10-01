@@ -136,6 +136,9 @@
 		057876141D9E0A3D0013B0EB /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FBC3F015916B6500C8CC2A /* BookIcon.png */; };
 		057876151D9E0A400013B0EB /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
 		057876161D9E0A400013B0EB /* BookIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0502CC40162E47C900DB0C2C /* BookIcon@2x.png */; };
+		057B45EB1D9F3D0700278FBE /* BookIcon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B45E81D9F3D0700278FBE /* BookIcon-40.png */; };
+		057B45EC1D9F3D0700278FBE /* BookIcon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B45E91D9F3D0700278FBE /* BookIcon-40@2x.png */; };
+		057B45ED1D9F3D0700278FBE /* BookIcon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B45EA1D9F3D0700278FBE /* BookIcon-40@3x.png */; };
 		05856EA813987F2E00BCA74E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9713987F2E00BCA74E /* NSObject+JSON.m */; };
 		05856EA913987F2E00BCA74E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9913987F2E00BCA74E /* SBJsonParser.m */; };
 		05856EAA13987F2E00BCA74E /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05856E9B13987F2E00BCA74E /* SBJsonStreamParser.m */; };
@@ -262,6 +265,9 @@
 		057876081D9E09310013B0EB /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
 		057876091D9E09310013B0EB /* chevron@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@3x.png"; sourceTree = "<group>"; };
 		0578760A1D9E09310013B0EB /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
+		057B45E81D9F3D0700278FBE /* BookIcon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookIcon-40.png"; sourceTree = "<group>"; };
+		057B45E91D9F3D0700278FBE /* BookIcon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookIcon-40@2x.png"; sourceTree = "<group>"; };
+		057B45EA1D9F3D0700278FBE /* BookIcon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookIcon-40@3x.png"; sourceTree = "<group>"; };
 		05856E9513987F2E00BCA74E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		05856E9613987F2E00BCA74E /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
 		05856E9713987F2E00BCA74E /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
@@ -686,6 +692,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				057B45E81D9F3D0700278FBE /* BookIcon-40.png */,
+				057B45E91D9F3D0700278FBE /* BookIcon-40@2x.png */,
+				057B45EA1D9F3D0700278FBE /* BookIcon-40@3x.png */,
 				057876091D9E09310013B0EB /* chevron@3x.png */,
 				057876081D9E09310013B0EB /* chevron@2x.png */,
 				0578760A1D9E09310013B0EB /* chevron.png */,
@@ -863,11 +872,14 @@
 				057876151D9E0A400013B0EB /* BookIcon@2x.png in Resources */,
 				05B2B3761556F005001F15F4 /* PaperTexture@2x.png in Resources */,
 				051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */,
+				057B45EB1D9F3D0700278FBE /* BookIcon-40.png in Resources */,
 				051782121D9A093400A65672 /* Calgary.gpx in Resources */,
 				0578760C1D9E09310013B0EB /* chevron@3x.png in Resources */,
 				0578760D1D9E09310013B0EB /* chevron.png in Resources */,
+				057B45ED1D9F3D0700278FBE /* BookIcon-40@3x.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
 				05CC96501651A462009CC29D /* YellowPagesLogo@2x.png in Resources */,
+				057B45EC1D9F3D0700278FBE /* BookIcon-40@2x.png in Resources */,
 				0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */,
 				0578760B1D9E09310013B0EB /* chevron@2x.png in Resources */,
 				057876131D9E0A3C0013B0EB /* BookIcon.png in Resources */,
