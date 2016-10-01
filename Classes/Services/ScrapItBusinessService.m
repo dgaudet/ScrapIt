@@ -118,9 +118,9 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store {
 	NSString *name = [NSString stringWithString:[store valueForKey:@"name"]];
 	NSString *businessId = [NSString stringWithString:[store valueForKey:@"business_id"]];
-	NSString *city;
-	NSString *province;
-	NSString *street;
+	NSString *city = @"";
+	NSString *province = @"";
+	NSString *street = @"";
 	
 	if ([store valueForKey:@"address"]) {
 		NSDictionary *address = [NSDictionary dictionaryWithDictionary:[store valueForKey:@"address"]];

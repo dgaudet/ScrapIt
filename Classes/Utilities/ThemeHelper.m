@@ -25,6 +25,7 @@
     [backgroundView setContentMode:UIViewContentModeBottom];
     
     [tableView setBackgroundView:backgroundView];
+    [backgroundView release];
 }
 
 + (void)setBackgroundForCreditsTableView:(UITableView *)tableView {

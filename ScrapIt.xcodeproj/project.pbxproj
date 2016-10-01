@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0598D37A1D981D9200604353 /* ScrapIt_local-Info.plist */; };
 		051782121D9A093400A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
 		051782141D9A093B00A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
 		051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
 		051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
 		051970D9165978CE009F1A5E /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051970D8165978CE009F1A5E /* CreditsView.m */; };
 		0521D26116E85540004AB781 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
+		05228CE71DA01D760075F183 /* BookIcon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B45E81D9F3D0700278FBE /* BookIcon-40.png */; };
+		05228CE81DA01D7A0075F183 /* BookIcon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B45E91D9F3D0700278FBE /* BookIcon-40@2x.png */; };
+		05228CE91DA01D7D0075F183 /* BookIcon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B45EA1D9F3D0700278FBE /* BookIcon-40@3x.png */; };
 		0524EF6E16D951B700E97834 /* PaperTexture-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0524EF6D16D951B700E97834 /* PaperTexture-568h@2x.png */; };
 		052DCC2E1759875200A39C0B /* ScrapItTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */; };
 		052DCC3517598CBE00A39C0B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052DCC2F17598BD900A39C0B /* OCHamcrestIOS.framework */; };
@@ -832,21 +834,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				057876101D9E09420013B0EB /* chevron@2x.png in Resources */,
+				05228CE91DA01D7D0075F183 /* BookIcon-40@3x.png in Resources */,
 				053CBD881D9E060000E21745 /* BookIconTest@2x.png in Resources */,
 				051782141D9A093B00A65672 /* Calgary.gpx in Resources */,
 				052E005A16C55E2C00E5E178 /* MainWindow.xib in Resources */,
 				051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */,
+				05228CE71DA01D760075F183 /* BookIcon-40.png in Resources */,
 				052E005B16C55E2C00E5E178 /* bradCrop.png in Resources */,
 				0578760F1D9E093D0013B0EB /* chevron@3x.png in Resources */,
 				057876141D9E0A3D0013B0EB /* BookIcon.png in Resources */,
 				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
 				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
+				05228CE81DA01D7A0075F183 /* BookIcon-40@2x.png in Resources */,
 				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
 				053CBD871D9E05FD00E21745 /* BookIconTest.png in Resources */,
 				052E006316C55E2C00E5E178 /* YellowPagesLogo@2x.png in Resources */,
 				0578760E1D9E093A0013B0EB /* chevron.png in Resources */,
-				0505E72A1D9B6217007221F9 /* ScrapIt_local-Info.plist in Resources */,
 				057876161D9E0A400013B0EB /* BookIcon@2x.png in Resources */,
 				05BEC72A16D9564A002DD780 /* PaperTexture-568h@2x.png in Resources */,
 			);

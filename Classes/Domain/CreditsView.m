@@ -47,6 +47,7 @@
         [dedication setText:dedicationText];
         
         [self addSubview:dedication];
+        [dedication release];
     }
     return self;
 }

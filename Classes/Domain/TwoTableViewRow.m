@@ -57,7 +57,7 @@ NSString * const TTVR_CELL_IDENTIFIER = @"TTVR_CELL_IDENTIFIER";
         UILabel *mainLabel = [[UILabel alloc] init];
         [mainLabel setFrame:[self groupedInnerContentRect]];
         mainLabel.backgroundColor = [UIColor clearColor];
-        mainLabel.lineBreakMode = UILineBreakModeWordWrap;
+        mainLabel.lineBreakMode = NSLineBreakByWordWrapping;
         mainLabel.numberOfLines = 999;
         mainLabel.tag = mainLabelTag;
 		[cell.contentView addSubview:mainLabel];
@@ -65,10 +65,11 @@ NSString * const TTVR_CELL_IDENTIFIER = @"TTVR_CELL_IDENTIFIER";
         UILabel *secondaryLabel = [[UILabel alloc] init];
         [secondaryLabel setFrame:[self subLabelContentRect]];        
         secondaryLabel.backgroundColor = [UIColor clearColor];
-        secondaryLabel.lineBreakMode = UILineBreakModeWordWrap;
+        secondaryLabel.lineBreakMode = NSLineBreakByWordWrapping;
         secondaryLabel.numberOfLines = 999;        
         secondaryLabel.tag = subLabelTag;
 		[cell.contentView addSubview:secondaryLabel];
+        [secondaryLabel release];
     }
     
     UILabel *mainLabel = (UILabel *) [cell.contentView viewWithTag:mainLabelTag];
