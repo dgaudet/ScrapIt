@@ -87,7 +87,10 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     if (self) {
         self.title = @"Find Scraps";
         _provinceService = [ProvinceService sharedInstance];
-        _userService = [UserService sharedInstance];        
+        _userService = [UserService sharedInstance];
+        _user = [[_userService retrieveUser] retain];
+        tableData = [[NSArray alloc] initWithArray:[self loadTableData]];
+        loadingData = NO;
     }
 
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightButtonClicked:)];
@@ -95,9 +98,6 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 //    self.navigationItem.rightBarButtonItem = rightButton;
 //    [rightButton release];
     
-    _user = [[_userService retrieveUser] retain];
-    tableData = [[NSArray alloc] initWithArray:[self loadTableData]];
-    loadingData = NO;
     return self;
 }
 

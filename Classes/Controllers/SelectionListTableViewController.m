@@ -26,10 +26,10 @@
     if (self) {
         // Custom initialization
         self.title = @"Select a Province";
+        tableData = [[NSArray alloc] initWithArray:[[[[ProvinceService sharedInstance] retrieveAllProvinces] allObjects] sortedArrayUsingSelector:@selector(compare:)]];
+        currentSelectedRow = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     }
-
-    tableData = [[NSArray alloc] initWithArray:[[[[ProvinceService sharedInstance] retrieveAllProvinces] allObjects] sortedArrayUsingSelector:@selector(compare:)]];
-    currentSelectedRow = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
+    
     return self;
 }
 
