@@ -107,9 +107,6 @@
 		05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */; };
 		0534EDEA16D2848B00D82133 /* ProvinceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B952C9140B02A900786A6D /* ProvinceService.m */; };
 		0534EDEC16D284BD00D82133 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACA96014074EBB007CDEFC /* Province.m */; };
-		0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		0534EE1516D2901400D82133 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0534EE1716D2919A00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1816D291A400D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
 		0534EE1916D291BD00D82133 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0534EE1616D2919900D82133 /* CoreData.framework */; };
@@ -235,12 +232,6 @@
 		05306D0116ACA43A0006777F /* EmailService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmailService.m; path = Services/EmailService.m; sourceTree = "<group>"; };
 		05306D0416ACA8D60006777F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		05309C7D164A1983009B5FD2 /* YellowPagesLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowPagesLogo.png; sourceTree = "<group>"; };
-		0534EE0916D2901400D82133 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Vendors/Google/GAI.h; sourceTree = "<group>"; };
-		0534EE0A16D2901400D82133 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Vendors/Google/GAITrackedViewController.h; sourceTree = "<group>"; };
-		0534EE0B16D2901400D82133 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Vendors/Google/GAITracker.h; sourceTree = "<group>"; };
-		0534EE0C16D2901400D82133 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = Vendors/Google/GAITransaction.h; sourceTree = "<group>"; };
-		0534EE0D16D2901400D82133 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = Vendors/Google/GAITransactionItem.h; sourceTree = "<group>"; };
-		0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Vendors/Google/libGoogleAnalytics.a; sourceTree = "<group>"; };
 		0534EE1616D2919900D82133 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0537D9EA145E4CC700EEB730 /* ScrapItBusinessService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapItBusinessService.h; path = Services/ScrapItBusinessService.h; sourceTree = "<group>"; };
 		0537D9EB145E4CC700EEB730 /* ScrapItBusinessService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapItBusinessService.m; path = Services/ScrapItBusinessService.m; sourceTree = "<group>"; };
@@ -380,7 +371,6 @@
 				052E009616C55E2C00E5E178 /* Foundation.framework in Frameworks */,
 				052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */,
 				052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */,
-				0534EE1416D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
 				0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +391,6 @@
 				056BD3D313DCD6FB0045FF79 /* UIKit.framework in Frameworks */,
 				056BD3D413DCD6FB0045FF79 /* Foundation.framework in Frameworks */,
 				056BD3D513DCD6FB0045FF79 /* CoreGraphics.framework in Frameworks */,
-				0534EE1516D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +407,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				0534EE1316D2901400D82133 /* libGoogleAnalytics.a in Frameworks */,
 				0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,19 +421,6 @@
 				052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		0534EDED16D28EE800D82133 /* Google */ = {
-			isa = PBXGroup;
-			children = (
-				0534EE0916D2901400D82133 /* GAI.h */,
-				0534EE0A16D2901400D82133 /* GAITrackedViewController.h */,
-				0534EE0B16D2901400D82133 /* GAITracker.h */,
-				0534EE0C16D2901400D82133 /* GAITransaction.h */,
-				0534EE0D16D2901400D82133 /* GAITransactionItem.h */,
-				0534EE0F16D2901400D82133 /* libGoogleAnalytics.a */,
-			);
-			name = Google;
 			sourceTree = "<group>";
 		};
 		056BD3D613DCD6FB0045FF79 /* Unit Tests */ = {
@@ -607,7 +582,6 @@
 		05F240A41600188F00B2CDD1 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				0534EDED16D28EE800D82133 /* Google */,
 				05F240A51600189800B2CDD1 /* Apple */,
 			);
 			name = Vendors;
