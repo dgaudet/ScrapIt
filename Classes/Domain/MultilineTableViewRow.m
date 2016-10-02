@@ -64,8 +64,9 @@ CGFloat MTVR_ROW_PADDING = 20.0;
 }
 
 - (CGFloat)heightForString:(NSString *)string withWidth:(CGFloat)width withFont:(UIFont *)font {
-    CGSize size = [string sizeWithFont:font constrainedToSize:CGSizeMake(width, 485.0) lineBreakMode:NSLineBreakByWordWrapping];
-    return size.height + MTVR_ROW_PADDING;
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(width, 485.0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+    
+    return rect.size.height + MTVR_ROW_PADDING;
 }
 
 - (CGFloat)heightForRow {    

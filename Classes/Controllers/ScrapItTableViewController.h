@@ -12,7 +12,6 @@
 #import "LocationHelper.h"
 #import "CreditsTableViewController.h"
 @class UILoadingAlertView;
-@class CreditsView;
 @class UserService;
 @class User;
 @class ProvinceService;

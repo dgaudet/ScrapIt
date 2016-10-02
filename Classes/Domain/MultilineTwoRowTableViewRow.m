@@ -10,6 +10,7 @@
 
 NSString * const MTRTVR_CELL_IDENTIFIER = @"MTRTVR_CELL_IDENTIFIER";
 CGFloat MTRTVR_ROW_PADDING = 20.0;
+CGFloat MTRTVR_CELL_HEIGHT_PADDING = 5.0;
 
 @interface MultilineTwoRowTableViewRow (PrivateMethods)
 
@@ -86,8 +87,9 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
 }
 
 - (CGFloat)heightForString:(NSString *)string withWidth:(CGFloat)width withFont:(UIFont *)font {
-    CGSize size = [string sizeWithFont:font constrainedToSize:CGSizeMake(width, 485.0) lineBreakMode:NSLineBreakByWordWrapping];
-    return size.height + 5;
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(width, 485.0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+    
+    return rect.size.height + MTRTVR_CELL_HEIGHT_PADDING;
 }
 
 - (CGFloat)heightForRow {
@@ -96,7 +98,7 @@ CGFloat MTRTVR_ROW_PADDING = 20.0;
     if (_value2) {
         height = height + MTRTVR_ROW_PADDING;
     } else {
-        height = height + 5.0;
+        height = height + MTRTVR_CELL_HEIGHT_PADDING;
     }
     return height;
 }

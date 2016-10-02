@@ -8,7 +8,6 @@
 
 #import "CreditsTableViewController.h"
 #import "TableViewRow.h"
-#import "MultilineTableViewRow.h"
 #import "TwoTableViewRow.h"
 #import "DeviceService.h"
 #import "EmailService.h"

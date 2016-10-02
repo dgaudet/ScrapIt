@@ -7,12 +7,9 @@
 //
 
 #import "BusinessListTableViewController.h"
-#import "MultilineTableViewRow.h"
 #import "MultilineTwoRowTableViewRow.h"
-#import "SearchService.h"
 #import "Business.h"
 #import "BusinessSummary.h"
-#import "EncodingUtil.h"
 #import "YellowPagesFooterView.h"
 #import "AnalyticsService.h"
 #import "ThemeHelper.h"
@@ -224,9 +221,10 @@ CGFloat const labelPadding = 20.0;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     NSString *titleText = [self tableView:self.tableView titleForHeaderInSection:section];
-    CGSize size = [titleText sizeWithFont:[ThemeHelper tableViewTitleFont] constrainedToSize:CGSizeMake(titleLabelWidth, 485.0) lineBreakMode:NSLineBreakByWordWrapping];
+    UIFont *font = [ThemeHelper tableViewTitleFont];
+    CGRect rect = [titleText boundingRectWithSize:CGSizeMake(titleLabelWidth, 485.0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
 
-    return size.height;
+    return rect.size.height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
