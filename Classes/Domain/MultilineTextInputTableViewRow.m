@@ -67,6 +67,7 @@ CGFloat const MTITVR_LINE_HEIGHT_SIZE = 25.0;
 
 - (void)dealloc {
     [textView release];
+    [delegate release];
     [super dealloc];
 }
 

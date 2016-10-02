@@ -11,10 +11,12 @@
 @interface ThemeHelper : NSObject
 
 + (void)setDefaultBackgroundForTableView:(UITableView *)tableView;
-+ (void)setBackgroundForCreditsTableView:(UITableView *)tableView;
-+ (void)setBackgroundForProvinceTableView:(UITableView *)tableView;
 + (void)setColorForNavBar:(UINavigationBar *)navBar;
 + (UIView *)viewForMapAnnotationCallout;
 + (UIFont *)tableViewTitleFont;
++ (void)setBackgroundForCreditsTableView:(UITableView *)tableView;
++ (UIColor *)rowSeparatorColorForCreditsView;
++ (UIColor *)mainTextColorForCreditsView;
++ (UIColor *)subTextColorForCreditsView;
 
 @end

@@ -28,15 +28,6 @@
     [backgroundView release];
 }
 
-+ (void)setBackgroundForCreditsTableView:(UITableView *)tableView {
-    [tableView setBackgroundView:nil];
-    [tableView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
-    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-}
-
-+ (void)setBackgroundForProvinceTableView:(UITableView *)tableView {
-}
-
 + (void)setColorForNavBar:(UINavigationBar *)navBar {
     if ([navBar respondsToSelector:@selector(setBarTintColor:)]) {
         //iOS 7 style
@@ -56,6 +47,25 @@
 
 + (UIFont *)tableViewTitleFont {
     return [UIFont fontWithName:@"Helvetica-Bold" size:17.0];
+}
+
+#pragma mark CreditsTableView Methods
++ (void)setBackgroundForCreditsTableView:(UITableView *)tableView {
+    [tableView setBackgroundView:nil];
+    [tableView setBackgroundColor:[UIColor lightGrayColor]];
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+}
+
++ (UIColor *)rowSeparatorColorForCreditsView {
+    return [UIColor darkGrayColor];
+}
+
++ (UIColor *)mainTextColorForCreditsView {
+    return [UIColor whiteColor];
+}
+
++ (UIColor *)subTextColorForCreditsView {
+    return [UIColor blackColor];
 }
 
 @end

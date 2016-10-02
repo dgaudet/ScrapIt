@@ -36,6 +36,7 @@
 - (void)dealloc {
     [subtitle release];
     [title release];
+    [businessSummary release];
     [super dealloc];
 }
 

@@ -54,16 +54,14 @@ NSString * const TTVR_CELL_IDENTIFIER = @"TTVR_CELL_IDENTIFIER";
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
         
-        UILabel *mainLabel = [[UILabel alloc] init];
-        [mainLabel setFrame:[self groupedInnerContentRect]];
+        UILabel *mainLabel = [[UILabel alloc] initWithFrame:[self groupedInnerContentRect]];
         mainLabel.backgroundColor = [UIColor clearColor];
         mainLabel.lineBreakMode = NSLineBreakByWordWrapping;
         mainLabel.numberOfLines = 999;
         mainLabel.tag = mainLabelTag;
 		[cell.contentView addSubview:mainLabel];
         
-        UILabel *secondaryLabel = [[UILabel alloc] init];
-        [secondaryLabel setFrame:[self subLabelContentRect]];        
+        UILabel *secondaryLabel = [[UILabel alloc] initWithFrame:[self subLabelContentRect]];
         secondaryLabel.backgroundColor = [UIColor clearColor];
         secondaryLabel.lineBreakMode = NSLineBreakByWordWrapping;
         secondaryLabel.numberOfLines = 999;        

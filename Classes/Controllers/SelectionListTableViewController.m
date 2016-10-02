@@ -59,8 +59,6 @@
 {
     [super viewDidLoad];
     [AnalyticsService logScreenViewWithName:@"Select Province"];
-    
-    [ThemeHelper setBackgroundForProvinceTableView:self.tableView];
 }
 
 - (void)viewDidUnload

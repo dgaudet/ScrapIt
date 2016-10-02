@@ -84,9 +84,11 @@ NSString * const GOOGLE_OK_STATUS = @"OK";
 	if ([[results valueForKey:@"status"] isEqualToString:GOOGLE_OK_STATUS]) {
         coordinate = [[GoogleSearchService sharedInstance] retrieveCoordinatesForCityResults:results];
 	} else {
-        NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
-        [errorDetail setValue:@"There was no address found with that name" forKey:NSLocalizedDescriptionKey];
-        *error = [NSError errorWithDomain:[[NSBundle mainBundle] bundleIdentifier] code:100 userInfo:errorDetail];
+        if (*error != NULL) {
+            NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+            [errorDetail setValue:@"There was no address found with that name" forKey:NSLocalizedDescriptionKey];
+            *error = [NSError errorWithDomain:[[NSBundle mainBundle] bundleIdentifier] code:100 userInfo:errorDetail];
+        }
     }
 
 	return coordinate;

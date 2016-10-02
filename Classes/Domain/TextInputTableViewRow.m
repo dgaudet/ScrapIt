@@ -66,6 +66,7 @@ int const TITVR_TEXTFIELD_TAG = 2;
 - (void)dealloc {
     [textField release];
     [label release];
+    [delegate release];
     [super dealloc];
 }
 

@@ -69,10 +69,9 @@
 
 - (NSArray *)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate error:(NSError **)error {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
-        if (error == NULL) {
-            error = nil;
+        if (*error != NULL) {
+            *error = [NetworkErrors noWifiError];
         }
-        *error = [NetworkErrors noWifiError];
         return [NSArray array];
     }
     NSArray *businesses = [[ScrapItBusinessService sharedInstance] retrieveBusinessesForCoordinates:coordinate];
@@ -82,14 +81,18 @@
 
 - (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)businessSummary error:(NSError **)error {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
-        *error = [NetworkErrors noWifiError];
+        if (*error != NULL) {
+            *error = [NetworkErrors noWifiError];
+        }
         return nil;
     }
     
     NSError *businessError = nil;
     Business *business = [[ScrapItBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary error:&businessError];
     if (businessError) {
-        *error = businessError;
+        if (*error != NULL) {
+            *error = businessError;
+        }
         return nil;
     }
     [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
@@ -98,12 +101,16 @@
 
 - (CLLocationCoordinate2D)retrieveCenterCoordinatesForCity:(NSString *)city inProvince:(Province *)province error:(NSError **)error {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
-        *error = [NetworkErrors noWifiError];
+        if (*error != NULL) {
+            *error = [NetworkErrors noWifiError];
+        }
         return CLLocationCoordinate2DMake(0.0, 0.0);
     } else {
         NSDictionary *locationResults = [[GoogleSearchService sharedInstance] retrieveCityLocationResults:city inProvince:province];
         if (!locationResults) {
-            *error = [NetworkErrors downloadErrorWithMessage:@"There was no city found with that name"];
+            if (*error != NULL) {
+                *error = [NetworkErrors downloadErrorWithMessage:@"There was no city found with that name"];
+            }
             return CLLocationCoordinate2DMake(0.0, 0.0);
         }
         [AnalyticsService logSearchEventForBusinessWithCity:city andProvince:province.name];

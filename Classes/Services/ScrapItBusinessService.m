@@ -60,7 +60,9 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
     NSError *requestError = nil;
 	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&requestError];
     if (requestError) {
-        *error = [NetworkErrors downloadErrorWithMessage:@"There was a problem retrieving that business please try again later."];
+        if (*error != NULL) {
+            *error = [NetworkErrors downloadErrorWithMessage:@"There was a problem retrieving that business please try again later."];
+        }
         return nil;
     }
 	NSArray *results = [responseString JSONValue];
