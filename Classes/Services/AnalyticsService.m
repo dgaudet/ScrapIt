@@ -140,7 +140,8 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logEventThroughGoogleCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label {
-    //[[GAI sharedInstance].defaultTracker sendEventWithCategory:category withAction:action withLabel:label withValue:nil];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category action:action label:label value:nil] build]];
 }
 
 + (void)logEventThroughCrashlytics:(NSString *)value forKey:(NSString *)key {
