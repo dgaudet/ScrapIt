@@ -71,12 +71,16 @@ CGFloat const labelPadding = 20.0;
     headerWidth = self.view.frame.size.width;
     titleLabelWidth = headerWidth - 2 * labelPadding;
     
-    [AnalyticsService logScreenViewWithName:@"Business Detail"];
 	[ThemeHelper setDefaultBackgroundForTableView:self.tableView];
     self.title = @"Store Details";
     tableData = [[NSArray alloc] initWithArray:[self setupTableData:business]];
     lastSelectedIndex = [[NSIndexPath indexPathForRow:0 inSection:0] retain];
     [self.tableView setScrollEnabled:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [AnalyticsService logScreenViewWithName:@"Business Detail"];
 }
 
 - (void)addYellowPagesFooterToView:(UIView *)view {

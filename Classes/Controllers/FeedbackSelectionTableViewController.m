@@ -84,7 +84,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [AnalyticsService logScreenViewWithName:@"Feedback"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -102,6 +101,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [AnalyticsService logScreenViewWithName:@"Feedback"];
 }
 
 - (void)viewDidAppear:(BOOL)animated

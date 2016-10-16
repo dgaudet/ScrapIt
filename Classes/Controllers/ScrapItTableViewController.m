@@ -167,7 +167,6 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
 
     [ThemeHelper setDefaultBackgroundForTableView:self.tableView];
 
@@ -178,6 +177,11 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
     tapBackgroundViewGesture.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:tapBackgroundViewGesture];
     [tapBackgroundViewGesture release];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];    
+    [AnalyticsService logScreenViewWithName:@"Search For Businesses"];
 }
 
 - (void)addInfoButtonToView {

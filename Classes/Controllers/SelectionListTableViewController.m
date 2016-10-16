@@ -55,12 +55,6 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [AnalyticsService logScreenViewWithName:@"Select Province"];
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -71,6 +65,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [AnalyticsService logScreenViewWithName:@"Select Province"];
     currentSelectedItem = initialCheckedItem;
 }
 

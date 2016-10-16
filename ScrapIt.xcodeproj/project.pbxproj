@@ -120,6 +120,8 @@
 		055399671745DD1B005191C2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055399651745DD12005191C2 /* AddressBook.framework */; };
 		0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
 		0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0560656916D70F7400D29E0F /* Crashlytics.framework */; };
+		056144941DB4317700D43475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056144921DB4317400D43475 /* GoogleService-Info.plist */; };
+		056144961DB4318200D43475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056144951DB4318200D43475 /* GoogleService-Info.plist */; };
 		056BD3D313DCD6FB0045FF79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		056BD3D413DCD6FB0045FF79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		056BD3D513DCD6FB0045FF79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -211,6 +213,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		E065A4953714D60A71987D62 /* libPods-ScrapIt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 751E7A93846A7E247AD1B774 /* libPods-ScrapIt.a */; };
+		E4437B7A05C3EEEFEF2D814D /* libPods-ScrapIt_local.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C28FF25DC6E4554D7FF7A3 /* libPods-ScrapIt_local.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,6 +247,8 @@
 		055399621745D239005191C2 /* MapsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapsHelper.m; path = Utilities/MapsHelper.m; sourceTree = "<group>"; };
 		055399651745DD12005191C2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		0560656916D70F7400D29E0F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		056144921DB4317400D43475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "ScrapIt_Local/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		056144951DB4318200D43475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		056BD3D213DCD6FB0045FF79 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056BD3D813DCD6FB0045FF79 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		056BD3DA13DCD6FB0045FF79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -354,7 +360,13 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ScrapIt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapIt_Prefix.pch; sourceTree = "<group>"; };
+		4B4CA30BA7F0A6FEA4B1E91E /* Pods-ScrapIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt/Pods-ScrapIt.debug.xcconfig"; sourceTree = "<group>"; };
+		751E7A93846A7E247AD1B774 /* libPods-ScrapIt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrapIt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		767F8BEEF71C84AB29F4456C /* Pods-ScrapIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt/Pods-ScrapIt.release.xcconfig"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ScrapIt-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ScrapIt-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A5C28FF25DC6E4554D7FF7A3 /* libPods-ScrapIt_local.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrapIt_local.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7C7D33C5703CFA1F3AF5DE4 /* Pods-ScrapIt_local.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt_local.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt_local/Pods-ScrapIt_local.release.xcconfig"; sourceTree = "<group>"; };
+		D37DD1F833C10D28DD11F0CC /* Pods-ScrapIt_local.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt_local.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt_local/Pods-ScrapIt_local.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +384,7 @@
 				052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */,
 				052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */,
 				0560656B16D70F7500D29E0F /* Crashlytics.framework in Frameworks */,
+				E4437B7A05C3EEEFEF2D814D /* libPods-ScrapIt_local.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +421,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				0560656A16D70F7400D29E0F /* Crashlytics.framework in Frameworks */,
+				E065A4953714D60A71987D62 /* libPods-ScrapIt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +435,14 @@
 				052DCC2D1759875200A39C0B /* ScrapItTableViewControllerTest.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		056144911DB4312E00D43475 /* ScrapIt_Local */ = {
+			isa = PBXGroup;
+			children = (
+				056144921DB4317400D43475 /* GoogleService-Info.plist */,
+			);
+			name = ScrapIt_Local;
 			sourceTree = "<group>";
 		};
 		056BD3D613DCD6FB0045FF79 /* Unit Tests */ = {
@@ -612,6 +634,17 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		1997B8D169B43B4C3E38325C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B4CA30BA7F0A6FEA4B1E91E /* Pods-ScrapIt.debug.xcconfig */,
+				767F8BEEF71C84AB29F4456C /* Pods-ScrapIt.release.xcconfig */,
+				D37DD1F833C10D28DD11F0CC /* Pods-ScrapIt_local.debug.xcconfig */,
+				C7C7D33C5703CFA1F3AF5DE4 /* Pods-ScrapIt_local.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +671,7 @@
 				056BD3D613DCD6FB0045FF79 /* Unit Tests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				1997B8D169B43B4C3E38325C /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -655,6 +689,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				056144951DB4318200D43475 /* GoogleService-Info.plist */,
+				056144911DB4312E00D43475 /* ScrapIt_Local */,
 				05228D141DA04FA30075F183 /* Images.xcassets */,
 				05228D021DA04A0A0075F183 /* BookIcon-60@2x.png */,
 				05228D031DA04A0A0075F183 /* BookIcon-60@3x.png */,
@@ -686,6 +722,8 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				751E7A93846A7E247AD1B774 /* libPods-ScrapIt.a */,
+				A5C28FF25DC6E4554D7FF7A3 /* libPods-ScrapIt_local.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -697,10 +735,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 052E009A16C55E2C00E5E178 /* Build configuration list for PBXNativeTarget "ScrapIt_local" */;
 			buildPhases = (
+				56DBF13D77BF2795FC9D73FD /* [CP] Check Pods Manifest.lock */,
 				052E005916C55E2C00E5E178 /* Resources */,
 				052E006416C55E2C00E5E178 /* Sources */,
 				052E009116C55E2C00E5E178 /* Frameworks */,
 				0533AC1716D70E6900D69366 /* ShellScript */,
+				ED0C101CC15C3E8BCDE595AB /* [CP] Embed Pods Frameworks */,
+				6B3593F545967B51BF9AA751 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -733,10 +774,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ScrapIt" */;
 			buildPhases = (
+				1F287B64AE585029AE9B67E6 /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				0533AC1616D70E3F00D69366 /* ShellScript */,
+				E30530AE2D85C1EF24696C58 /* [CP] Embed Pods Frameworks */,
+				38AEEBD4D0A211AB24F311E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -776,6 +820,7 @@
 				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -802,6 +847,7 @@
 				0578760F1D9E093D0013B0EB /* chevron@3x.png in Resources */,
 				052E005C16C55E2C00E5E178 /* Ideas.txt in Resources */,
 				052E005E16C55E2C00E5E178 /* PaperTexture.png in Resources */,
+				056144941DB4317700D43475 /* GoogleService-Info.plist in Resources */,
 				05228D161DA04FCF0075F183 /* Images.xcassets in Resources */,
 				052E005F16C55E2C00E5E178 /* PaperTexture@2x.png in Resources */,
 				052E006216C55E2C00E5E178 /* YellowPagesLogo.png in Resources */,
@@ -835,6 +881,7 @@
 				051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */,
 				051782121D9A093400A65672 /* Calgary.gpx in Resources */,
 				0578760C1D9E09310013B0EB /* chevron@3x.png in Resources */,
+				056144961DB4318200D43475 /* GoogleService-Info.plist in Resources */,
 				05228D171DA04FDE0075F183 /* Images.xcassets in Resources */,
 				0578760D1D9E09310013B0EB /* chevron.png in Resources */,
 				05309C7E164A1983009B5FD2 /* YellowPagesLogo.png in Resources */,
@@ -885,6 +932,96 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		1F287B64AE585029AE9B67E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		38AEEBD4D0A211AB24F311E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrapIt/Pods-ScrapIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56DBF13D77BF2795FC9D73FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B3593F545967B51BF9AA751 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrapIt_local/Pods-ScrapIt_local-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E30530AE2D85C1EF24696C58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrapIt/Pods-ScrapIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED0C101CC15C3E8BCDE595AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrapIt_local/Pods-ScrapIt_local-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1062,6 +1199,7 @@
 /* Begin XCBuildConfiguration section */
 		052E009B16C55E2C00E5E178 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D37DD1F833C10D28DD11F0CC /* Pods-ScrapIt_local.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Local";
@@ -1087,7 +1225,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
-				OTHER_CFLAGS = "-DTest";
+				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deansapps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScrapIt_local;
 			};
@@ -1095,6 +1233,7 @@
 		};
 		052E009C16C55E2C00E5E178 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7C7D33C5703CFA1F3AF5DE4 /* Pods-ScrapIt_local.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Local";
@@ -1118,10 +1257,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"-DTest",
-				);
+				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deansapps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScrapIt_local;
 				VALIDATE_PRODUCT = YES;
@@ -1195,6 +1331,7 @@
 		};
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B4CA30BA7F0A6FEA4B1E91E /* Pods-ScrapIt.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1227,6 +1364,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 767F8BEEF71C84AB29F4456C /* Pods-ScrapIt.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

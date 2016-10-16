@@ -190,9 +190,13 @@ NSString *const Row_Key = @"Row";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [AnalyticsService logScreenViewWithName:@"Credits and Info"];
     
     [ThemeHelper setBackgroundForCreditsTableView:self.tableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [AnalyticsService logScreenViewWithName:@"Credits and Info"];
 }
 
 - (void)viewDidUnload

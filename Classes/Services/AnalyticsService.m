@@ -10,8 +10,8 @@
 #import "DeviceUtil.h"
 #import "Constants.h"
 #import "DeviceService.h"
-//#import "GAI.h"
 #import "BusinessSummary.h"
+#import <Google/Analytics.h>
 #import <Crashlytics/Crashlytics.h>
 
 NSString * const AS_City_Search_Key = @"City Search";
@@ -24,6 +24,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 
 @interface AnalyticsService (PrivateMethods)
 
++ (void)setupGoogleAnalytics;
 + (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary;
 + (void)logEventWithCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label;
 + (void)logEventThroughGoogleCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label;
@@ -36,8 +37,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 @implementation AnalyticsService
 
 + (void)startTrackingAnalytics {    
-    //[GAI sharedInstance].dispatchInterval = 20;
-    //[[GAI sharedInstance] trackerWithTrackingId:kGoogleAnalyticsTrackingCode];
+    [self setupGoogleAnalytics];
     [Crashlytics startWithAPIKey:kCrashlyticsCode];
 }
 
@@ -110,7 +110,21 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logScreenViewWithName:(NSString *)name {
-    //[[GAI sharedInstance].defaultTracker sendView:name];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:name];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
++ (void)setupGoogleAnalytics {
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
 }
 
 + (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary {

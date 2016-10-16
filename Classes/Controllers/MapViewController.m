@@ -53,7 +53,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [AnalyticsService logScreenViewWithName:@"Map - Business Search Results"];
+    
     
 	mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
 	mapView.mapType = MKMapTypeStandard;
@@ -69,6 +69,11 @@
 	
 	[self.view addSubview:mapView];
 	[self addAnnotationsWithPlaceMarks:placemarksForCity];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [AnalyticsService logScreenViewWithName:@"Map - Business Search Results"];
 }
 
 /*

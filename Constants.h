@@ -34,12 +34,6 @@
 #define kScrapItServicesApiKey @"53E00A51-6CAD-4E34-B75A-2E2A18957104"
 #endif
 
-#ifdef Test
-#define kGoogleAnalyticsTrackingCode @"UA-38534491-2"
-#else
-#define kGoogleAnalyticsTrackingCode @"UA-38534491-1"
-#endif
-
 #define kCrashlyticsCode @"a5e729783a2ccbc18626b6a118870aae9c94ed75"
 
 #endif
