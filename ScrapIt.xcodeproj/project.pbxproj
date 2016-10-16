@@ -1225,7 +1225,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Vendors/Google\"",
 				);
-				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTest",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deansapps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScrapIt_local;
 			};

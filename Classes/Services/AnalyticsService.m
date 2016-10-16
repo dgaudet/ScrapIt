@@ -124,7 +124,10 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
     // Optional: configure GAI options.
     GAI *gai = [GAI sharedInstance];
     gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    
+#ifdef Test
     gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+#endif
 }
 
 + (NSString *)businessSummaryDataForLogging:(BusinessSummary *)summary {
