@@ -208,10 +208,10 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1E9AAD1D85D3D3EF0D283FC1 /* Pods_ScrapIt_local.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA5075FA4707CD9D8EDA5FA /* Pods_ScrapIt_local.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		E065A4953714D60A71987D62 /* libPods-ScrapIt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 751E7A93846A7E247AD1B774 /* libPods-ScrapIt.a */; };
-		E4437B7A05C3EEEFEF2D814D /* libPods-ScrapIt_local.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C28FF25DC6E4554D7FF7A3 /* libPods-ScrapIt_local.a */; };
+		599B7E518266951E080CE97E /* Pods_ScrapIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54309EEFEF91C407DD1ED8 /* Pods_ScrapIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,11 +356,11 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ScrapIt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapIt_Prefix.pch; sourceTree = "<group>"; };
+		3DA5075FA4707CD9D8EDA5FA /* Pods_ScrapIt_local.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrapIt_local.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4CA30BA7F0A6FEA4B1E91E /* Pods-ScrapIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt/Pods-ScrapIt.debug.xcconfig"; sourceTree = "<group>"; };
-		751E7A93846A7E247AD1B774 /* libPods-ScrapIt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrapIt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		767F8BEEF71C84AB29F4456C /* Pods-ScrapIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt/Pods-ScrapIt.release.xcconfig"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ScrapIt-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ScrapIt-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		A5C28FF25DC6E4554D7FF7A3 /* libPods-ScrapIt_local.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrapIt_local.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D54309EEFEF91C407DD1ED8 /* Pods_ScrapIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrapIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C7D33C5703CFA1F3AF5DE4 /* Pods-ScrapIt_local.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt_local.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt_local/Pods-ScrapIt_local.release.xcconfig"; sourceTree = "<group>"; };
 		D37DD1F833C10D28DD11F0CC /* Pods-ScrapIt_local.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrapIt_local.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrapIt_local/Pods-ScrapIt_local.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -379,7 +379,7 @@
 				052E009616C55E2C00E5E178 /* Foundation.framework in Frameworks */,
 				052E009716C55E2C00E5E178 /* UIKit.framework in Frameworks */,
 				052E009816C55E2C00E5E178 /* CoreGraphics.framework in Frameworks */,
-				E4437B7A05C3EEEFEF2D814D /* libPods-ScrapIt_local.a in Frameworks */,
+				1E9AAD1D85D3D3EF0D283FC1 /* Pods_ScrapIt_local.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +414,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				E065A4953714D60A71987D62 /* libPods-ScrapIt.a in Frameworks */,
+				599B7E518266951E080CE97E /* Pods_ScrapIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,8 +714,8 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
-				751E7A93846A7E247AD1B774 /* libPods-ScrapIt.a */,
-				A5C28FF25DC6E4554D7FF7A3 /* libPods-ScrapIt_local.a */,
+				9D54309EEFEF91C407DD1ED8 /* Pods_ScrapIt.framework */,
+				3DA5075FA4707CD9D8EDA5FA /* Pods_ScrapIt_local.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -728,11 +728,12 @@
 			buildConfigurationList = 052E009A16C55E2C00E5E178 /* Build configuration list for PBXNativeTarget "ScrapIt_local" */;
 			buildPhases = (
 				56DBF13D77BF2795FC9D73FD /* [CP] Check Pods Manifest.lock */,
-				052E005916C55E2C00E5E178 /* Resources */,
 				052E006416C55E2C00E5E178 /* Sources */,
 				052E009116C55E2C00E5E178 /* Frameworks */,
+				052E005916C55E2C00E5E178 /* Resources */,
 				ED0C101CC15C3E8BCDE595AB /* [CP] Embed Pods Frameworks */,
 				6B3593F545967B51BF9AA751 /* [CP] Copy Pods Resources */,
+				0580BF7F1DBD0C9400B1094B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -766,11 +767,12 @@
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ScrapIt" */;
 			buildPhases = (
 				1F287B64AE585029AE9B67E6 /* [CP] Check Pods Manifest.lock */,
-				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
 				E30530AE2D85C1EF24696C58 /* [CP] Embed Pods Frameworks */,
 				38AEEBD4D0A211AB24F311E3 /* [CP] Copy Pods Resources */,
+				05E58A721DBD101300354937 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -896,6 +898,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		0580BF7F1DBD0C9400B1094B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Fabric/run a5e729783a2ccbc18626b6a118870aae9c94ed75 f85ecbf3477e150c670b5cc5a5361b15a2eb03c3b6e6b9560ff4c15025715357";
+		};
+		05E58A721DBD101300354937 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Fabric/run a5e729783a2ccbc18626b6a118870aae9c94ed75 f85ecbf3477e150c670b5cc5a5361b15a2eb03c3b6e6b9560ff4c15025715357";
 		};
 		1F287B64AE585029AE9B67E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
