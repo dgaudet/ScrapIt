@@ -8,8 +8,6 @@
 ** Use Asset Catalog for images
 *** The App Distribution Guide has information on migrating assets to an Asset Catalog
 ** Switch to ARC
-** Get Crashyltics Working
-** Get GoogleAnalytics Working
 ** If there are more than one store in a city with no location, they show up in the middle of the city, and clicking on the pin
 *** multiple times loads different stores, not sure what to do about this but probably something
 ** If a store has no address the address row in store details should be different
@@ -41,7 +39,7 @@
 * Items Required for next release
 * nice to have *
 ** fix warnings
-** Get Crashlytics and Google Analytics working
+** -Get Crashlytics and Google Analytics working-
 ** Fix -Cannot snapshot view- error
 *** required startup image
 **** https://developer.apple.com/ios/human-interface-guidelines/graphics/launch-screen/

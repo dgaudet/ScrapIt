@@ -23,7 +23,7 @@
 #define kSystemAppSupportEmail @"support@deangaudet.com"
 
 #ifdef Test
-#define kScrapItServicesBaseUrl @"http://localhost:8080/"
+#define kScrapItServicesBaseUrl @"http://deangaudet.com/"
 #else
 #define kScrapItServicesBaseUrl @"http://deangaudet.com/"
 #endif
@@ -33,7 +33,5 @@
 #else
 #define kScrapItServicesApiKey @"53E00A51-6CAD-4E34-B75A-2E2A18957104"
 #endif
-
-#define kCrashlyticsCode @"a5e729783a2ccbc18626b6a118870aae9c94ed75"
 
 #endif
