@@ -11,7 +11,7 @@
 #import "Constants.h"
 #import "DeviceService.h"
 #import "BusinessSummary.h"
-//#import <Google/Analytics.h>
+#import <Google/Analytics.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -40,7 +40,6 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 + (void)startTrackingAnalytics {    
     [self setupGoogleAnalytics];
     [Fabric with:@[[Crashlytics class]]];
-//    [Crashlytics startWithAPIKey:kCrashlyticsCode];
 }
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
@@ -112,23 +111,23 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logScreenViewWithName:(NSString *)name {
-//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//    [tracker set:kGAIScreenName value:name];
-//    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:name];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 + (void)setupGoogleAnalytics {
     // Configure tracker from GoogleService-Info.plist.
-//    NSError *configureError;
-//    [[GGLContext sharedInstance] configureWithError:&configureError];
-//    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-//    
-//    // Optional: configure GAI options.
-//    GAI *gai = [GAI sharedInstance];
-//    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
     
 #ifdef Test
-//    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
 #endif
 }
 
@@ -142,14 +141,14 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logEventThroughGoogleCategory:(NSString *)category withAction:(NSString *)action withLabel:(NSString *)label {
-//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category action:action label:label value:nil] build]];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category action:action label:label value:nil] build]];
 }
 
 + (void)logEventThroughCrashlytics:(NSString *)value forKey:(NSString *)key {
-//    [Crashlytics setObjectValue:value forKey:key];
-//    NSString *lastActionString = [NSString stringWithFormat:@"Key: %@ - Value: %@", key, value];
-//    [Crashlytics setObjectValue:lastActionString forKey:@"last_UI_action"];
+    [CrashlyticsKit setObjectValue:value forKey:key];
+    NSString *lastActionString = [NSString stringWithFormat:@"Key: %@ - Value: %@", key, value];
+    [CrashlyticsKit setObjectValue:lastActionString forKey:@"last_UI_action"];
 }
 
 @end
