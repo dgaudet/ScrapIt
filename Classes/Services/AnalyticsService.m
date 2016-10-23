@@ -12,7 +12,7 @@
 #import "DeviceService.h"
 #import "BusinessSummary.h"
 #import <Google/Analytics.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Crashlytics/Crashlytics.h>
 
 NSString * const AS_City_Search_Key = @"City Search";
 NSString * const AS_Business_Detail_Key = @"Business Detail View";
@@ -38,7 +38,7 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 
 + (void)startTrackingAnalytics {    
     [self setupGoogleAnalytics];
-    [Crashlytics startWithAPIKey:kCrashlyticsCode];
+//    [Crashlytics startWithAPIKey:kCrashlyticsCode];
 }
 
 + (void)logSearchEventForBusinessWithCity:(NSString *)city andProvince:(NSString *)province {
@@ -145,9 +145,9 @@ NSString * const AS_User_Tapped_Key = @"User Tapped";
 }
 
 + (void)logEventThroughCrashlytics:(NSString *)value forKey:(NSString *)key {
-    [Crashlytics setObjectValue:value forKey:key];
-    NSString *lastActionString = [NSString stringWithFormat:@"Key: %@ - Value: %@", key, value];
-    [Crashlytics setObjectValue:lastActionString forKey:@"last_UI_action"];
+//    [Crashlytics setObjectValue:value forKey:key];
+//    NSString *lastActionString = [NSString stringWithFormat:@"Key: %@ - Value: %@", key, value];
+//    [Crashlytics setObjectValue:lastActionString forKey:@"last_UI_action"];
 }
 
 @end
