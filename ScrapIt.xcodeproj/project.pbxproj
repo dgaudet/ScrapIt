@@ -1213,10 +1213,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Google\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DTest",
@@ -1248,10 +1245,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ScrapIt_local-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Google\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deansapps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScrapIt_local;
@@ -1348,10 +1342,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ScrapIt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Google\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deangaudet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Find Scraps";
 			};
@@ -1380,10 +1371,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ScrapIt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Vendors/Google\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deangaudet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Find Scraps";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
