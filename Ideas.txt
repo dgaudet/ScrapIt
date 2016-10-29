@@ -45,3 +45,4 @@
 **** https://developer.apple.com/ios/human-interface-guidelines/graphics/launch-screen/
 *** required background
 * Get working with iPod
+* Update Company information with iTunes and versioning, and possibly with the government?
