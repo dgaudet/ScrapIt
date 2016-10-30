@@ -21,6 +21,7 @@
 @interface MapViewController (PrivateMethods)
 
 - (void)addAnnotationsWithPlaceMarks:(NSArray *)placemarks;
+- (void)loadBusinessOrShowError:(Business *)business error:(NSError *)error;
 - (void)loadBusinessListTableViewControllerWithBusiness:(Business *)business;
 - (void)showLoadingIndicatorsCompetion:(void (^)(void))completion;
 - (void)hideLoadingIndicatorsCompletion:(void (^)(void))completion;
@@ -113,17 +114,27 @@
     
     [self showLoadingIndicatorsCompetion:^{
         [[SearchService sharedInstance] businessFromBusinessSummary:placeMark.businessSummary completionBlock:^(Business * _Nullable business, NSError * _Nullable error) {
-            if (error != NULL) {
-                [self displayErrorToUser:error];
-            }
-            if(business != NULL){
-                [self loadBusinessListTableViewControllerWithBusiness:business];
+            if ([NSThread isMainThread]) {
+                [self loadBusinessOrShowError:business error:error];
             } else {
-                NSError *error = [ApplicationError generalError];
-                [self displayErrorToUser:error];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self loadBusinessOrShowError:business error:error];
+                });
             }
         }];
     }];
+}
+
+- (void)loadBusinessOrShowError:(Business *)business error:(NSError *)error {
+    if (error != NULL) {
+        [self displayErrorToUser:error];
+    }
+    if(business != NULL){
+        [self loadBusinessListTableViewControllerWithBusiness:business];
+    } else {
+        NSError *error = [ApplicationError generalError];
+        [self displayErrorToUser:error];
+    }
 }
 
 - (void)loadBusinessListTableViewControllerWithBusiness:(Business *)business {

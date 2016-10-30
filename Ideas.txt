@@ -46,3 +46,5 @@
 *** required background
 * Get working with iPod
 * Update Company information with iTunes and versioning, and possibly with the government?
+* Move NetworkErrors class from domain to Errors folder
+* Handle more exception cases from retrieveBusinessesForCoordinates
