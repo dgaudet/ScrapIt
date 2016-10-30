@@ -51,6 +51,7 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 - (void)displayLocationHelperErrorToUser;
 - (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message;
 - (void)loadMapViewOrDisplayErrorForLocation:(CLLocationCoordinate2D)location andTitle:(NSString *)title;
+- (void)loadMapViewOrDisplayErrorForTitle:(NSString *)title location:(CLLocationCoordinate2D)location placeMarks:(NSArray *)placemarks andError:(NSError *)error;
 - (void)loadMapViewControllerwithTitle:(NSString *)title mapCenter:(CLLocationCoordinate2D)mapCenter placemarks:(NSArray *)placemarks;
 - (void)showLoadingIndicatorsCompletion:(void (^)(void))completion;
 - (void)hideLoadingIndicators;
@@ -326,14 +327,24 @@ CGFloat const STVC_HEADER_HEIGHT = 40.0;
 
 - (void)findStoresforCoords:(CLLocationCoordinate2D)location {
     [self showLoadingIndicatorsCompletion:^{
+        [self setButtonSelectedFalseIfNeeded];
         [self loadMapViewOrDisplayErrorForLocation:location andTitle:@"Mapped Stores"];
     }];
 }
 
 - (void)loadMapViewOrDisplayErrorForLocation:(CLLocationCoordinate2D)location andTitle:(NSString *)title {
-    NSError *error = nil;
-    NSArray *placemarks = [[SearchService sharedInstance] retrievePlacemarksForCoordinates:location error:&error];
-    [self setButtonSelectedFalseIfNeeded];
+    [[SearchService sharedInstance] retrievePlacemarksForCoordinates:location completionBlock:^(NSArray * _Nonnull placemarks, NSError * _Nullable error) {
+        if ([NSThread isMainThread]) {
+            [self loadMapViewOrDisplayErrorForTitle:title location:location placeMarks:placemarks andError:error];
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self loadMapViewOrDisplayErrorForTitle:title location:location placeMarks:placemarks andError:error];
+            });
+        }
+    }];
+}
+
+- (void)loadMapViewOrDisplayErrorForTitle:(NSString *)title location:(CLLocationCoordinate2D)location placeMarks:(NSArray *)placemarks andError:(NSError *)error {
     if (error) {
         [self displayErrorToUser:error];
     } else {

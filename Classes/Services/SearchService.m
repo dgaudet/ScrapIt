@@ -66,30 +66,29 @@
 	return nil;
 }
 
-- (NSArray *)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate error:(NSError **)error {
+- (void)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate completionBlock:(nonnull void(^)(NSArray * _Nonnull placemarks, NSError * _Nullable error))completion {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
-        if (*error != NULL) {
-            *error = [NetworkErrors noWifiError];
-        }
-        return [NSArray array];
+        NSError *error = [NetworkErrors noWifiError];
+        completion([NSArray array], error);
+    } else {
+        [AnalyticsService logBusinessEventForStoresWithLocation:coordinate];
+        [[ScrapItBusinessService sharedInstance] retrieveBusinessesForCoordinates:coordinate completionBlock:^(NSArray * _Nonnull businesses, NSError * _Nullable error) {
+            NSArray *placemarks = [self generatePlacemarksFromBusinesses:businesses];
+            completion(placemarks, error);
+        }];
     }
-    NSArray *businesses = [[ScrapItBusinessService sharedInstance] retrieveBusinessesForCoordinates:coordinate];
-    [AnalyticsService logBusinessEventForStoresWithLocation:coordinate];
-    return [self generatePlacemarksFromBusinesses:businesses];
 }
 
 - (void)businessFromBusinessSummary:(BusinessSummary *)businessSummary completionBlock:(void(^)(Business * _Nullable business, NSError * _Nullable error))completion {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
         NSError *error = [NetworkErrors noWifiError];
         completion(NULL, error);
+    } else {
+        [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
+        [[ScrapItBusinessService sharedInstance] businessFromBusinessSummary:businessSummary completionBlock:^(Business * _Nullable business, NSError * _Nullable error) {
+            completion(business, error);
+        }];
     }
-    
-    [[ScrapItBusinessService sharedInstance] businessFromBusinessSummary:businessSummary completionBlock:^(Business * _Nullable business, NSError * _Nullable error) {
-        if (business != NULL) {
-            [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
-        }
-        completion(business, error);
-    }];
 }
 
 - (CLLocationCoordinate2D)retrieveCenterCoordinatesForCity:(NSString *)city inProvince:(Province *)province error:(NSError **)error {

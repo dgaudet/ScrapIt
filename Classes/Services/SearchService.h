@@ -19,9 +19,9 @@
 }
 
 + (_Nonnull id)sharedInstance;
-- (nonnull NSArray *)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate error:(NSError **)error;
 - (CLLocationCoordinate2D)retrieveCenterCoordinatesForCity:(NSString * _Nonnull)city inProvince:(Province * _Nonnull)province error:(NSError **)error;
 - (CLLocationCoordinate2D)retrieveCoordinatesForStreet:(NSString * _Nonnull)street city:(NSString * _Nonnull)city province:(NSString *)prov country:(NSString * _Nonnull)country error:(NSError **)error;
+- (void)retrievePlacemarksForCoordinates:(CLLocationCoordinate2D)coordinate completionBlock:(nonnull void(^)(NSArray * _Nonnull placemarks, NSError * _Nullable error))completion;
 - (void)businessFromBusinessSummary:(BusinessSummary * _Nonnull)businessSummary completionBlock:(nonnull void(^)(Business * _Nullable business, NSError * _Nullable error))completion;
 
 @end

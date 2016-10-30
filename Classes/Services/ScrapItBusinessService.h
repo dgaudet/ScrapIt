@@ -14,7 +14,7 @@
 @interface ScrapItBusinessService : NSObject
 
 + (_Nonnull id)sharedInstance;
-- (nonnull NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate;
+- (void)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate completionBlock:(nonnull void(^)(NSArray * _Nonnull businesses, NSError * _Nullable error))completion;
 - (void)businessFromBusinessSummary:(nonnull BusinessSummary *)summary completionBlock:(nonnull void(^)(Business * _Nullable business, NSError * _Nullable error))completion;
 
 @end

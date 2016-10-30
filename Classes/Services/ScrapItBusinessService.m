@@ -7,7 +7,6 @@
 //
 
 #import "ScrapItBusinessService.h"
-#import "JSON.h"
 #import "EncodingUtil.h"
 #import "Business.h"
 #import "BusinessSummary.h"
@@ -24,7 +23,6 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
 
 - (NSString *)searchUrlWithCoordinates:(CLLocationCoordinate2D)coordinate;
 - (NSString *)searchUrlWithBusinessSummary:(BusinessSummary *)business;
-- (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl;
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store;
 - (NSString *)getLongFormProvinceFromAbbreviation:(NSString *)provinceCode;
 - (Business *)businessFromDataArray:(NSArray *)data withBusinessSummary:(BusinessSummary *)summary;
@@ -48,11 +46,36 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
     return master;
 }
 
-- (nonnull NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate {
+- (void)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate completionBlock:(nonnull void(^)(NSArray * _Nonnull businesses, NSError * _Nullable error))completion {
     NSString *request = [self searchUrlWithCoordinates:coordinate];
+    NSURL *url = [NSURL URLWithString:request];
     
-    //    NSLog(@"request: %@", request);
-    return [self retrieveBusinessesFromUrl:request];    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionTask *businessRequestTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable requestError) {
+        NSMutableArray *businesses = [[[NSMutableArray alloc] init] autorelease];
+        NSError *error = NULL;
+        if (!requestError) {
+            if (data) {
+                NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                if (jsonArray) {
+                    NSArray *stores = [NSArray arrayWithArray:[jsonArray valueForKey:@"items"]];
+                    if ([stores count] > 0) {
+                        for (NSDictionary *store in stores) {
+                            BusinessSummary *business = [self retrieveBusinessFromDictionary: store];
+                            if(business) {
+                                [businesses addObject:business];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (requestError) {
+            error = [NetworkErrors downloadErrorWithMessage:@"There was a problem retrieving businesses please try again later."];
+        }
+        completion(businesses, error);
+    }];
+    [businessRequestTask resume];
 }
 
 - (void)businessFromBusinessSummary:(nonnull BusinessSummary *)summary completionBlock:(nonnull void(^)(Business * _Nullable business, NSError * _Nullable error))completion {
@@ -109,25 +132,6 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
     NSString *encodedProvice = [self getLongFormProvinceFromAbbreviation:business.province];
     NSString *queryParams = [NSString stringWithFormat:@"id=%@&province=%@&name=%@", business.businessId, encodedProvice, encodedName];
     return [NSString stringWithFormat:@"%@%@?%@=%@&%@", kScrapItServicesBaseUrl, SBS_Bus_By_Details_Location, SBS_API_Key_Prefix, kScrapItServicesApiKey, queryParams];
-}
-
-- (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl {
-    NSURL *url = [NSURL URLWithString:searchUrl];
-	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-	NSDictionary *results = [responseString JSONValue];
-	NSArray *stores = [NSArray arrayWithArray:[results valueForKey:@"items"]];
-	
-	NSMutableArray *businesses = [[[NSMutableArray alloc] init] autorelease];
-	if ([stores count] > 0) {
-		for (NSDictionary *store in stores) {
-			BusinessSummary *business = [self retrieveBusinessFromDictionary: store];
-			if(business) {
-				[businesses addObject:business];
-			}
-		}
-		return businesses;
-	}
-	return nil;
 }
 
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store {
