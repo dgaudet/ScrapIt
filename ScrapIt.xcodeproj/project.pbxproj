@@ -11,6 +11,8 @@
 		051782141D9A093B00A65672 /* Calgary.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782101D9A093400A65672 /* Calgary.gpx */; };
 		051782171D9A0D5000A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
 		051782181D9A0D5600A65672 /* Saskatoon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 051782161D9A0D5000A65672 /* Saskatoon.gpx */; };
+		051991351DC642D400667E92 /* ApplicationError.m in Sources */ = {isa = PBXBuildFile; fileRef = 051991341DC642D400667E92 /* ApplicationError.m */; };
+		051991361DC642D400667E92 /* ApplicationError.m in Sources */ = {isa = PBXBuildFile; fileRef = 051991341DC642D400667E92 /* ApplicationError.m */; };
 		05228D061DA04A0A0075F183 /* BookIcon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05228D021DA04A0A0075F183 /* BookIcon-60@2x.png */; };
 		05228D071DA04A0A0075F183 /* BookIcon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05228D031DA04A0A0075F183 /* BookIcon-60@3x.png */; };
 		05228D081DA04A0A0075F183 /* BookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05228D041DA04A0A0075F183 /* BookIcon.png */; };
@@ -217,6 +219,8 @@
 /* Begin PBXFileReference section */
 		051782101D9A093400A65672 /* Calgary.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Calgary.gpx; sourceTree = "<group>"; };
 		051782161D9A0D5000A65672 /* Saskatoon.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Saskatoon.gpx; sourceTree = "<group>"; };
+		051991331DC642D400667E92 /* ApplicationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationError.h; path = Errors/ApplicationError.h; sourceTree = "<group>"; };
+		051991341DC642D400667E92 /* ApplicationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationError.m; path = Errors/ApplicationError.m; sourceTree = "<group>"; };
 		05228D021DA04A0A0075F183 /* BookIcon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookIcon-60@2x.png"; path = "App Store Resources/Icons/BookIcon-60@2x.png"; sourceTree = "<group>"; };
 		05228D031DA04A0A0075F183 /* BookIcon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookIcon-60@3x.png"; path = "App Store Resources/Icons/BookIcon-60@3x.png"; sourceTree = "<group>"; };
 		05228D041DA04A0A0075F183 /* BookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BookIcon.png; path = "App Store Resources/Icons/BookIcon.png"; sourceTree = "<group>"; };
@@ -421,6 +425,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0519912F1DC6424700667E92 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				051991331DC642D400667E92 /* ApplicationError.h */,
+				051991341DC642D400667E92 /* ApplicationError.m */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
 		052DCC2B1759872C00A39C0B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +627,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0519912F1DC6424700667E92 /* Errors */,
 				05DEDADC16D1B8930058A861 /* Repositories */,
 				05F240A41600188F00B2CDD1 /* Vendors */,
 				05B2F444146A1980008CE996 /* Utilities */,
@@ -1038,6 +1052,7 @@
 				052E007216C55E2C00E5E178 /* BusinessSummary.m in Sources */,
 				052E007316C55E2C00E5E178 /* PlaceMark.m in Sources */,
 				052E007516C55E2C00E5E178 /* ProvinceService.m in Sources */,
+				051991361DC642D400667E92 /* ApplicationError.m in Sources */,
 				052E007616C55E2C00E5E178 /* SearchService.m in Sources */,
 				052E007716C55E2C00E5E178 /* GoogleSearchService.m in Sources */,
 				052E007816C55E2C00E5E178 /* SelectionListTableViewController.m in Sources */,
@@ -1140,6 +1155,7 @@
 				05ACA967140750F5007CDEFC /* BusinessSummary.m in Sources */,
 				05B952C2140AFFF700786A6D /* PlaceMark.m in Sources */,
 				05B952CA140B02A900786A6D /* ProvinceService.m in Sources */,
+				051991351DC642D400667E92 /* ApplicationError.m in Sources */,
 				05B952CD140B036900786A6D /* SearchService.m in Sources */,
 				05B952D9140B041B00786A6D /* GoogleSearchService.m in Sources */,
 				05B952DE140B05BA00786A6D /* SelectionListTableViewController.m in Sources */,

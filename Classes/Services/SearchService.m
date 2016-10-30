@@ -9,7 +9,6 @@
 #import "SearchService.h"
 #import "PlaceMark.h"
 #import "GoogleSearchService.h"
-#import "JSON.h"
 #import "Province.h"
 #import "Business.h"
 #import "BusinessSummary.h"
@@ -79,24 +78,18 @@
     return [self generatePlacemarksFromBusinesses:businesses];
 }
 
-- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)businessSummary error:(NSError **)error {
+- (void)businessFromBusinessSummary:(BusinessSummary *)businessSummary completionBlock:(void(^)(Business * _Nullable business, NSError * _Nullable error))completion {
     if ([_reachability currentReachabilityStatus] == NotReachable) {
-        if (*error != NULL) {
-            *error = [NetworkErrors noWifiError];
-        }
-        return nil;
+        NSError *error = [NetworkErrors noWifiError];
+        completion(NULL, error);
     }
     
-    NSError *businessError = nil;
-    Business *business = [[ScrapItBusinessService sharedInstance] retrieveBusinessFromBusinessSummary:businessSummary error:&businessError];
-    if (businessError) {
-        if (*error != NULL) {
-            *error = businessError;
+    [[ScrapItBusinessService sharedInstance] businessFromBusinessSummary:businessSummary completionBlock:^(Business * _Nullable business, NSError * _Nullable error) {
+        if (business != NULL) {
+            [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
         }
-        return nil;
-    }
-    [AnalyticsService logDetailViewEventForBusiness:businessSummary.name inCity:businessSummary.city andProvince:businessSummary.province];
-	return business;
+        completion(business, error);
+    }];
 }
 
 - (CLLocationCoordinate2D)retrieveCenterCoordinatesForCity:(NSString *)city inProvince:(Province *)province error:(NSError **)error {

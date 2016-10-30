@@ -27,6 +27,7 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
 - (NSArray *)retrieveBusinessesFromUrl:(NSString *)searchUrl;
 - (BusinessSummary *)retrieveBusinessFromDictionary:(NSDictionary *)store;
 - (NSString *)getLongFormProvinceFromAbbreviation:(NSString *)provinceCode;
+- (Business *)businessFromDataArray:(NSArray *)data withBusinessSummary:(BusinessSummary *)summary;
 - (NSString *)encodeBusinessName:(NSString *)businessName;
 
 @end
@@ -36,7 +37,7 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
 //ScrapIt python app
 //ToDo: have the python app fail if you don't have enough query params ie: missing latitude, but have longitude
 
-+ (id)sharedInstance
++ (nonnull id)sharedInstance
 {
 	static id master = nil;
 	@synchronized(self)
@@ -47,34 +48,46 @@ NSString * const SBS_API_Key_Prefix = @"apikey";
     return master;
 }
 
-- (NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate {
+- (nonnull NSArray *)retrieveBusinessesForCoordinates:(CLLocationCoordinate2D)coordinate {
     NSString *request = [self searchUrlWithCoordinates:coordinate];
     
     //    NSLog(@"request: %@", request);
     return [self retrieveBusinessesFromUrl:request];    
 }
 
-- (Business *)retrieveBusinessFromBusinessSummary:(BusinessSummary *)business error:(NSError **)error {
-	NSString *request = [self searchUrlWithBusinessSummary:business];
-	NSURL *url = [NSURL URLWithString:request];
-    NSError *requestError = nil;
-	NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&requestError];
-    if (requestError) {
-        if (*error != NULL) {
-            *error = [NetworkErrors downloadErrorWithMessage:@"There was a problem retrieving that business please try again later."];
+- (void)businessFromBusinessSummary:(nonnull BusinessSummary *)summary completionBlock:(nonnull void(^)(Business * _Nullable business, NSError * _Nullable error))completion {
+    NSString *request = [self searchUrlWithBusinessSummary:summary];
+    NSURL *url = [NSURL URLWithString:request];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionTask *businessRequestTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable requestError) {
+        Business *businessFromRequest = NULL;
+        NSError *error = NULL;
+        if (!requestError) {
+            if (data) {
+                NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                if (jsonArray) {
+                    businessFromRequest = [self businessFromDataArray:jsonArray withBusinessSummary:summary];
+                }
+            }
         }
-        return nil;
+        if (businessFromRequest == NULL || requestError) {
+            error = [NetworkErrors downloadErrorWithMessage:@"There was a problem retrieving that business please try again later."];
+        }
+        completion(businessFromRequest, error);
+    }];
+    [businessRequestTask resume];
+}
+
+- (Business *)businessFromDataArray:(NSArray *)data withBusinessSummary:(BusinessSummary *)summary {
+    NSString *phoneNum = @"", *busUrl = @"";
+    if ([data valueForKey:@"phoneNumber"]) {
+        phoneNum = [JsonHelper stringForJsonValue:[data valueForKey:@"phoneNumber"]];
     }
-	NSArray *results = [responseString JSONValue];
-	
-	NSString *phoneNum = @"", *busUrl = @"";
-	if ([results valueForKey:@"phoneNumber"]) {
-		phoneNum = [JsonHelper stringForJsonValue:[results valueForKey:@"phoneNumber"]];
-	}
-	if ([results valueForKey:@"url"]) {
-        busUrl = [JsonHelper stringForJsonValue:[results valueForKey:@"url"]];
-	}
-	return [[[Business alloc] initWithBusinessSummary:business phoneNumber:phoneNum url:busUrl] autorelease];
+    if ([data valueForKey:@"url"]) {
+        busUrl = [JsonHelper stringForJsonValue:[data valueForKey:@"url"]];
+    }
+    return [[[Business alloc] initWithBusinessSummary:summary phoneNumber:phoneNum url:busUrl] autorelease];
 }
 
 - (NSString *)encodeBusinessName:(NSString *)businessName {

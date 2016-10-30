@@ -14,6 +14,7 @@
 #import "YellowPagesFooterView.h"
 #import "AnalyticsService.h"
 #import "ThemeHelper.h"
+#import "ApplicationError.h"
 
 //ToDo: do the correct thing? when you try to get a cities location but there isn't one found
 
@@ -108,16 +109,20 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    PlaceMark *placeMark = view.annotation;	
+    PlaceMark *placeMark = view.annotation;
     
     [self showLoadingIndicatorsCompetion:^{
-        NSError *error = nil;
-        Business *business = [[SearchService sharedInstance] retrieveBusinessFromBusinessSummary:placeMark.businessSummary error:&error];
-        if (error) {
-            [self displayErrorToUser:error];
-        } else {
-            [self loadBusinessListTableViewControllerWithBusiness:business];
-        }
+        [[SearchService sharedInstance] businessFromBusinessSummary:placeMark.businessSummary completionBlock:^(Business * _Nullable business, NSError * _Nullable error) {
+            if (error != NULL) {
+                [self displayErrorToUser:error];
+            }
+            if(business != NULL){
+                [self loadBusinessListTableViewControllerWithBusiness:business];
+            } else {
+                NSError *error = [ApplicationError generalError];
+                [self displayErrorToUser:error];
+            }
+        }];
     }];
 }
 
