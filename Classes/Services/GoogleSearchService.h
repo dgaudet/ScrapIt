@@ -15,6 +15,7 @@
 }
 
 + (id)sharedInstance;
+- (NSDictionary *)retrieveCityLocationResults:(NSString *)city inProvince:(Province *)province completionBlock:(void (^)(NSArray *locationResults, NSError *error))completion;
 - (NSDictionary *)retrieveCityLocationResults:(NSString *)city inProvince:(Province *)province;
 - (CLLocationCoordinate2D)retrieveCoordinatesForCityResults:(NSDictionary *)results;
 - (CLLocationCoordinate2D)retrieveCoordinatesForStreet:(NSString *)street city:(NSString *)city province:(NSString *)prov country:(NSString *)country error:(NSError **)error;

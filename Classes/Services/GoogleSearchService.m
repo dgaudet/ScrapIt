@@ -33,6 +33,40 @@ NSString * const GOOGLE_OK_STATUS = @"OK";
     return master;
 }
 
+- (NSDictionary *)retrieveCityLocationResults:(NSString *)city inProvince:(Province *)province completionBlock:(void (^)(NSArray *locationResults, NSError *error))completion {
+    //http://code.google.com/apis/maps/documentation/geocoding/
+    //http://maps.googleapis.com/maps/api/geocode/xml?address=saskatoon,+sk&sensor=false
+    NSString *address = [city stringByAppendingFormat:@", %@", province.code];
+    NSString *encodedAddress = [EncodingUtil urlEncodedString:address];
+    NSString *request = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true&region=ca", encodedAddress];
+    NSURL *url = [NSURL URLWithString:request];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionTask *businessRequestTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable requestError) {
+        NSArray *locationResults = NULL;
+        if (!requestError) {
+            if (data) {
+                NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                if (jsonArray) {
+                    if ([[jsonArray valueForKey:@"status"] isEqualToString:GOOGLE_OK_STATUS]) {
+                        locationResults = jsonArray;
+                    }
+                }
+            }
+        }
+        completion(locationResults, requestError);
+    }];
+    [businessRequestTask resume];
+    
+    NSString *responseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary *results = [responseString JSONValue];
+    
+    if ([[results valueForKey:@"status"] isEqualToString:GOOGLE_OK_STATUS]) {
+        return results;
+    }
+    return nil;
+}
+
 - (NSDictionary *)retrieveCityLocationResults:(NSString *)city inProvince:(Province *)province {
 	//http://code.google.com/apis/maps/documentation/geocoding/
 	//http://maps.googleapis.com/maps/api/geocode/xml?address=saskatoon,+sk&sensor=false
